@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   Route,
-  Redirect,
-  Switch,
+  Navigate,
+  Routes,
   BrowserRouter as Router
 } from 'react-router-dom';
 
@@ -14,10 +14,10 @@ function App() {
   return (
     <Router>
       <div>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Redirect from='*' to='/' />
-        </Switch>
+        <Routes>
+          <Route exact path='/' element={<Home/>} />
+          <Route path='*' element={<Navigate to='/' replace />} />
+        </Routes>
       </div>
     </Router>
   );

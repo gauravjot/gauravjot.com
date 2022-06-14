@@ -9,7 +9,7 @@ export default function Header() {
       .get('https://gauravjot-portfolio.firebaseio.com/header.json')
       .then(({ data }) => {
         setProfile([data.aboutme,data.image,data.subtitle]); 
-        {/** 0 = about me, 1 = profile picture, 2 = subtitle */}
+        /** 0 = about me, 1 = profile picture, 2 = subtitle */
       });
   }, []);
 
