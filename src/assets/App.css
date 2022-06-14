@@ -24,12 +24,12 @@ code {
 }
 
 a {
-  color: #866ab9;
+  color: #6f48b6;
 }
 
 a:hover {
-  color: #673ab7;
-  text-decoration: none;
+  color: #552a9e;
+  text-decoration: underline;
 }
 
 p {
@@ -58,8 +58,13 @@ p {
 
 .btn-outline-light {
   color: #4e3b6f;
-  border-color: #e0e0e0;
+  border:2px solid #c4b1e0;
   margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.btn-outline-light i {
+  font-weight: 400;
 }
 
 .btn-outline-light:hover {
@@ -130,7 +135,7 @@ p {
 
 .quick-about {
   font-size: 1.15rem;
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
   color: #333;
 }
 
@@ -158,14 +163,19 @@ p {
 
 .m-card-title {
   font-size: 1.2rem;
-  letter-spacing: 0.005rem;
+  line-height: 1.8rem;
   font-weight: bold;
   color: #343434;
 }
 
 .m-card-subtitle {
-  font-size: 1rem;
-  letter-spacing: 0.005rem;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+.m-card-description {
+  color:#555555;
+  line-height: 1.5rem;
 }
 
 .contact-links a {
@@ -175,7 +185,7 @@ p {
 }
 
 .contact-links a:hover {
-  background: #dcdcdc;
+  background: #e2e0e6;
 }
 
 .cl-git,

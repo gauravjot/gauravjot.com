@@ -20,22 +20,31 @@ export default function EducationListItem({ education }) {
               </span>)
           }
         </div>
-        <div className='m-card-subtitle'>
+        <div className='m-card-subtitle text-muted'>
           {education.credential &&
-            <div className='text-muted'>
+            <div>
               Credential ID: {education.credential}
             </div>
           }
-          <div className='text-muted'>
+          <div>
             {education.name}
           </div>
-          <div className='text-muted'>
-            {education.started} - {education.finished}
-          </div>
-          <div>
-            {education.description}
-          </div>
+          {education.started &&
+            <div>
+              {education.started} - {education.finished}
+            </div>
+          }
+          
         </div>
+        {education.description &&
+          <div>
+            <div className='p-1' />
+            <div className="m-card-description">
+              {education.description}
+            </div>
+            <div className='p-1' />
+          </div>
+        }
       </div>
     </div>
   );

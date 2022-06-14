@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export default function ProjectListItem({ project }) {
   return (
@@ -9,16 +8,7 @@ export default function ProjectListItem({ project }) {
         }
       <div className='media-body m-card-body'>
         <div className='m-card-title'>
-          <Link
-            to={{
-              pathname: `project/${project.id}`,
-              state: {
-                currentProject: project
-              }
-            }}
-          >
-            {project.name}
-          </Link>
+          {project.name}
         </div>
         <div className='m-card-subtitle text-muted'>
           {project.started} 
@@ -28,9 +18,12 @@ export default function ProjectListItem({ project }) {
             </span>
           }
         </div>
+        <div className='p-1' />
         <div>
-          {project.description}
-          <div className='p-1' />
+          <div className="m-card-description">
+            {project.description}
+          </div>
+          <div className='p-2' />
           {project.github &&
             <span>
               <a

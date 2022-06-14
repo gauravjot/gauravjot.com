@@ -38,12 +38,18 @@ export default function Header() {
             <div className='statement b'>
               I'm <span className='accent-color'>Gauravjot Garaya</span>
             </div>
-            <div className='title'>
-              {profile[2]}
-            </div>
+            {profile[2] &&
+              <div className='title'>
+                {profile[2]}
+              </div>
+            }
             <div className='quick-about'>
               <p>
-                {profile[0]}
+                {profile[0] &&
+                  <span>
+                    {profile[0]}
+                  </span>
+                }
                 <div className='p-2' />
                 <div className='contact-links'>
                   <span className='text-muted'>I am @</span>&nbsp;
