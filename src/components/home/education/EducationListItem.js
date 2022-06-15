@@ -4,7 +4,7 @@ export default function EducationListItem({ education }) {
   return (
     <div className='media m-card'>
       {education.icon &&
-          <img className='mr-3 align-self-start rounded' src={education.icon} width='64px' height='auto' alt="academic"/>
+          <img className='ml-3 mt-3 align-self-start rounded' src={education.icon} width='64px' height='auto' alt="academic"/>
         }
       <div className='media-body m-card-body'>
         <div className='m-card-title'>

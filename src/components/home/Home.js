@@ -4,6 +4,7 @@ import Footer from './Footer';
 import ProjectsOverview from './project/ProjectsOverview';
 import EducationOverview from './education/EducationOverview';
 import SkillOverview from './skill/SkillOverview';
+import Blog from './Blog';
 
 function Home() {
   document.title = 'Home | Gauravjot';
@@ -12,6 +13,7 @@ function Home() {
     <div className='fade-in-2'>
       <Header />
       <div className='container'>
+        <Blog />
         <div className='row'>
           <div className='col-sm-12 col-md-6'>
             <ProjectsOverview />

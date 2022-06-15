@@ -28,7 +28,7 @@ export default function SkillOverview() {
   return (
     <div>
       <div className='heading b m-b-15 m-t-15'>
-        <span className='b-accent-border'>I am skillful in</span>
+        <span className='b-accent-border'>I work with</span>
       </div>
       <div>
         {skills.map(skill => (
@@ -45,7 +45,7 @@ export default function SkillOverview() {
       {(learnings.length > 0) &&
         <div>
           <div className='heading b m-b-15 m-t-15'>
-            <span className='b-accent-border'>Currently doing</span>
+            <span className='b-accent-border'>Learning</span>
           </div>
           {learnings.map(learning => (
             <div>
@@ -55,8 +55,8 @@ export default function SkillOverview() {
                     {learning.name}
                 </a>
               </div>
-              <div>
-                <span className='text-muted text-sm'>{learning.resource}</span>
+              <div className='text-sm'>
+                {learning.resource}
               </div>
               <div className='p-2'></div>
             </div>

@@ -54,18 +54,20 @@ export default function Header() {
                 <div className='contact-links'>
                   <span className='text-muted'>I am @</span>&nbsp;
                   <a
-                    href='http://github.com/gauravjot'
+                    href='https://github.com/gauravjot'
                     className='cl-git'
                     rel='noopener noreferrer'
                     target='_blank'
+                    title="Github"
                   >
                     <i className='fab fa-lg fa-github' />
                   </a>
                   <a
-                    href='http://linkedin.com/in/gauravjot'
+                    href='https://linkedin.com/in/gauravjot'
                     rel='noopener noreferrer'
                     target='_blank'
                     className='cl-linkedin'
+                    title="LinkedIn"
                   >
                     <i className='fab fa-lg fa-linkedin' />
                   </a>
@@ -74,8 +76,18 @@ export default function Header() {
                     rel='noopener noreferrer'
                     target='_blank'
                     className='cl-email'
+                    title="Email"
                   >
                     <i className='fas fa-lg fa-envelope' />
+                  </a>
+                  <a
+                    href='https://medium.com/@gauravjot'
+                    rel='noopener noreferrer'
+                    target='_blank'
+                    className='cl-medium'
+                    title="Medium"
+                  >
+                    <i className='fa-brands fa-medium' />
                   </a>
                 </div>
               </p>

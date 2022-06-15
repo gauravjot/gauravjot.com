@@ -4,7 +4,7 @@ export default function ProjectListItem({ project }) {
   return (
     <div className='media m-card m-b-15 m-card-hoverable'>
       {project.icon &&
-          <img className='mr-3 align-self-start rounded' src={project.icon} width='64px' height='auto' alt="project"/>
+          <img className='ml-3 mt-3  align-self-start rounded' src={project.icon} width='64px' height='auto' alt="project"/>
         }
       <div className='media-body m-card-body'>
         <div className='m-card-title'>

@@ -9,7 +9,7 @@ body {
   /* background-image: url('./img/backdrop.jpg');
   background-size: cover;
   background-attachment: fixed; */
-  background: #f4f4f4;
+  background: #f0f0f0;
 }
 /* .backdrop-overlay {
   height: 100%;
@@ -46,10 +46,15 @@ p {
 }
 .text-sm {
   font-size: 0.9rem;
+  line-height: 1.35rem;
 }
 
 .text-m {
   font-size: 1.1rem;
+}
+
+.text-muted {
+  color:#909ca7 !important;
 }
 
 .close {
@@ -59,7 +64,7 @@ p {
 .btn-outline-light {
   color: #4e3b6f;
   border:2px solid #c4b1e0;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-weight: bold;
 }
 
@@ -153,29 +158,55 @@ p {
   font-weight: bold;
 }
 
-.m-card {
+/* .m-card {
   padding: 0.8rem 1rem;
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
   border-radius: 6px;
   background: #fff;
   margin-bottom: 1rem;
+} */
+
+.m-card {
+  border-radius: 4px;
+  background: #fff;
+  margin-bottom: 1rem;
+}
+
+.m-card-body {
+  padding: 0.8rem 1rem;
 }
 
 .m-card-title {
   font-size: 1.2rem;
-  line-height: 1.8rem;
+  line-height: 1.5rem;
   font-weight: bold;
   color: #343434;
+  padding-bottom: 0.2rem;
+}
+
+.m-card-title a {
+  color:#343434;
+}
+
+.m-card-title a:hover {
+  color:#212121;
 }
 
 .m-card-subtitle {
   font-size: 0.9rem;
-  line-height: 1.2rem;
+  line-height: 1.3rem;
+  font-weight: 500;
 }
 
 .m-card-description {
   color:#555555;
-  line-height: 1.5rem;
+  line-height: 1.4rem;
+}
+
+.card-img-top {
+  max-height: 175px;
+  object-fit: cover;
+  object-position: top;
 }
 
 .contact-links a {
@@ -206,6 +237,11 @@ p {
 .cl-email,
 .cl-email:hover {
   color: #db4a39;
+}
+
+.cl-medium,
+.cl-medium:hover {
+  color: #000000;
 }
 
 /* Animations */
