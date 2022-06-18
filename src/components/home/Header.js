@@ -14,6 +14,7 @@ export default function Header() {
   }, []);
 
   return (
+    <div className='header-background'>
     <div className='container'>
       <div className='header'>
         <div className='p-4' />
@@ -22,11 +23,6 @@ export default function Header() {
             <center>
               <img
                 src={profile[1]}
-                style={{
-                  border: '0.3rem #ffffff solid',
-                  borderRadius: '50%',
-                  boxShadow: '0 2px 6px 0 hsla(0, 0%, 0%, 0.2)'
-                }}
                 alt='Gauravjot Garaya'
                 className='img-fluid img-profile'
               />
@@ -35,8 +31,8 @@ export default function Header() {
           </div>
           <div className='col-lg-9 col-md-8 col-sm-12'>
             <div className='hello b'>Hello,</div>
-            <div className='statement b'>
-              I'm <span className='accent-color'>Gauravjot Garaya</span>
+            <div className='statement'>
+              I'm <span className='name-author'>Gauravjot Garaya</span>
             </div>
             {profile[2] &&
               <div className='title'>
@@ -52,7 +48,7 @@ export default function Header() {
                 }
                 <div className='p-2' />
                 <div className='contact-links'>
-                  <span className='text-muted'>I am @</span>&nbsp;
+                  <span>I am @</span>&nbsp;
                   <a
                     href='https://github.com/gauravjot'
                     className='cl-git'
@@ -95,6 +91,7 @@ export default function Header() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

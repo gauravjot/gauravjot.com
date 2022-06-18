@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Roboto', 'Segoe UI', sans-serif,
     sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -36,10 +37,6 @@ p {
   word-spacing: 0.03rem;
 }
 
-.accent-color {
-  color: #673ab7;
-}
-
 .accent-background {
   background: #673ab7;
   color: #fff;
@@ -54,7 +51,7 @@ p {
 }
 
 .text-muted {
-  color:#909ca7 !important;
+  color:#8a9196 !important;
 }
 
 .close {
@@ -109,7 +106,7 @@ p {
 }
 
 .m-b-15 {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 
 .m-t-15 {
@@ -122,12 +119,32 @@ p {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 1.5s;
-  padding-bottom: 0.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.header-background {
+  background-image: url('./img/servers.png');
+  background-position: center;
+  background-size: contain;
+  background-color: #3b1f6a;
+  color:rgba(255, 255, 255, 0.8);
+}
+
+.img-profile {
+    border: 0.5rem rgba(0, 0, 0, 0.2) solid;
+    border-radius: 50%;
+    box-sizing: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .hello {
-  color: #343434;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.5rem;
+}
+
+.name-author {
+  color: #fff;
+  font-family: 'Poppins';
+  font-weight: 500;
 }
 
 .statement {
@@ -135,18 +152,20 @@ p {
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  font-weight: 500;
 }
 
 .quick-about {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-top: 0.5rem;
-  color: #333;
+  color: rgba(255,255,255,0.95);
 }
 
 .heading {
-  color: #343434;
+  color: #212121;
   font-size: 1.5rem;
+  font-family: 'Poppins';
 }
 
 .b-accent-border {
@@ -178,8 +197,9 @@ p {
 
 .m-card-title {
   font-size: 1.2rem;
-  line-height: 1.5rem;
+  line-height: 1.4rem;
   font-weight: bold;
+  font-family: 'Poppins';
   color: #343434;
   padding-bottom: 0.2rem;
 }
@@ -216,17 +236,17 @@ p {
 }
 
 .contact-links a:hover {
-  background: #e2e0e6;
+  background: rgb(255, 255, 255,0.2);
 }
 
 .cl-git,
 .cl-git:hover {
-  color: #777;
+  color: #dadada;
 }
 
 .cl-linkedin,
 .cl-linkedin:hover {
-  color: #0077b5;
+  color: #00a6ff;
 }
 
 .cl-twitter,
@@ -236,12 +256,12 @@ p {
 
 .cl-email,
 .cl-email:hover {
-  color: #db4a39;
+  color: #fe4c38;
 }
 
 .cl-medium,
 .cl-medium:hover {
-  color: #000000;
+  color: #ffffff;
 }
 
 /* Animations */
@@ -335,6 +355,8 @@ p {
 
   .statement {
     font-size: 2rem;
+    line-height:2rem;
+    margin-bottom: 1rem;
   }
 
   .title {
@@ -346,6 +368,6 @@ p {
   }
 
   .img-profile {
-    max-width: 60% !important;
+    max-width: 80% !important;
   }
 }
