@@ -1,6 +1,6 @@
 {
   "name": "gauravjot-portfolio",
-  "version": "v2022.06",
+  "version": "2022.06.19",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
