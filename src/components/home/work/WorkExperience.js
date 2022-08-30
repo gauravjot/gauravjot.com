@@ -19,7 +19,7 @@ export default function WorkExperience() {
   }, []);
 
   return (
-    <div>
+    <div id="work">
         <div className='heading b m-b-15 m-t-15'>
             <span className='b-accent-border'>Work Experience</span>
         </div>

@@ -450,14 +450,14 @@ p {
   }
 
   .statement {
-    font-size: 2rem;
+    font-size: 1.7rem;
     line-height:2rem;
     margin-bottom: 0.5rem;
     line-height: 2.5rem;
   }
 
   .title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .quick-about {
@@ -470,6 +470,8 @@ p {
 
   .hello {
     margin-top: 0;
+    font-size:1.1rem;
+    font-weight: 400;
   }
   
   .work-card:before {

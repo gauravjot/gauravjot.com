@@ -19,7 +19,7 @@ export default function ProjectsOverview() {
   }, []);
 
   return (
-    <div>
+    <div id="projects">
       <div className='heading b m-b-15 m-t-15'>
         <span className='b-accent-border'>Projects</span>
       </div>
