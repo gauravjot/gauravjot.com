@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import ProjectsOverview from './project/ProjectsOverview';
 import EducationOverview from './education/EducationOverview';
-import SkillOverview from './skill/SkillOverview';
+import WorkExperience from './work/WorkExperience';
 import Blog from './Blog';
 
 function Home() {
@@ -19,8 +19,8 @@ function Home() {
             <ProjectsOverview />
           </div>
           <div className='col-sm-12 col-md-6'>
+            <WorkExperience />
             <EducationOverview />
-            <SkillOverview />
           </div>
         </div>
       </div>

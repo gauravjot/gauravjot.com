@@ -37,6 +37,10 @@ p {
   word-spacing: 0.03rem;
 }
 
+.ml-100 {
+  margin-left: 5em;
+}
+
 .accent-background {
   background: #673ab7;
   color: #fff;
@@ -196,7 +200,7 @@ p {
 }
 
 .m-card-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4rem;
   font-weight: bold;
   font-family: 'Poppins';
@@ -216,6 +220,15 @@ p {
   font-size: 0.9rem;
   line-height: 1.3rem;
   font-weight: 500;
+}
+
+.m-card-subtitle a {
+  color:#62686c;
+}
+
+.m-card-subtitle a i {
+  font-size:0.7rem;
+  color:#879096;
 }
 
 .m-card-description {
@@ -262,6 +275,39 @@ p {
 .cl-medium,
 .cl-medium:hover {
   color: #ffffff;
+}
+
+.workfinishdate {
+  position: absolute;
+  left: 1em;
+  color: #673ab7;
+  padding-top: 1.075em;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.work-card {
+  position: relative;
+}
+
+.work-card:before {
+  content: '';
+  border-left: .1rem solid #673ab7;
+  position: absolute;
+  height: 95%;
+  top: 2.1em;
+  left: -1em;
+}
+
+.workfinishdate:before {
+  position: absolute;
+  content: '';
+  background: #673ab7;
+  border-radius: 10em;
+  width: 1em;
+  height: 1em;
+  left: 4.375em;
+  top: 1.25em;
 }
 
 /* Animations */
@@ -346,12 +392,24 @@ p {
   }
 
   .quick-about {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
   /* mobile display */
+  
+  .heading {
+    font-size:1.3rem;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .m-card-title {
+    font-size: 1.05rem;
+  }
 
   .statement {
     font-size: 2rem;
@@ -364,10 +422,19 @@ p {
   }
 
   .quick-about {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .img-profile {
     max-width: 80% !important;
+  }
+
+  
+  .work-card:before {
+    top: 2.4em;
+  }
+
+  .workfinishdate:before {
+    left: 3.75em;
   }
 }
