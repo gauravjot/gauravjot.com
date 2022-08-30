@@ -41,11 +41,11 @@ export default function Header() {
             <div className='statement'>
               I'm <span className='name-author'>Gauravjot Garaya</span>
             </div>
-            {/* {profile[2] &&
+            {profile[2] &&
               <div className='title'>
                 {profile[2]}
               </div>
-            } */}
+            }
             <div className='quick-about'>
               <p>
                 {/* {profile[0] &&
