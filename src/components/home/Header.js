@@ -17,7 +17,14 @@ export default function Header() {
     <div className='header-background'>
     <div className='container'>
       <div className='header'>
-        <div className='p-4' />
+        <nav className="navbar navbar-expand navbar-dark">
+            <div className="navbar-nav">
+              <a className="nav-item nav-link" href="https://medium.com/@gauravjot">Blog</a>
+              <a className="nav-item nav-link" href="#projects">Projects</a>
+              <a className="nav-item nav-link" href="#work">Work</a>
+              <a className="nav-item nav-link" href="#education">Education</a>
+            </div>
+        </nav>
         <div className='row'>
           <div className='col-lg-3 col-md-4 col-sm-12'>
             <center>
@@ -34,21 +41,20 @@ export default function Header() {
             <div className='statement'>
               I'm <span className='name-author'>Gauravjot Garaya</span>
             </div>
-            {profile[2] &&
+            {/* {profile[2] &&
               <div className='title'>
                 {profile[2]}
               </div>
-            }
+            } */}
             <div className='quick-about'>
               <p>
-                {profile[0] &&
+                {/* {profile[0] &&
                   <span>
                     {profile[0]}
                   </span>
-                }
+                } */}
                 <div className='p-2' />
                 <div className='contact-links'>
-                  <span>I am @</span>&nbsp;
                   <a
                     href='https://github.com/gauravjot'
                     className='cl-git'
@@ -68,7 +74,7 @@ export default function Header() {
                     <i className='fab fa-lg fa-linkedin' />
                   </a>
                   <a
-                    href='mailto:gauravjot@outlook.com'
+                    href='mailto:connect@gauravjot.com'
                     rel='noopener noreferrer'
                     target='_blank'
                     className='cl-email'
