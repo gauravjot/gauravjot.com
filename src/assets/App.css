@@ -216,6 +216,12 @@ p {
   color:#212121;
 }
 
+.m-card-title a i {
+  font-size:0.7rem;
+  color:#879096;
+  vertical-align: middle;
+}
+
 .m-card-subtitle {
   font-size: 0.9rem;
   line-height: 1.3rem;
@@ -229,6 +235,7 @@ p {
 .m-card-subtitle a i {
   font-size:0.7rem;
   color:#879096;
+  vertical-align: middle;
 }
 
 .m-card-description {

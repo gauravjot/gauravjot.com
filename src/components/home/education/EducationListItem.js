@@ -12,7 +12,7 @@ export default function EducationListItem({ education }) {
             (<a rel='noopener noreferrer'
               target='_blank'
               href={education.link}>
-              {education.degree}
+              {education.degree} <i className="fa-solid fa-up-right-from-square"></i>
             </a>)
             : (
               <span>

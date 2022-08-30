@@ -31,7 +31,7 @@ export default function Blog() {
                             <img className="card-img-top" src={post.image} alt={post.title} />
                         }
                     <div className='media-body m-card-body d-inline-block'>
-                        <div className="m-card-title"><a href={post.link}>{post.title}</a></div>
+                        <div className="m-card-title"><a href={post.link}>{post.title} <i className="fa-solid fa-up-right-from-square"></i></a></div>
                         <div className="m-card-subtitle text-muted">{post.date} • {post.platform}</div>
                         <div className="p-1"></div>
                         <div className="m-card-description">{post.description.length > 210 ? post.description.slice(0,200) + "…" : post.description}</div>
