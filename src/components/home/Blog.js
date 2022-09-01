@@ -24,8 +24,8 @@ export default function Blog() {
             </div>
 
             <div className="row">
-            {posts.map(post => (
-                <div class="col-sm-12 col-md-6">
+            {posts.map((post, index) => (
+                <div className={(index > 1) ? "d-none d-lg-block d-xl-block col-sm-12 col-md-6 col-lg-4" : "col-sm-12 col-md-6 col-lg-4"}>
                     <div className="m-card m-card-hoverable">
                         {post.image &&
                             <img className="card-img-top" src={post.image} alt={post.title} />
@@ -34,9 +34,9 @@ export default function Blog() {
                         <div className="m-card-title"><a href={post.link}>{post.title} <i className="fa-solid fa-up-right-from-square"></i></a></div>
                         <div className="m-card-subtitle text-muted">{post.date} • {post.platform}</div>
                         <div className="p-1"></div>
-                        <div className="m-card-description">{post.description.length > 210 ? post.description.slice(0,200) + "…" : post.description}</div>
-                        <div className="p-2"></div>
-                        <a className='btn btn-outline-light btn-sm float-right' href={post.link}>Read more</a>
+                        <div className="m-card-description">{post.description.length > 160 ? post.description.replace(/^(.{100}[^\s]*).*/, "$1") + "…" : post.description}</div>
+                        {/* <div className="p-2"></div>
+                        <a className='btn btn-outline-light btn-sm float-right' href={post.link}>Read more</a> */}
                     </div>
                     </div>
                 </div>

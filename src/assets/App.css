@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', 'Segoe UI', sans-serif,
@@ -265,7 +269,7 @@ p {
 }
 
 .card-img-top {
-  max-height: 175px;
+  height: 160px;
   object-fit: cover;
   object-position: top;
 }
