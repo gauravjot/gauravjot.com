@@ -27,12 +27,12 @@ export default function ProjectListItem({ project }) {
           {project.github &&
             <span>
               <a
-                className='btn btn-outline-light btn-sm'
+                className='btn btn-outline-light'
                 rel='noopener noreferrer'
                 target='_blank'
                 href={project.github}>
                   <i className={'fab fa-lg fa-github'} />
-                  &nbsp; View Github
+                  &nbsp;View Github
               </a>
               &nbsp;&nbsp;
             </span>
@@ -40,7 +40,7 @@ export default function ProjectListItem({ project }) {
           {project.live &&
             <span>
               <a
-                className='btn btn-outline-light btn-sm'
+                className='btn btn-outline-light'
                 rel='noopener noreferrer'
                 target='_blank'
                 href={project.live}
@@ -55,7 +55,7 @@ export default function ProjectListItem({ project }) {
                       return <i className={'fab fa-lg fa-firefox'} />;
                   }
                 })()}
-                &nbsp; View Live
+                &nbsp;View Live
               </a>
             </span>
           }

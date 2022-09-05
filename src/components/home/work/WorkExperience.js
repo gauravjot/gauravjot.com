@@ -19,12 +19,12 @@ export default function WorkExperience() {
   }, []);
 
   return (
-    <div id="work">
+    <div>
         <div className='heading b m-b-15 m-t-15'>
             <span className='b-accent-border'>Work Experience</span>
         </div>
         {works.map((work, index) => (
-            <div className='media m-card ml-100'>
+            <div className='media m-card ml-100' key={index}>
                 <div className='workfinishdate'>{work.startlabel}</div>
                 <div className={(index === works.length - 1) ? 
                         'media-body m-card-body':

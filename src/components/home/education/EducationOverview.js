@@ -18,7 +18,7 @@ export default function EducationOverview() {
       });
   }, []);
   return (
-    <div id="education">
+    <div>
       <div className='heading b m-b-15 m-t-15'>
         <span className='b-accent-border'>Education & Certs</span>
       </div>

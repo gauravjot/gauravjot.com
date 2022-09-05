@@ -34,7 +34,7 @@ export default function Blog() {
                         <div className="m-card-title"><a href={post.link}>{post.title} <i className="fa-solid fa-up-right-from-square"></i></a></div>
                         <div className="m-card-subtitle text-muted">{post.date} • {post.platform}</div>
                         <div className="p-1"></div>
-                        <div className="m-card-description">{post.description.length > 160 ? post.description.replace(/^(.{100}[^\s]*).*/, "$1") + "…" : post.description}</div>
+                        <div className="m-card-description">{post.description.length > 120 ? post.description.replace(/^(.{70}[^\s]*).*/, "$1") + "…" : post.description}</div>
                         {/* <div className="p-2"></div>
                         <a className='btn btn-outline-light btn-sm float-right' href={post.link}>Read more</a> */}
                     </div>

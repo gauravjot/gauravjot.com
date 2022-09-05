@@ -37,8 +37,8 @@ export default function SkillOverview() {
             <span className='b-accent-border'>I work with</span>
           </div>
           <div>
-            {skills.map(skill => (
-                <span>
+            {skills.map((skill, index) => (
+                <span key={index}>
                   {(skill.link) ?
                     <a href={skill.link} className='btn btn-primary btn-accent hover-underline' rel='noopener noreferrer'
                     target='_blank'>{skill.name}</a>
@@ -56,15 +56,15 @@ export default function SkillOverview() {
           <div className='heading b m-b-15 m-t-15'>
             <span className='b-accent-border'>Learning</span>
           </div>
-          {learnings.map(learning => (
-            <div>
+          {learnings.map((learning, index) => (
+            <div key={index}>
               <div>
                 <a className='btn btn-accent hover-underline'
                   href={learning.link}>
-                    {learning.name}
+                    {learning.name} <i className="fa-solid fa-up-right-from-square text-sm text-muted"></i>
                 </a>
               </div>
-              <div className='text-sm'>
+              <div className='text-sm text-muted'>
                 {learning.resource}
               </div>
               <div className='p-2'></div>
