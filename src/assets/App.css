@@ -14,12 +14,12 @@ html {
   --textMuted: #8a9196;
   --textSecondary: rgb(190, 190, 190);
   --cardBG: rgb(34, 34, 34);
-  --fontHeading: 'Roboto Mono'Roboto+Mono;
+  --fontHeading: 'Roboto Mono', 'Consolas';
 }
 
 body {
   margin: 0;
-  font-family: 'Roboto Mono', 'Fira Code', 'Segoe UI', sans-serif,
+  font-family: 'Roboto Mono', 'Consolas', 'Segoe UI', sans-serif,
     sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -140,6 +140,8 @@ p {
   color:white;
   transition: back;
   z-index: 1;
+  width:3rem;
+  height:3rem;
 }
 
 .btn-floating:before {
@@ -275,15 +277,21 @@ p {
   margin-top: 1rem;
 }
 
+.statement {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
 .name-author {
   color: #fff;
   font-family: var(--fontHeading);
   font-weight: 500;
-}
-
-.statement {
   font-size: 3.5rem;
-  line-height: 4rem;
+  background: linear-gradient(225deg,#d53a9d, #3ab6d5, #8543f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -2px;
 }
 
 .title {
@@ -414,22 +422,9 @@ p {
   position: absolute;
   left: 0em;
   color: var(--accentLight);
-  padding-top: 1.075em;
-  font-size: 0.85rem;
+  padding-top: 1em;
+  font-size: 0.85em;
   font-weight: 500;
-}
-
-.work-card {
-  position: relative;
-}
-
-.work-card:before {
-  content: '';
-  border-left: .1rem solid var(--accentLight);
-  position: absolute;
-  height: 95%;
-  top: 2.1em;
-  left: -1em;
 }
 
 .workfinishdate:before {
@@ -441,6 +436,28 @@ p {
   height: 1em;
   left: 5.5em;
   top: 1.25em;
+  background: linear-gradient(to right,#d53a9d, #743ad5);
+}
+
+.work-card {
+  position: relative;
+}
+
+.work-card:before {
+  content: '';
+  border-left: .1rem solid #A43AB9;
+  position: absolute;
+  height: 95%;
+  top: 2.3em;
+  left: -1em;
+}
+
+/*
+******* FOOTER
+*/
+
+.footer {
+  margin-bottom: 2rem;
 }
 
 /* Animations */
@@ -516,7 +533,7 @@ p {
   }
 
   .statement {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .title {
@@ -546,6 +563,12 @@ p {
 
   .statement {
     font-size: 2.5rem;
+  }
+
+  .name-author {
+    font-size: 1.5em;
+    display: inline-block;
+    line-height: 1.2em;
   }
 
   .title {
@@ -606,7 +629,8 @@ p {
   }
   
   .work-card:before {
-    top: 2.4em;
+    top: 2.3em;
+    left: -1.32em;
   }
 
   .workfinishdate:before {
