@@ -5,7 +5,6 @@ import ProjectsOverview from './project/ProjectsOverview';
 import EducationOverview from './education/EducationOverview';
 import WorkExperience from './work/WorkExperience';
 import SkillOverview from './skill/SkillOverview';
-import Blog from './Blog';
 
 function Home() {
   document.title = 'Home | Gauravjot';

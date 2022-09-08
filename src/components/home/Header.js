@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import ThemeToggle from "../ThemeToggle";
 
 export default function Header() {
   const [profile, setProfile] = useState([]);
@@ -18,11 +19,16 @@ export default function Header() {
       <div className='navbar-background'>
         <div className='container'>
           <nav className="navbar navbar-expand navbar-dark">
-              <div className="navbar-nav">
+              <div className="navbar-nav mr-auto">
                 <a className="nav-item nav-link" href="https://medium.com/@gauravjot" rel='noopener noreferrer' target='_blank'>Blog</a>
                 <a className="nav-item nav-link" href="#projects">Projects</a>
                 <a className="nav-item nav-link" href="#work">Work</a>
                 <a className="nav-item nav-link" href="#education">Education</a>
+              </div>
+              <div className="float-right">
+                <div className="th-toggle">
+                  <ThemeToggle />
+                </div>
               </div>
           </nav>
         </div>
