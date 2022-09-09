@@ -20,7 +20,7 @@
 .eslintcache
 /.firebase
 .firebaserc
-firebase.json
+# firebase.json
 firebase-debug.log
 
 npm-debug.log*
