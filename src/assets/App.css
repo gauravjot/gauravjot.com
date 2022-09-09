@@ -318,6 +318,10 @@ p {
 }
 
 .darkmode-toggle:hover button {
+  background-color: var(--white-opaque2x);
+}
+
+.darkmode-toggle:hover .enabled {
   background-color: var(--accentLight);
 }
 
@@ -375,7 +379,7 @@ p {
   font-family: var(--fontHeading);
   font-weight: 500;
   font-size: 3.5rem;
-  background: linear-gradient(225deg,#d53a9d, #3ab6d5, #8543f6);
+  background: linear-gradient(45deg, #3ab6d5, #d53a9d, #8543f6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
