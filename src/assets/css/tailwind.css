@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700;900&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply bg-white text-gray-950;
+	@apply dark:bg-gray-950 dark:text-gray-300;
+	margin: 0;
+	font-family: "Roboto Mono", "Consolas", "Segoe UI", sans-serif;
+	font-size: 16px;
+}
+
+.font-mono {
+	font-family: "Roboto Mono", "Consolas", "Courier New", monospace;
+}
+
+a {
+	@apply text-cerise-600 no-underline;
+	@apply hover:text-cerise-700 hover:underline;
+}
+
+/* Buttons */
+.btn-outline-light {
+	color: var(--textSecondary);
+	margin-bottom: 4px;
+	font-weight: bold;
+	border-radius: 50rem;
+	border: none;
+	background: var(--white-opaque2x);
+}
+.btn-outline-light i {
+	font-weight: 400;
+}
+.btn-outline-light:hover {
+	background: linear-gradient(to right, #d53a9d, #743ad5);
+	color: var(--black);
+}
+.btn-outline-light:focus {
+	outline: 2px solid var(--textSecondary);
+	outline-offset: 3px;
+	box-shadow: none;
+}
+.btn-accent {
+	background: transparent;
+	color: var(--white);
+	border-radius: 0px;
+	border: 0px;
+	margin-right: 8px;
+	margin-bottom: 8px;
+	padding: 0;
+	font-size: 1.05rem;
+	font-weight: 500;
+}
+.btn-accent:focus {
+	outline: 2px solid var(--textSecondary);
+	outline-offset: 3px;
+	box-shadow: none;
+}
+.btn-accent:hover {
+	color: var(--white);
+}
+
+/*
+******* Squiggly Line
+*/
+.squiggle {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAQCAYAAABz9a1kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAIPSURBVEhLtZVPSBRhGIdnk6yQyMIQUotaAuniScIgsYRNJbBOBR2EIAiCrmGB6MWDeBSEDql4MKgu/gldFARvdRE6Be1FKcGgg0V12np+7zg7Mx8zi5v5wMPOb1j2e+d9v282k8vlPnqe9xU3cAXncBsPmsPYjTexWYX80d0Iv/AFDuA33TgA7uAwXrAEh3Y/oxzDR/gBr+nGf+QITuJLLBUhkgoJOIOLeNfS/qnBt9hnyUGFnMIW1Ch2MEo1TuNtS/+O9sNrvG4pzipezeiKfaIPkUVt2HOWQn5jO763VDnj+NC/jDGC/fl8vuiOpoCduGUp5Ci+wXpLlfEAk4p4jk+wqJC0R1SMRqEuRGlCFaNx7ZUrOOZfxtA4dCBKVGkstMbLZjWVEp/xC/ZaCjmLdbhgqTwNqDGfsBSyidoL37VuoaDnphAVoCCdYtZRG/mypZBW1PvlnaVkanEJL1oK+Yk38JOC1gvW1wtN96wrkU0bUIXz2GUpRHO9j1OW4pxEdazNUohenPdwRmu52KlJY7cwdWUNLyk46GiPov4e9D0V3I+N6PIMh90HDnKpIyKlK0LzXsZmS5UziEP+pb9OQLBeakcSCtImfYUdlvbGD3yME5YiuA8d64go0xWhPaMffooqLA3tIR11jakQ7UCAu0ZiIQFlCjqOt7AHz+Np1EnSkdc7Yhb9cxkh/SE97y8nu4W9Ry6d/gAAAABJRU5ErkJggg==");
+	background-position: center;
+	background-size: contain;
+	height: 8px;
+	background-repeat: repeat-x;
+}
+
+/* Theme Toggler */
+.th-toggle {
+	@apply w-full grid place-content-end;
+}
+.darkmode-toggle {
+	@apply bg-black/10;
+	@apply dark:bg-white/10;
+	@apply inline-block rounded-full w-12 h-7 text-sm relative shadow cursor-pointer;
+}
+.darkmode-toggle button {
+	@apply bg-slate-400;
+	@apply w-[1.35rem] h-[1.35rem] rounded-full absolute p-0 border-none top-[0.2rem]
+    left-[0.175rem] transition-colors;
+}
+.darkmode-toggle button .fa-moon,
+.darkmode-toggle .enabled .fa-sun {
+	display: none;
+}
+.darkmode-toggle button .fa-sun,
+.darkmode-toggle .enabled .fa-moon {
+	display: block;
+}
+.darkmode-toggle .enabled {
+	@apply bg-cerise-600;
+	@apply left-[1.5rem];
+}
+.darkmode-toggle:hover button {
+	@apply bg-opacity-50;
+}
+.darkmode-toggle:hover .enabled {
+	@apply bg-cerise-500;
+}
+
+/* Navbar */
+.navbar-section {
+	border-top: 0.2rem solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #d53a9d, #743ad5, #3ab6d5);
+	@apply fixed w-full;
+}
+.navbar-background {
+	@apply bg-white border-black/10;
+	@apply dark:bg-gray-950 dark:border-white/10;
+	@apply backdrop-blur-lg py-1 border-b;
+}
+.nav-link {
+	@apply hover:bg-gray-200 text-gray-700 hover:text-black;
+	@apply dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-900;
+	@apply py-2 px-5 rounded mr-2 no-underline hover:no-underline;
+}
