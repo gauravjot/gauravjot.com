@@ -1,12 +1,12 @@
 import * as React from "react";
-import ThemeToggle from "../utils/theme_switch/ThemeToggle";
+import ThemeToggle from "./utils/theme_switch/ThemeToggle";
 
 export interface ITopbarProps {}
 
 export default function Topbar(props: ITopbarProps) {
 	return (
 		<div className="navbar-section">
-			<div className="navbar-background">
+			<div className="navbar-background bg-white dark:bg-gray-950">
 				<div className="container mx-auto">
 					<nav className="flex pb-2 pt-3">
 						<div className="flex-1">

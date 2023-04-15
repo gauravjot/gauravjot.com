@@ -62,8 +62,8 @@ export default function ThemeToggle() {
 	return (
 		<div className="darkmode-toggle" onClick={toggle}>
 			<button ref={toggleBtn}>
-				<i className="fas fa-moon"></i>
-				<i className="fas fa-sun"></i>
+				<span className="ic ic-moon invert"></span>
+				<span className="ic ic-sun"></span>
 			</button>
 		</div>
 	);

@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700;900&display=swap");
 
 html {
 	scroll-behavior: smooth;
@@ -15,6 +15,14 @@ body {
 	font-size: 16px;
 }
 
+body * {
+	@apply transition-colors duration-200;
+}
+
+* {
+	@apply text-gray-800 dark:text-gray-100;
+}
+
 .font-mono {
 	font-family: "Roboto Mono", "Consolas", "Courier New", monospace;
 }
@@ -24,21 +32,49 @@ a {
 	@apply hover:text-cerise-700 hover:underline;
 }
 
+.container {
+	@apply w-4/6;
+}
+
+.select-none {
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+/* Headings */
+h1 {
+	@apply text-5xl font-bold leading-[4rem];
+}
+h2 {
+	@apply text-4xl font-bold leading-[3.5rem] tracking-tight;
+}
+h3 {
+	@apply text-3xl font-bold leading-[2.5rem] tracking-tight;
+}
+
 /* Buttons */
 .btn-outline-light {
-	color: var(--textSecondary);
-	margin-bottom: 4px;
-	font-weight: bold;
-	border-radius: 50rem;
-	border: none;
-	background: var(--white-opaque2x);
+	@apply bg-gray-200 dark:bg-gray-900;
+	@apply text-gray-950 dark:text-white;
+	@apply px-4 py-2 rounded-full font-bold hover:no-underline
+    duration-0 inline-block leading-4 select-none;
 }
-.btn-outline-light i {
-	font-weight: 400;
+
+.btn-outline-light span {
+	@apply duration-0;
+}
+.btn-outline-light:hover span {
+	@apply text-white duration-0;
+}
+.btn-outline-light:hover .ic-md,
+.btn-outline-light:hover .ic {
+	@apply invert;
 }
 .btn-outline-light:hover {
+	@apply shadow-cerise-600/50 shadow-lg;
 	background: linear-gradient(to right, #d53a9d, #743ad5);
-	color: var(--black);
 }
 .btn-outline-light:focus {
 	outline: 2px solid var(--textSecondary);
@@ -88,14 +124,14 @@ a {
 .darkmode-toggle button {
 	@apply bg-slate-400;
 	@apply w-[1.35rem] h-[1.35rem] rounded-full absolute p-0 border-none top-[0.2rem]
-    left-[0.175rem] transition-colors;
+    left-[0.175rem] pl-[0.175rem] transition-all ease-out duration-300;
 }
-.darkmode-toggle button .fa-moon,
-.darkmode-toggle .enabled .fa-sun {
+.darkmode-toggle button .ic-moon,
+.darkmode-toggle .enabled .ic-sun {
 	display: none;
 }
-.darkmode-toggle button .fa-sun,
-.darkmode-toggle .enabled .fa-moon {
+.darkmode-toggle button .ic-sun,
+.darkmode-toggle .enabled .ic-moon {
 	display: block;
 }
 .darkmode-toggle .enabled {
@@ -117,12 +153,12 @@ a {
 	@apply fixed w-full;
 }
 .navbar-background {
-	@apply bg-white border-black/10;
-	@apply dark:bg-gray-950 dark:border-white/10;
+	@apply border-black/10;
+	@apply dark:border-white/10;
 	@apply backdrop-blur-lg py-1 border-b;
 }
 .nav-link {
-	@apply hover:bg-gray-200 text-gray-700 hover:text-black;
+	@apply hover:bg-gray-100 text-gray-700 hover:text-black;
 	@apply dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-900;
-	@apply py-2 px-5 rounded mr-2 no-underline hover:no-underline;
+	@apply py-1.5 px-3 rounded mr-4 no-underline hover:no-underline tracking-tight font-medium text-[.9rem];
 }
