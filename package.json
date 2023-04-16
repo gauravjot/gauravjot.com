@@ -17,8 +17,8 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"css": "npx tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/main.css",
-		"watch-css": "npx tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/main.css --watch"
+		"css": "npx tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/_main.css",
+		"watch-css": "npx tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/_main.css --watch"
 	},
 	"eslintConfig": {
 		"extends": [

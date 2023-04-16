@@ -174,7 +174,8 @@ h3 {
 .darkmode-toggle {
 	@apply bg-black/10;
 	@apply dark:bg-white/10;
-	@apply inline-block rounded-full w-12 h-7 text-sm relative shadow cursor-pointer;
+	@apply inline-block rounded-full w-12 h-7 text-sm relative shadow
+   pointer-events-none transition-all;
 }
 .dark .darkmode-toggle {
 	background: linear-gradient(
@@ -185,7 +186,7 @@ h3 {
 }
 .darkmode-toggle button {
 	@apply w-[1.35rem] h-[1.35rem] rounded-full absolute p-0 border-none top-[0.2rem]
-    left-[0.175rem] pl-[0.175rem] transition-all ease-out duration-300;
+    left-[0.175rem] pl-[0.175rem] transition-all ease-out duration-300 pointer-events-auto;
 	background: linear-gradient(45deg, #3ab6d5, #743ad5);
 }
 .darkmode-toggle button .ic-moon,
@@ -196,6 +197,9 @@ h3 {
 .darkmode-toggle .enabled .ic-moon {
 	display: block;
 }
+.darkmode-toggle button:hover {
+	@apply scale-125;
+}
 .darkmode-toggle .enabled {
 	background: #d53a9d;
 	@apply left-[1.5rem];
@@ -203,7 +207,7 @@ h3 {
 .darkmode-toggle:hover button {
 	@apply bg-opacity-50;
 }
-.darkmode-toggle:hover .enabled {
+.darkmode-toggle .enabled:hover {
 	@apply bg-cerise-500;
 }
 

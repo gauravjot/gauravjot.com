@@ -1125,17 +1125,20 @@ h3{
 }
 
 .darkmode-toggle{
+  pointer-events: none;
   position: relative;
   display: inline-block;
   height: 1.75rem;
   width: 3rem;
-  cursor: pointer;
   border-radius: 9999px;
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .dark .darkmode-toggle {
@@ -1147,6 +1150,7 @@ h3{
 }
 
 .darkmode-toggle button{
+  pointer-events: auto;
   position: absolute;
   top: 0.2rem;
   left: 0.175rem;
@@ -1173,6 +1177,13 @@ h3{
   display: block;
 }
 
+.darkmode-toggle button:hover{
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .darkmode-toggle .enabled {
   background: #d53a9d;
   left: 1.5rem;
@@ -1182,7 +1193,7 @@ h3{
   --tw-bg-opacity: 0.5;
 }
 
-.darkmode-toggle:hover .enabled{
+.darkmode-toggle .enabled:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(228 80 182 / var(--tw-bg-opacity));
 }
