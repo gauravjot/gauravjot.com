@@ -1,12 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Route, Navigate, Routes, BrowserRouter as Router } from "react-router-dom";
+import {
+	Route,
+	Navigate,
+	Routes,
+	BrowserRouter as Router,
+	redirect,
+} from "react-router-dom";
 import { themeApply } from "./components/utils/theme_switch/ThemeApply";
 
 import "./assets/css/main.css";
 import "./assets/css/spinner.css";
 import "./assets/css/icons.css";
 import { Spinner } from "./components/utils/Spinner";
+import { NotFound } from "./components/utils/NotFound";
 
 const Home = React.lazy(() => import("./components/home/Home"));
 
@@ -38,7 +45,7 @@ function App() {
 							</React.Suspense>
 						}
 					/>
-					<Route path="*" element={<Navigate to="/" replace />} />
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
 		</Router>
