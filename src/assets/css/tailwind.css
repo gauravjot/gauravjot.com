@@ -102,6 +102,61 @@ h3 {
 }
 
 /*
+******* logo
+*/
+.logo-svg {
+	@apply transition-transform;
+}
+.logo-svg:hover {
+	@apply scale-105;
+}
+.logo-svg:hover path:nth-child(1) {
+	animation: anim-logo1 2s cubic-bezier(0.71, 0.13, 0.9, 0.07) infinite;
+}
+.logo-svg:hover path:nth-child(2) {
+	animation: anim-logo2 2s cubic-bezier(0.71, 0.13, 0.9, 0.07) infinite;
+}
+.logo-svg:hover path:nth-child(3) {
+	animation: anim-logo3 2s cubic-bezier(0.71, 0.13, 0.9, 0.07) infinite;
+}
+@keyframes anim-logo1 {
+	0%,
+	100% {
+		fill: #3ab6d5;
+	}
+	33% {
+		fill: #d53a9d;
+	}
+	66% {
+		fill: #743ad5;
+	}
+}
+@keyframes anim-logo2 {
+	0%,
+	100% {
+		fill: #743ad5;
+	}
+	33% {
+		fill: #3ab6d5;
+	}
+	66% {
+		fill: #d53a9d;
+	}
+}
+@keyframes anim-logo3 {
+	0%,
+	100% {
+		fill: #d53a9d;
+	}
+	33% {
+		fill: #743ad5;
+	}
+	66% {
+		fill: #3ab6d5;
+	}
+}
+
+/*
 ******* Squiggly Line
 */
 .squiggle {
@@ -121,10 +176,17 @@ h3 {
 	@apply dark:bg-white/10;
 	@apply inline-block rounded-full w-12 h-7 text-sm relative shadow cursor-pointer;
 }
+.dark .darkmode-toggle {
+	background: linear-gradient(
+		to left,
+		rgba(116, 58, 213, 0.6),
+		rgba(58, 182, 213, 0.3)
+	);
+}
 .darkmode-toggle button {
-	@apply bg-slate-400;
 	@apply w-[1.35rem] h-[1.35rem] rounded-full absolute p-0 border-none top-[0.2rem]
     left-[0.175rem] pl-[0.175rem] transition-all ease-out duration-300;
+	background: linear-gradient(45deg, #3ab6d5, #743ad5);
 }
 .darkmode-toggle button .ic-moon,
 .darkmode-toggle .enabled .ic-sun {
@@ -135,7 +197,7 @@ h3 {
 	display: block;
 }
 .darkmode-toggle .enabled {
-	@apply bg-cerise-600;
+	background: #d53a9d;
 	@apply left-[1.5rem];
 }
 .darkmode-toggle:hover button {
@@ -147,7 +209,7 @@ h3 {
 
 /* Navbar */
 .navbar-section {
-	border-top: 0.2rem solid;
+	border-top: 0.25rem solid;
 	border-image-slice: 1;
 	border-image-source: linear-gradient(to right, #d53a9d, #743ad5, #3ab6d5);
 	@apply fixed w-full;
@@ -160,5 +222,17 @@ h3 {
 .nav-link {
 	@apply hover:bg-gray-100 text-gray-700 hover:text-black;
 	@apply dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-900;
-	@apply py-1.5 px-3 rounded mr-4 no-underline hover:no-underline tracking-tight font-medium text-[.9rem];
+	@apply py-1.5 px-3 rounded mr-4 no-underline hover:no-underline tracking-tight font-medium text-[0.95rem];
+}
+.nav-link[aria-current="true"] {
+	@apply font-bold;
+}
+.nav-link[aria-current="true"]:nth-child(1) {
+	@apply dark:text-cerise-300 text-cerise-700;
+}
+.nav-link[aria-current="true"]:nth-child(2) {
+	@apply dark:text-purpear-400 text-purpear-700;
+}
+.nav-link[aria-current="true"]:nth-child(3) {
+	@apply dark:text-skeal-200 text-skeal-600;
 }
