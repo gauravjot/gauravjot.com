@@ -27,7 +27,6 @@ export default function Projects() {
 					projectsArray[projectsArray.length] = data[e];
 				});
 				setProjects(projectsArray);
-				console.log(projectsArray);
 			});
 	}, []);
 

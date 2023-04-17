@@ -1,8 +1,9 @@
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import React from "react";
 
 export default function ThemeToggle() {
 	let toggleBtn = React.useRef<HTMLButtonElement>(null);
-	let darkMode = localStorage.getItem("darkMode");
+	const [theme, setTheme] = useLocalStorage("theme", "light");
 
 	// DOM inserts
 	function changeToDark() {
@@ -20,41 +21,40 @@ export default function ThemeToggle() {
 			window.matchMedia &&
 			window.matchMedia("(prefers-color-scheme: dark)").matches
 		) {
-			if (darkMode === ("enabled" || null)) {
+			if (theme === ("dark" || null)) {
 				changeToDark();
-			} else if (darkMode === "disabled") {
+			} else if (theme === "light") {
 				changeToLight();
 			}
 		} else {
-			if (darkMode === ("disabled" || null)) {
+			if (theme === ("light" || null)) {
 				changeToLight();
-			} else if (darkMode === "enabled") {
+			} else if (theme === "dark") {
 				changeToDark();
 			}
 		}
-	});
 
-	// Detect browser's theme change
-	window
-		.matchMedia("(prefers-color-scheme: dark)")
-		.addEventListener("change", (event) => {
-			if (localStorage.getItem("darkMode") === null) {
-				if (event.matches) {
-					changeToDark();
-				} else {
-					changeToLight();
+		// Detect browser's theme change
+		window
+			.matchMedia("(prefers-color-scheme: dark)")
+			.addEventListener("change", (event) => {
+				if (theme === null) {
+					if (event.matches) {
+						changeToDark();
+					} else {
+						changeToLight();
+					}
 				}
-			}
-		});
+			});
+	});
 
 	// Toggler
 	const toggle = () => {
-		let darkMode = localStorage.getItem("darkMode");
-		if (darkMode !== "enabled") {
-			localStorage.setItem("darkMode", "enabled");
+		if (theme !== "dark") {
+			setTheme("dark");
 			changeToDark();
 		} else {
-			localStorage.setItem("darkMode", "disabled");
+			setTheme("light");
 			changeToLight();
 		}
 	};
