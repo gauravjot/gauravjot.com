@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,10 +9,14 @@ html {
 
 body {
 	@apply bg-white text-gray-950;
-	@apply dark:bg-gray-950 dark:text-gray-300;
 	margin: 0;
 	font-family: "Roboto Mono", "Consolas", "Segoe UI", sans-serif;
 	font-size: 16px;
+	font-display: block;
+}
+
+.dark {
+	@apply bg-gray-950 text-gray-300;
 }
 
 body * {
@@ -25,6 +29,11 @@ body * {
 
 .font-mono {
 	font-family: "Roboto Mono", "Consolas", "Courier New", monospace;
+	font-display: block;
+}
+
+.font-sans {
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 a {

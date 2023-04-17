@@ -1,4 +1,4 @@
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import React from "react";
 
 export default function ThemeToggle() {
@@ -46,7 +46,7 @@ export default function ThemeToggle() {
 					}
 				}
 			});
-	});
+	}, [theme]);
 
 	// Toggler
 	const toggle = () => {

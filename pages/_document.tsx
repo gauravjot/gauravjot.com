@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
 	return (
@@ -28,6 +29,9 @@ export default function Document() {
 				<link rel="manifest" href="/site.webmanifest" />
 			</Head>
 			<body>
+				<Script id="themeSet" strategy="afterInteractive">
+					{`if(!document.body.classList.contains("dark") && localStorage.getItem("theme") === 'dark'){document.body.classList.add("dark")}`}
+				</Script>
 				<Main />
 				<NextScript />
 			</body>
