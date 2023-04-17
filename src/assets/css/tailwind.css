@@ -175,7 +175,7 @@ h3 {
 	@apply bg-black/10;
 	@apply dark:bg-white/10;
 	@apply inline-block rounded-full w-12 h-7 text-sm relative shadow
-   pointer-events-none transition-all;
+   cursor-pointer transition-all;
 }
 .dark .darkmode-toggle {
 	background: linear-gradient(
@@ -216,27 +216,31 @@ h3 {
 	border-top: 0.25rem solid;
 	border-image-slice: 1;
 	border-image-source: linear-gradient(to right, #d53a9d, #743ad5, #3ab6d5);
-	@apply fixed w-full;
+	@apply fixed w-full z-40;
 }
 .navbar-background {
-	@apply border-black/10;
-	@apply dark:border-white/10;
-	@apply backdrop-blur-lg py-1 border-b;
+	@apply border-black/10 bg-white/70;
+	@apply dark:border-white/10 dark:bg-gray-950/70;
+	@apply py-1 border-b backdrop-blur-[8px];
 }
 .nav-link {
 	@apply hover:bg-gray-100 text-gray-700 hover:text-black;
-	@apply dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-900;
-	@apply py-1.5 px-3 rounded mr-4 no-underline hover:no-underline tracking-tight font-medium text-[0.95rem];
-}
-.nav-link[aria-current="true"] {
-	@apply font-bold;
+	@apply dark:text-gray-200 dark:hover:text-white dark:hover:bg-gray-900;
+	@apply py-1.5 px-3 rounded mr-4 no-underline hover:no-underline
+    tracking-tight font-medium text-[0.975rem] border border-transparent;
 }
 .nav-link[aria-current="true"]:nth-child(1) {
+	@apply bg-cerise-100 dark:bg-cerise-600/10;
 	@apply dark:text-cerise-300 text-cerise-700;
+	@apply hover:border-cerise-500/60 hover:border;
 }
 .nav-link[aria-current="true"]:nth-child(2) {
-	@apply dark:text-purpear-400 text-purpear-700;
+	@apply bg-purpear-200 dark:bg-purpear-600/20;
+	@apply dark:text-purpear-200 text-purpear-900;
+	@apply hover:border-purpear-700/80 hover:border;
 }
 .nav-link[aria-current="true"]:nth-child(3) {
+	@apply bg-skeal-100 dark:bg-skeal-600/20;
 	@apply dark:text-skeal-200 text-skeal-600;
+	@apply hover:border-skeal-600/60 hover:border;
 }

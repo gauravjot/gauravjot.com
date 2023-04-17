@@ -8,7 +8,7 @@ import Footer from "../Footer";
 export default function Home() {
 	return (
 		<div className="fade-in-2 bg-white dark:bg-gray-950">
-			<Topbar current={Page.PROJECTS} />
+			<Topbar current={Page.HOME} />
 			<div className="py-8"></div>
 			<Hero />
 			<div className="container mx-auto">
