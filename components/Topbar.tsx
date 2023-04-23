@@ -37,7 +37,7 @@ export default function Topbar({ current }: { current: Page }) {
 							);
 						})}
 					</div>
-					<div className="flex-none pb-3 pt-3.5 grid">
+					<div className="flex-none pb-3 pt-3.5 flex place-items-center">
 						<ThemeToggle />
 					</div>
 				</nav>

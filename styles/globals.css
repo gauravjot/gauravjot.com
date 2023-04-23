@@ -37,12 +37,31 @@ body * {
 }
 
 a {
-	@apply text-cerise-600 no-underline;
-	@apply hover:text-cerise-700 hover:underline;
+	@apply text-cerise-600 no-underline relative inline-block;
+	@apply hover:text-cerise-800;
+}
+.dark a {
+	@apply text-cerise-300 hover:text-cerise-400;
+}
+.text-content a {
+	@apply text-black hover:text-black;
+}
+.dark .text-content a {
+	@apply text-gray-100 hover:text-white;
+}
+.text-content a::after {
+	content: "";
+	background: rgb(164 164 164 / 0.3);
+	@apply w-full absolute bottom-[0.175rem] left-0 rounded-full h-[0.225rem]
+    transition-all;
+}
+.text-content a:hover::after {
+	background: linear-gradient(to right, #d53a9d, #743ad5);
+	@apply bottom-[0.075rem] transition-all;
 }
 
 .container {
-	@apply w-4/6;
+	@apply max-w-[100ch];
 }
 
 .select-none {
@@ -65,7 +84,7 @@ h3 {
 
 /* Buttons */
 .btn-outline-light {
-	@apply bg-gray-200 dark:bg-gray-900;
+	@apply bg-gray-200/60 dark:bg-gray-900;
 	@apply text-gray-950 dark:text-white;
 	@apply px-4 py-2 rounded-full font-bold hover:no-underline
     duration-0 inline-block leading-4 select-none;
@@ -131,7 +150,7 @@ h3 {
 @keyframes anim-logo1 {
 	0%,
 	100% {
-		fill: #3ab6d5;
+		fill: #21c9f3;
 	}
 	33% {
 		fill: #d53a9d;
@@ -146,7 +165,7 @@ h3 {
 		fill: #743ad5;
 	}
 	33% {
-		fill: #3ab6d5;
+		fill: #21c9f3;
 	}
 	66% {
 		fill: #d53a9d;
@@ -161,7 +180,7 @@ h3 {
 		fill: #743ad5;
 	}
 	66% {
-		fill: #3ab6d5;
+		fill: #21c9f3;
 	}
 }
 
@@ -181,40 +200,39 @@ h3 {
 	@apply w-full grid place-content-end;
 }
 .darkmode-toggle {
-	@apply bg-black/10;
-	@apply dark:bg-white/10;
-	@apply inline-block rounded-full w-12 h-7 text-sm relative shadow
+	background: linear-gradient(
+		135deg,
+		rgba(93, 199, 225, 0.7) 30%,
+		rgba(255, 222, 30, 0.7)
+	);
+	@apply inline-block rounded-full w-12 h-7 text-sm relative
    cursor-pointer transition-all;
 }
 .dark .darkmode-toggle {
 	background: linear-gradient(
-		to left,
-		rgba(116, 58, 213, 0.6),
-		rgba(58, 182, 213, 0.3)
+		225deg,
+		rgba(58, 182, 213, 0.3) 30%,
+		rgba(116, 58, 213, 0.4)
 	);
 }
 .darkmode-toggle button {
-	@apply w-[1.35rem] h-[1.35rem] rounded-full absolute p-0 border-none top-[0.2rem]
+	@apply bg-white;
+	@apply w-[1.35rem] h-[1.35rem] rounded-full absolute p-0 border-none top-[0.2rem] shadow-sm
     left-[0.175rem] pl-[0.175rem] transition-all ease-out duration-300 pointer-events-auto;
-	background: linear-gradient(45deg, #3ab6d5, #743ad5);
 }
 .darkmode-toggle button .ic-moon,
 .darkmode-toggle .enabled .ic-sun {
-	display: none;
+	@apply absolute left-[0.175rem] top-[0.175rem];
+	@apply scale-0 opacity-0 transition-all duration-300;
 }
 .darkmode-toggle button .ic-sun,
 .darkmode-toggle .enabled .ic-moon {
-	display: block;
-}
-.darkmode-toggle button:hover {
-	@apply scale-125;
+	@apply absolute left-[0.175rem] top-[0.175rem];
+	@apply scale-100 opacity-100 transition-all duration-300;
 }
 .darkmode-toggle .enabled {
 	background: #d53a9d;
 	@apply left-[1.5rem];
-}
-.darkmode-toggle:hover button {
-	@apply bg-opacity-50;
 }
 .darkmode-toggle .enabled:hover {
 	@apply bg-cerise-500;
@@ -224,13 +242,13 @@ h3 {
 .navbar-section {
 	border-top: 0.25rem solid;
 	border-image-slice: 1;
-	border-image-source: linear-gradient(to right, #d53a9d, #743ad5, #3ab6d5);
+	border-image-source: linear-gradient(to right, #e39600, #d53a9d, #743ad5, #3ab6d5);
 	@apply fixed w-full z-40;
 }
 .navbar-background {
 	@apply border-black/10 bg-white/70;
-	@apply dark:border-white/10 dark:bg-gray-950/70;
-	@apply py-1 border-b backdrop-blur-[8px];
+	@apply dark:border-white/10 dark:bg-gray-950/80;
+	@apply py-1 border-b backdrop-blur-[25px];
 }
 .nav-link {
 	@apply hover:bg-gray-100 text-gray-700 hover:text-black;
