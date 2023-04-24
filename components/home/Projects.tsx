@@ -1,72 +1,86 @@
 import * as React from "react";
 import axios from "axios";
+import useSWR from "swr";
+import Image from "next/image";
 
-interface ProjectItemType {
-	description: string;
-	github?: string;
+type ProjectItemType = {
 	name: string;
-	started?: string;
-	finished?: string;
-	type?: string;
-	skills?: string;
-	lang?: string;
-	art?: string;
-	gallery?: string;
-}
+	description: string;
+	preview: string;
+	url: string;
+	git?: string;
+};
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+const tail = {
+	project: {
+		link: "w-10 h-10 flex place-content-center place-items-center hover:bg-gray-200/50 dark:hover:bg-gray-200/20 rounded",
+		btn: "btn-outline-light !py-2.5 outline outline-1 outline-gray-300/60 dark:outline-gray-700 hover:outline-0",
+	},
+};
 
 export default function Projects() {
-	const [projects, setProjects] = React.useState<ProjectItemType[]>([]);
-
-	React.useEffect(() => {
-		axios
-			.get("https://gauravjot-portfolio.firebaseio.com/projects.json")
-			.then(({ data }) => {
-				let projectsArray: ProjectItemType[] = [];
-				const projectsInJSON = data.projects.split(","); // project1, project2 ...
-				projectsInJSON.forEach((e: string) => {
-					projectsArray[projectsArray.length] = data[e];
-				});
-				setProjects(projectsArray);
-			});
-	}, []);
+	const { data, error } = useSWR("/api/projects", fetcher);
 
 	return (
 		<section id="projects" className="container mx-auto">
 			<h2 className="my-4">Projects</h2>
-			{projects?.length > 0 &&
-				projects.map((project) => {
-					return <ProjectItem key={project.name} project={project} />;
-				})}
+			<div className="flex flex-col gap-24 mt-12">
+				{data?.projects.length > 0 &&
+					data.projects.map((project: ProjectItemType) => {
+						return <ProjectItem key={project.name} project={project} />;
+					})}
+			</div>
 		</section>
 	);
 }
 
 function ProjectItem({ project }: { project: ProjectItemType }) {
 	return (
-		<div className="flex my-8">
-			<div className="w-3/5 mr-8">
-				<h3>{project.name}</h3>
-				<div className="my-0.5">
-					{project.lang && project.lang + " / "}
-					{project.skills && project.skills}
-				</div>
-				<p className="my-2.5 text-gray-700 dark:text-gray-300">
-					{project.description}
-				</p>
-				<div className="my-4">
+		<div>
+			{project.preview && (
+				<a href={project.url} rel="noreferrer" target="_blank">
+					<Image
+						src={project.preview}
+						alt={project.name + " image"}
+						width={1000}
+						height={750}
+						className="w-full rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-lg shadow-black/5"
+						quality={100}
+					/>
+				</a>
+			)}
+			<div className="mt-8 mx-24">
+				<h3>
 					<a
-						href={project.github}
-						className="btn-outline-light"
+						className="text-black dark:text-white hover:dark:text-white hover:text-black hover:underline hover:underline-offset-8"
+						href={project.url}
 						rel="noreferrer"
 						target="_blank"
 					>
-						<span className="ic-md ic-github dark:invert mr-2 align-middle"></span>
-						<span className="align-middle">GitHub</span>
+						{project.name}
+						<span className="ml-2 align-middle ic-xl ic-ne-arrow invert-[0.5]"></span>
 					</a>
+				</h3>
+				<p className="my-3 text-gray-600 dark:text-gray-300">
+					{project.description}
+				</p>
+				<div className="mt-6">
+					{project.git ? (
+						<a
+							href={project.git}
+							className={tail.project.btn}
+							rel="noreferrer"
+							target="_blank"
+						>
+							<span className="ic-md ic-github dark:invert mr-2 align-middle"></span>
+							<span className="align-middle">GitHub</span>
+						</a>
+					) : (
+						<></>
+					)}
 				</div>
-			</div>
-			<div className="w-2/5">
-				{project.art && <img src={project.art} alt={project.name + " image"} />}
 			</div>
 		</div>
 	);

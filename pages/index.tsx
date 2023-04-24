@@ -18,7 +18,9 @@ export default function Home() {
 			<div className="container mx-auto">
 				<Squiggle />
 			</div>
-			<Projects />
+			<div className="my-12">
+				<Projects />
+			</div>
 			<Footer />
 		</div>
 	);

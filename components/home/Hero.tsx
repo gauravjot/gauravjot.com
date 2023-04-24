@@ -48,6 +48,7 @@ export default function Hero() {
 						className={tail.social.link}
 						rel="noreferrer"
 						target="_blank"
+						title="Github"
 					>
 						<span className="ic-md ic-github dark:invert-[.85]"></span>
 					</a>
@@ -56,6 +57,7 @@ export default function Hero() {
 						className={tail.social.link}
 						rel="noreferrer"
 						target="_blank"
+						title="LinkedIn"
 					>
 						<span className="ic-md ic-linkedin dark:invert-[.85]"></span>
 					</a>
