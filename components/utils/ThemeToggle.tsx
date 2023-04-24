@@ -8,11 +8,9 @@ export default function ThemeToggle() {
 	// DOM inserts
 	function changeToDark() {
 		document.body.classList.add("dark");
-		toggleBtn.current?.classList.add("enabled");
 	}
 	function changeToLight() {
 		document.body.classList.remove("dark");
-		toggleBtn.current?.classList.remove("enabled");
 	}
 
 	// Set default color accoriding to browser's theme

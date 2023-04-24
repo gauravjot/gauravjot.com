@@ -3,27 +3,27 @@
 		{
 			"name": "CoFinder",
 			"description": "Some sample description for this project.",
-			"preview": "/assets/screenshots/CoFinder.png",
+			"preview": "/assets/projects/CoFinder.png",
 			"url": "https://cofinder.ca"
 		},
 		{
 			"name": "Letsnote.io",
 			"description": "Some sample description for this project.",
-			"preview": "/assets/screenshots/Letsnote.png",
+			"preview": "/assets/projects/Letsnote.png",
 			"url": "https://letsnote.io",
 			"git": "https://github.com/gauravjot/letsnote"
 		},
 		{
 			"name": "Social Network",
 			"description": "Some sample description for this project.",
-			"preview": "/assets/screenshots/SocialNetwork.png",
+			"preview": "/assets/projects/SocialNetwork.png",
 			"url": "https://sn.nzran.com",
 			"git": "https://github.com/gauravjot/social-network"
 		},
 		{
 			"name": "AmoledBackgrounds",
 			"description": "Some sample description for this project.",
-			"preview": "/assets/screenshots/AmoledBackgrounds.png",
+			"preview": "/assets/projects/AmoledBackgrounds.png",
 			"url": "https://play.google.com/store/apps/details?id=com.droidheat.amoledbackgrounds&pli=1",
 			"git": "https://github.com/gauravjot/social-network"
 		}

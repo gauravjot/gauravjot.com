@@ -1,5 +1,4 @@
 import * as React from "react";
-import axios from "axios";
 import useSWR from "swr";
 import Image from "next/image";
 
@@ -16,7 +15,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const tail = {
 	project: {
 		link: "w-10 h-10 flex place-content-center place-items-center hover:bg-gray-200/50 dark:hover:bg-gray-200/20 rounded",
-		btn: "btn-outline-light !py-2.5 outline outline-1 outline-gray-300/60 dark:outline-gray-700 hover:outline-0",
+		btn: "btn-outline-light !py-2.5",
 	},
 };
 
@@ -44,10 +43,10 @@ function ProjectItem({ project }: { project: ProjectItemType }) {
 					<Image
 						src={project.preview}
 						alt={project.name + " image"}
-						width={1000}
-						height={750}
-						className="w-full rounded-lg opacity-80 hover:opacity-100 transition-opacity shadow-lg shadow-black/5"
-						quality={100}
+						width={800}
+						height={600}
+						className="w-full rounded-lg opacity-90 hover:opacity-100 transition-opacity shadow-lg shadow-black/5"
+						quality={70}
 					/>
 				</a>
 			)}

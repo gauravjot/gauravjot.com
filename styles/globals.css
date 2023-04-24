@@ -81,13 +81,20 @@ h2 {
 h3 {
 	@apply text-3xl font-bold leading-[2.5rem] tracking-tight;
 }
+h4 {
+	@apply text-2xl font-bold leading-[2.25rem] tracking-tight;
+}
+h5 {
+	@apply text-xl font-bold leading-[2rem] tracking-tight;
+}
 
 /* Buttons */
 .btn-outline-light {
 	@apply bg-gray-200/60 dark:bg-gray-900;
-	@apply text-gray-950 dark:text-white;
+	@apply !text-black dark:text-white;
 	@apply px-4 py-2 rounded-full font-bold hover:no-underline
     duration-0 inline-block leading-4 select-none;
+	@apply outline outline-1 outline-gray-300/60 dark:outline-gray-700;
 }
 
 .btn-outline-light span {
@@ -101,32 +108,12 @@ h3 {
 	@apply invert;
 }
 .btn-outline-light:hover {
-	@apply shadow-cerise-600/50 shadow-lg;
+	@apply shadow-cerise-600/50 shadow-lg text-white outline-transparent;
 	background: linear-gradient(to right, #d53a9d, #743ad5);
 }
 .btn-outline-light:focus {
-	outline: 2px solid var(--textSecondary);
-	outline-offset: 3px;
-	box-shadow: none;
-}
-.btn-accent {
-	background: transparent;
-	color: var(--white);
-	border-radius: 0px;
-	border: 0px;
-	margin-right: 8px;
-	margin-bottom: 8px;
-	padding: 0;
-	font-size: 1.05rem;
-	font-weight: 500;
-}
-.btn-accent:focus {
-	outline: 2px solid var(--textSecondary);
-	outline-offset: 3px;
-	box-shadow: none;
-}
-.btn-accent:hover {
-	color: var(--white);
+	@apply text-white outline-4 outline-purpear-400/40 dark:outline-purple-500/40;
+	background: linear-gradient(to right, #d53a9d, #743ad5);
 }
 
 /*
@@ -193,6 +180,7 @@ h3 {
 	background-size: contain;
 	height: 8px;
 	background-repeat: repeat-x;
+	@apply invert dark:invert-0;
 }
 
 /* Theme Toggler */
@@ -206,7 +194,7 @@ h3 {
 		rgba(255, 222, 30, 0.7)
 	);
 	@apply inline-block rounded-full w-12 h-7 text-sm relative
-   cursor-pointer transition-all;
+    cursor-pointer transition-all;
 }
 .dark .darkmode-toggle {
 	background: linear-gradient(
@@ -215,26 +203,29 @@ h3 {
 		rgba(116, 58, 213, 0.4)
 	);
 }
+.dark .darkmode-toggle button {
+	@apply left-[1.5rem];
+}
 .darkmode-toggle button {
 	@apply bg-white;
 	@apply w-[1.35rem] h-[1.35rem] rounded-full absolute p-0 border-none top-[0.2rem] shadow-sm
     left-[0.175rem] pl-[0.175rem] transition-all ease-out duration-300 pointer-events-auto;
 }
 .darkmode-toggle button .ic-moon,
-.darkmode-toggle .enabled .ic-sun {
+.dark .darkmode-toggle button .ic-sun {
 	@apply absolute left-[0.175rem] top-[0.175rem];
 	@apply scale-0 opacity-0 transition-all duration-300;
 }
 .darkmode-toggle button .ic-sun,
-.darkmode-toggle .enabled .ic-moon {
+.dark .darkmode-toggle button .ic-moon {
 	@apply absolute left-[0.175rem] top-[0.175rem];
 	@apply scale-100 opacity-100 transition-all duration-300;
 }
-.darkmode-toggle .enabled {
+.dark .darkmode-toggle button {
 	background: #d53a9d;
 	@apply left-[1.5rem];
 }
-.darkmode-toggle .enabled:hover {
+.dark .darkmode-toggle button:hover {
 	@apply bg-cerise-500;
 }
 
@@ -270,4 +261,16 @@ h3 {
 	@apply bg-skeal-100 dark:bg-skeal-600/20;
 	@apply dark:text-skeal-200 text-skeal-600;
 	@apply hover:border-skeal-600/60 hover:border;
+}
+
+/* Footer */
+.footer-section {
+	background: linear-gradient(
+		to right,
+		rgba(227, 150, 0, 0.05),
+		rgba(213, 58, 157, 0.05),
+		rgba(116, 58, 213, 0.05),
+		rgba(58, 182, 213, 0.05)
+	);
+	@apply border-t border-black/5 dark:border-white/5;
 }

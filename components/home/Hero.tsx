@@ -7,8 +7,7 @@ export default function Hero() {
 		},
 		social: {
 			link: "w-10 h-10 flex place-content-center place-items-center hover:bg-gray-200/50 dark:hover:bg-gray-200/20 rounded",
-			emailbtn:
-				"btn-outline-light !py-3 outline outline-1 outline-gray-300/60 dark:outline-gray-700 hover:outline-0",
+			emailbtn: "btn-outline-light !py-3",
 		},
 	};
 
