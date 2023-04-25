@@ -1,5 +1,5 @@
 import * as React from "react";
-import useSWR from "swr";
+import data from "@/json/projects.json";
 import Image from "next/image";
 
 type ProjectItemType = {
@@ -10,8 +10,6 @@ type ProjectItemType = {
 	git?: string;
 };
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
 const tail = {
 	project: {
 		link: "w-10 h-10 flex place-content-center place-items-center hover:bg-gray-200/50 dark:hover:bg-gray-200/20 rounded",
@@ -20,13 +18,11 @@ const tail = {
 };
 
 export default function Projects() {
-	const { data, error } = useSWR("/api/projects", fetcher);
-
 	return (
 		<section id="projects" className="container mx-auto">
 			<h2 className="my-4">Projects</h2>
 			<div className="flex flex-col gap-24 mt-12">
-				{data?.projects.length > 0 &&
+				{data.projects.length > 0 &&
 					data.projects.map((project: ProjectItemType) => {
 						return <ProjectItem key={project.name} project={project} />;
 					})}

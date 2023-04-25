@@ -1,0 +1,88 @@
+.blog-content * {
+	@apply font-sans;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+	@apply font-serif mb-6 mt-8 text-gray-950 dark:text-gray-100;
+}
+.blog-content h1 {
+	@apply mb-8 mt-14 text-7xl font-black leading-[5.5rem];
+}
+.blog-content h2 {
+	@apply mb-7 mt-12 text-5xl font-black;
+}
+.blog-content h3 {
+	@apply mb-6 mt-9 text-4xl;
+}
+.blog-content h4 {
+	@apply text-3xl;
+}
+.blog-content h5 {
+	@apply text-2xl;
+}
+.blog-content h6 {
+	@apply text-xl;
+}
+
+.blog-content p {
+	@apply my-6 leading-9 text-[1.2rem] text-gray-700 dark:text-gray-100;
+}
+
+.blog-content li {
+	@apply my-4 ml-6 pl-4 leading-9 text-[1.2rem] text-gray-700 dark:text-gray-100;
+}
+.blog-content li::marker {
+	@apply dark:text-gray-400 text-gray-500;
+}
+
+.blog-content ol li {
+	@apply list-decimal;
+}
+
+.blog-content ul li {
+	@apply list-disc;
+}
+
+.blog-content code {
+	@apply bg-gray-100/80 opacity-90 inline-block dark:bg-gray-100/10 font-medium font-mono px-1.5 rounded text-base tracking-wide;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	@apply rounded-md dark:bg-gray-800/20 bg-gray-950;
+}
+.blog-content pre code {
+	@apply font-mono tracking-wide bg-transparent dark:bg-transparent py-0 px-0;
+}
+.blog-content pre code * {
+	@apply font-mono;
+}
+
+.blog-content a {
+	@apply text-black hover:text-black;
+}
+.dark .blog-content a {
+	@apply text-gray-100 hover:text-white;
+}
+.blog-content a::before {
+	content: "";
+	@apply bg-skeal-300/70 absolute bottom-[0.25rem] right-[0.82rem] left-0 h-[0.15rem]
+    transition-all duration-300;
+}
+.blog-content a:hover::before {
+	background: linear-gradient(to right, #d53a9d, #743ad5);
+	@apply bottom-0 transition-all duration-300;
+}
+
+.blog-content a::after {
+	content: "\279A";
+	@apply text-gray-400/80 dark:text-gray-500 text-[0.9rem] leading-7 align-top;
+}
+
+.blog-content img {
+	@apply my-10 text-sm;
+}

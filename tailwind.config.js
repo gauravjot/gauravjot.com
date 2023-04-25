@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
 	darkMode: "class",
 	content: [
@@ -8,6 +9,11 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["Inter", ...fontFamily.sans],
+				mono: ["Roboto Mono", ...fontFamily.mono],
+				serif: ["Merriweather", ...fontFamily.serif],
+			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":

@@ -8,6 +8,7 @@ export enum Page {
 	HOME,
 	BLOG,
 	CONTACT,
+	BLOG_POST,
 }
 const MENU = [
 	{ id: Page.HOME, title: "Portfolio", url: ROUTE.home },
@@ -17,7 +18,7 @@ const MENU = [
 
 export default function Topbar({ current }: { current: Page }) {
 	return (
-		<div className="navbar-section">
+		<div className={(current === Page.BLOG_POST ? "" : "fixed ") + "navbar-section"}>
 			<div className="navbar-background">
 				<nav className="flex container mx-auto">
 					<Link className="flex place-items-center" href="/">
