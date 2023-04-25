@@ -9,8 +9,6 @@ import ScrollToTopBtn from "@/components/utils/ScrollToTopButton";
 
 type Props = {
 	post: PostType;
-	morePosts: PostType[];
-	preview?: boolean;
 };
 
 export default function Post({ post }: Props) {
@@ -20,7 +18,18 @@ export default function Post({ post }: Props) {
 		<div>
 			<Head>
 				<title>{title}</title>
-				<meta property="og:image" content={post.ogImage.url} />
+				<meta
+					property="og:image"
+					content={`https://gauravjot.com/assets/blog_images/${post.ogImage.url}`}
+				/>
+				<meta
+					property="og:url"
+					content={`https://gauravjot.com/blog/${post.slug}`}
+				/>
+				<meta property="og:title" content={post.title} />
+				<meta property="og:type" content="article" />
+				<meta property="og:description" content={post.excerpt} />
+				<meta property="og:locale" content="en_US" />
 			</Head>
 			<Topbar current={Page.BLOG_POST} />
 			<article className="container mx-auto">
@@ -57,6 +66,7 @@ export async function getStaticProps({ params }: Params) {
 				content,
 			},
 		},
+		revalidate: 1800, // In seconds
 	};
 }
 
@@ -71,6 +81,6 @@ export async function getStaticPaths() {
 				},
 			};
 		}),
-		fallback: false,
+		fallback: "blocking",
 	};
 }

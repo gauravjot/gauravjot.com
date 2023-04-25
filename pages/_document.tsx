@@ -29,7 +29,7 @@ export default function Document() {
 			</Head>
 			<body>
 				<Script id="themeSet" strategy="afterInteractive">
-					{`if(!document.body.classList.contains("dark") && localStorage.getItem("theme") === 'dark'){document.body.classList.add("dark")}`}
+					{`if(!document.body.classList.contains("dark") && localStorage.getItem("theme") === 'dark'){document.body.classList.add("dark");}`}
 				</Script>
 				<Main />
 				<NextScript />
