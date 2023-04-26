@@ -1,7 +1,6 @@
 ---
 title: "Social Network"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/assets/blog/preview/cover.jpg"
 date: "2020-03-16T05:35:07.322Z"
 author:
     name: Joe Haddad
@@ -10,11 +9,11 @@ ogImage:
     url: "/assets/blog/preview/cover.jpg"
 ---
 
-Nexus is a powerful social network web application. The application includes features such as fully customizable user profiles, a powerful dashboard, ability to connect with others as a friend, comment and leave replies to own or your friend's posts.
+> Nexus is a powerful social network web application. The application includes features such as fully customizable user profiles, a powerful dashboard, ability to connect with others as a friend, comment and leave replies to own or your friend's posts.
 
 ---
 
-Nexus is a powerful social network web application. The application includes features such as fully customizable user profiles, a powerful dashboard, ability to connect with others as a friend, comment and leave replies to own or your friend's posts.
+! ! ! Nexus is a powerful social network web application. The application includes features such as fully customizable user profiles, a powerful dashboard, ability to connect with others as a friend, comment and leave replies to own or your friend's posts.
 
 Nexus is a powerful social network web application. The application includes features such as fully customizable user profiles, a powerful dashboard, ability to connect with others as a friend, comment and leave replies to own or your friend's posts.
 
@@ -50,7 +49,7 @@ Things which Nexus is or does behind the scenes are:
 
 Feel free to fork and make pull requests. Thank you to everyone who invests their effort and time!
 
-```python
+```python {1,3}
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'socialnetwork.settings')

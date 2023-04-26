@@ -32,6 +32,7 @@ export function BlogPost(props: IBlogPostProps) {
 					<></>
 				)}
 			</div>
+			<h3>Table of Contents</h3>
 			<div dangerouslySetInnerHTML={{ __html: post.content }} />
 			<div className="my-24">
 				<Squiggle />

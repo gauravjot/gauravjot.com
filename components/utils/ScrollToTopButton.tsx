@@ -30,7 +30,7 @@ export default function ScrollToTopBtn() {
 		<button
 			ref={mybutton}
 			type="button"
-			className="fixed scale-0 z-20 bottom-16 right-24 bg-gray-600/30 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full w-12 h-12"
+			className="fixed scale-0 flex place-items-center place-content-center z-20 bottom-16 right-24 bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full w-12 h-12"
 			id="btn-back-to-top"
 			title="Scroll to top"
 			onClick={() => {
@@ -39,7 +39,7 @@ export default function ScrollToTopBtn() {
 			}}
 			aria-label="Top"
 		>
-			&uarr;
+			<span className="ic-md dark:invert ic-north"></span>
 		</button>
 	);
 }

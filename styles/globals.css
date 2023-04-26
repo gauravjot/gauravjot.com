@@ -258,10 +258,14 @@ h5 {
 .footer-section {
 	background: linear-gradient(
 		to right,
-		rgba(227, 150, 0, 0.05),
-		rgba(213, 58, 157, 0.05),
-		rgba(116, 58, 213, 0.05),
-		rgba(58, 182, 213, 0.05)
+		rgba(227, 150, 0, 0.1),
+		rgba(213, 58, 157, 0.1),
+		rgba(116, 58, 213, 0.1),
+		rgba(58, 182, 213, 0.1)
 	);
-	@apply border-t border-black/5 dark:border-white/5;
+	@apply relative pt-10;
+}
+.footer-section::before {
+	content: "";
+	@apply h-24 w-full absolute top-0 bg-gradient-to-b from-white to-transparent dark:from-gray-950 dark:to-transparent;
 }
