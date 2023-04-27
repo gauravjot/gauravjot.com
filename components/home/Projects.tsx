@@ -1,6 +1,7 @@
 import * as React from "react";
 import data from "@/json/projects.json";
 import Image from "next/image";
+import markdownToHtml from "@/lib/md_to_html";
 
 type ProjectItemType = {
 	name: string;
@@ -23,15 +24,21 @@ export default function Projects() {
 			<h2 className="my-4">Projects</h2>
 			<div className="flex flex-col gap-24 mt-12">
 				{data.projects.length > 0 &&
-					data.projects.map((project: ProjectItemType) => {
-						return <ProjectItem key={project.name} project={project} />;
+					data.projects.map((project: ProjectItemType, index) => {
+						return (
+							<ProjectItem
+								key={project.name}
+								project={project}
+								num={index}
+							/>
+						);
 					})}
 			</div>
 		</section>
 	);
 }
 
-function ProjectItem({ project }: { project: ProjectItemType }) {
+function ProjectItem({ project, num }: { project: ProjectItemType; num: number }) {
 	return (
 		<div>
 			{project.preview && (
@@ -46,7 +53,7 @@ function ProjectItem({ project }: { project: ProjectItemType }) {
 					/>
 				</a>
 			)}
-			<div className="mt-8 mx-24">
+			<div className="mt-8 mx-24 relative">
 				<h3>
 					<a
 						className="text-black dark:text-white hover:dark:text-white hover:text-black hover:underline hover:underline-offset-8"
@@ -58,10 +65,11 @@ function ProjectItem({ project }: { project: ProjectItemType }) {
 						<span className="ml-2 align-middle ic-xl ic-ne-arrow invert-[0.5]"></span>
 					</a>
 				</h3>
-				<p className="my-3 text-gray-600 dark:text-gray-300">
-					{project.description}
-				</p>
-				<div className="mt-6">
+				<p
+					className="my-6 text-gray-600 text-content text-project-description dark:text-gray-300 leading-8"
+					dangerouslySetInnerHTML={{ __html: project.description }}
+				/>
+				<div className="mt-10">
 					{project.git ? (
 						<a
 							href={project.git}
@@ -75,6 +83,9 @@ function ProjectItem({ project }: { project: ProjectItemType }) {
 					) : (
 						<></>
 					)}
+				</div>
+				<div className="absolute font-mono -top-1 italic -left-24 text-7xl tracking-tighter text-stroke text-white dark:text-gray-950">
+					#{num + 1}
 				</div>
 			</div>
 		</div>

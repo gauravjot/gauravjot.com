@@ -8,7 +8,7 @@
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
-	@apply font-serif mb-6 mt-8 text-gray-950 dark:text-gray-100;
+	@apply font-serif mb-6 mt-8 text-gray-950 dark:text-gray-100 relative;
 }
 .blog-content h1 {
 	@apply mb-8 mt-14 text-7xl font-black leading-[5.5rem];
@@ -29,7 +29,7 @@
 	@apply text-xl;
 }
 /* headings link */
-.blog-content .icon-link {
+.blog-content a .icon-link {
 	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgOTYgOTYwIDk2MCIgd2lkdGg9IjQ4Ij48cGF0aCBkPSJNNDQzLjc4MiA3OTAuMTMxSDI4MHEtODkuMjggMC0xNTEuNzA2LTYyLjQxMy02Mi40MjUtNjIuNDEyLTYyLjQyNS0xNTEuNTQ2IDAtODkuMTM0IDYyLjQyNS0xNTIuMDAxUTE5MC43MiAzNjEuMzA0IDI4MCAzNjEuMzA0aDE2My43ODJ2NzkuNzgzaC0xNjMuNTRxLTU2LjczOCAwLTk1Ljk0NyAzOS4wNjktMzkuMjA4IDM5LjA2OS0zOS4yMDggOTUuNjA5IDAgNTYuNTM5IDM5LjIwOCA5NS44NDQgMzkuMjA5IDM5LjMwNCA5NS45NDcgMzkuMzA0aDE2My41NHY3OS4yMThabS0xMjguMzkxLTE4MC43NHYtNjYuNzgyaDMyOS4yMTh2NjYuNzgySDMxNS4zOTFabTIwMC44MjcgMTgwLjc0di03OS4yMThoMTYzLjU0cTU2LjczOCAwIDk1Ljk0Ny0zOS4wNjkgMzkuMjA4LTM5LjA2OSAzOS4yMDgtOTUuNjA5IDAtNTYuNTM5LTM5LjIwOC05NS44NDQtMzkuMjA5LTM5LjMwNC05NS45NDctMzkuMzA0aC0xNjMuNTR2LTc5Ljc4M0g2ODBxODkuMDk5IDAgMTUxLjg5OCA2Mi44MjMgNjIuNzk4IDYyLjgyMyA2Mi43OTggMTUxLjk1NyAwIDg5LjEzNC02Mi43OTggMTUxLjU5UTc2OS4wOTkgNzkwLjEzMSA2ODAgNzkwLjEzMUg1MTYuMjE4WiIvPjwvc3ZnPg==);
 	background-size: contain;
 	@apply dark:invert-[0.25] invert-[0.75] hover:invert-[0.5] dark:hover:invert-[0.65] w-7 h-7 -rotate-45 inline-block ml-3 align-middle;
@@ -47,6 +47,23 @@
 .blog-content h5 a:hover::before,
 .blog-content h6 a:hover::before {
 	background: transparent;
+}
+.blog-content h1 a,
+.blog-content h2 a,
+.blog-content h3 a,
+.blog-content h4 a,
+.blog-content h5 a,
+.blog-content h6 a {
+	@apply opacity-0;
+}
+
+.blog-content h1:hover a,
+.blog-content h2:hover a,
+.blog-content h3:hover a,
+.blog-content h4:hover a,
+.blog-content h5:hover a,
+.blog-content h6:hover a {
+	@apply opacity-100;
 }
 
 .blog-content hr {

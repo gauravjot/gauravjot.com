@@ -17,6 +17,7 @@ export function BlogPost(props: IBlogPostProps) {
 				{dateFormatter(post.date)}
 			</div>
 			<h1 className="!mt-4">{post.title}</h1>
+			<p className="italic text-base">{post.excerpt}</p>
 			<div>
 				{post.coverImage ? (
 					<>

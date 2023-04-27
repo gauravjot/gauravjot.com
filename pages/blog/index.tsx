@@ -5,6 +5,7 @@ import Head from "next/head";
 import Topbar, { Page } from "@/components/Topbar";
 import Footer from "@/components/Footer";
 import dateFormatter from "@/lib/date_formatter";
+import Link from "next/link";
 
 type Props = {
 	allPosts: PostType[];
@@ -49,7 +50,7 @@ export default function BlogHome({ allPosts }: Props) {
 
 function Article({ post }: { post: PostType }) {
 	return (
-		<a
+		<Link
 			href={"/blog/" + post.slug}
 			className="block my-6 hover:bg-gray-300/20 hover:dark:bg-gray-500/10 rounded px-6 py-4"
 		>
@@ -58,6 +59,6 @@ function Article({ post }: { post: PostType }) {
 				{dateFormatter(post.date)} - {post.author.name}
 			</div>
 			<div className="my-4 leading-9 font-sans text-[1.125rem]">{post.excerpt}</div>
-		</a>
+		</Link>
 	);
 }
