@@ -14,7 +14,7 @@ export default function Home() {
 			<Topbar current={Page.CONTACT} />
 			<div className="py-10"></div>
 			<div className="container mx-auto">
-				<div className="mx-24 my-16">
+				<div className="mx-8 lg:mx-24 my-16">
 					<ContactForm />
 					<div className="py-8"></div>
 					<FindMe />

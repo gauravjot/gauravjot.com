@@ -3,7 +3,7 @@ import * as React from "react";
 export default function Hero() {
 	const tail = {
 		hero: {
-			p: "text-content my-7 leading-9 text-[1.05rem] dark:text-gray-300",
+			p: "text-content my-7 lg:leading-9 lg:text-[1.05rem] dark:text-gray-300",
 		},
 		social: {
 			link: "w-10 h-10 flex place-content-center place-items-center hover:bg-gray-200/50 dark:hover:bg-gray-200/20 rounded",
@@ -14,10 +14,11 @@ export default function Hero() {
 	return (
 		<section id="hero">
 			<div className="container mx-auto">
-				<h1 className="my-12 mt-16 leading-[4.25rem] text-content">
-					Software Engineer, Front-End
-					<br /> Developer and Open Source
-					<br /> Contributor
+				<h1 className="my-10 lg:my-12 lg:mt-16 leading-[2.75rem] lg:leading-[4.25rem] text-content">
+					Software Engineer,{" "}
+					<span className="inline-block">
+						Building Elegent & Reactive User Experiences.
+					</span>
 				</h1>
 				<p className={tail.hero.p}>
 					I am Gauravjot Garaya, a Vancouver based software engineer with over

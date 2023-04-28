@@ -107,6 +107,7 @@ raw Markdown line up prettily. You can also use inline Markdown.
 | Markdown | Less      | Pretty     |
 | -------- | --------- | ---------- |
 | _Still_  | `renders` | **nicely** |
+| _Still_  | `renders` | **nicely** |
 | 1        | 2         | 3          |
 
 ## Task List

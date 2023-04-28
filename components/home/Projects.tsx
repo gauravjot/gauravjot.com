@@ -22,7 +22,7 @@ export default function Projects() {
 	return (
 		<section id="projects" className="container mx-auto">
 			<h2 className="my-4">Projects</h2>
-			<div className="flex flex-col gap-24 mt-12">
+			<div className="flex flex-col gap-16 lg:gap-24 mt-12">
 				{data.projects.length > 0 &&
 					data.projects.map((project: ProjectItemType, index) => {
 						return (
@@ -42,18 +42,18 @@ function ProjectItem({ project, num }: { project: ProjectItemType; num: number }
 	return (
 		<div>
 			{project.preview && (
-				<a href={project.url} rel="noreferrer" target="_blank">
+				<a href={project.url} rel="noreferrer" target="_blank" className="block">
 					<Image
 						src={project.preview}
 						alt={project.name + " image"}
 						width={800}
 						height={600}
 						className="w-full rounded-lg opacity-90 hover:opacity-100 transition-opacity shadow-lg shadow-black/5"
-						quality={70}
+						quality={85}
 					/>
 				</a>
 			)}
-			<div className="mt-8 mx-24 relative">
+			<div className="mt-8 mx-6 lg:mx-24 relative">
 				<h3>
 					<a
 						className="text-black dark:text-white hover:dark:text-white hover:text-black hover:underline hover:underline-offset-8"
@@ -66,7 +66,7 @@ function ProjectItem({ project, num }: { project: ProjectItemType; num: number }
 					</a>
 				</h3>
 				<p
-					className="my-6 text-gray-600 text-content text-project-description dark:text-gray-300 leading-8"
+					className="my-6 text-gray-600 text-content text-project-description dark:text-gray-300 lg:text-base lg:leading-8"
 					dangerouslySetInnerHTML={{ __html: project.description }}
 				/>
 				<div className="mt-10">
@@ -84,7 +84,7 @@ function ProjectItem({ project, num }: { project: ProjectItemType; num: number }
 						<></>
 					)}
 				</div>
-				<div className="absolute font-mono -top-1 italic -left-24 text-7xl tracking-tighter text-stroke text-white dark:text-gray-950">
+				<div className="absolute font-mono italic -top-2 lg:-top-1 right-2 lg:-left-24 lg:right-auto text-5xl lg:text-7xl tracking-tighter text-stroke text-white dark:text-gray-950">
 					#{num + 1}
 				</div>
 			</div>

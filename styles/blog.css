@@ -8,25 +8,26 @@
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
-	@apply font-serif mb-6 mt-8 text-gray-950 dark:text-gray-100 relative;
+	@apply font-serif mb-4 lg:mb-6 mt-8 text-gray-950 dark:text-gray-100 relative antialiased;
 }
 .blog-content h1 {
-	@apply mb-8 mt-14 text-7xl font-black leading-[5.5rem];
+	@apply mb-6 lg:mb-8 mt-14 text-4xl lg:text-7xl font-black leading-[3rem] lg:leading-[5.5rem];
 }
 .blog-content h2 {
-	@apply mb-7 mt-12 text-5xl font-black;
+	@apply mb-5 lg:mb-7 mt-12 text-3xl lg:text-5xl font-black leading-[2.75rem] lg:leading-[4rem];
 }
 .blog-content h3 {
-	@apply mb-6 mt-9 text-4xl;
+	@apply mb-4 lg:mb-6 mt-9 text-2xl lg:text-4xl leading-[2.25rem] lg:leading-[3rem];
 }
 .blog-content h4 {
-	@apply text-3xl;
+	@apply text-xl lg:text-3xl leading-[2rem] lg:leading-[2.75rem];
 }
 .blog-content h5 {
-	@apply text-2xl;
+	@apply text-lg lg:text-2xl leading-[1.9rem] lg:leading-[2.5rem];
 }
 .blog-content h6 {
-	@apply text-xl;
+	@apply text-base lg:text-xl;
+	@apply leading-6 sm:leading-7 md:leading-8 lg:leading-9;
 }
 /* headings link */
 .blog-content a .icon-link {
@@ -71,11 +72,15 @@
 }
 
 .blog-content p {
-	@apply my-6 leading-9 text-[1.2rem] text-gray-700 dark:text-gray-100;
+	@apply text-base md:text-[1.1rem] lg:text-[1.2rem] antialiased;
+	@apply leading-7 md:leading-8 lg:leading-9;
+	@apply my-4 lg:my-6 text-gray-950 dark:text-gray-100;
 }
 
 .blog-content li {
-	@apply my-4 ml-6 pl-4 leading-9 text-[1.2rem] text-gray-700 dark:text-gray-100;
+	@apply text-base md:text-[1.1rem] lg:text-[1.2rem] antialiased;
+	@apply leading-7 md:leading-8 lg:leading-9;
+	@apply pl-4 my-4 ml-5 lg:my-4 text-gray-950 dark:text-gray-100;
 }
 .blog-content li::marker {
 	@apply dark:text-gray-400 text-gray-500;
@@ -105,7 +110,8 @@
 	@apply bg-skeal-50 dark:bg-skeal-600/20 border border-skeal-200/60 dark:border-skeal-400/20 rounded px-4 my-8;
 }
 .blog-content blockquote p {
-	@apply leading-8 text-lg;
+	@apply text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.1rem];
+	@apply leading-6 sm:leading-7 md:leading-8;
 }
 .blog-content blockquote p:first-child,
 .blog-content blockquote p:last-child {
@@ -113,15 +119,16 @@
 }
 
 .blog-content code {
-	@apply bg-gray-100/80 opacity-90 inline-block dark:bg-gray-100/10 font-medium font-mono px-1.5 rounded text-base tracking-wide;
+	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.975rem] lg:text-base;
+	@apply bg-gray-100/80 opacity-90 inline-block dark:bg-gray-100/20 font-medium font-mono px-1.5 rounded text-sm lg:text-base tracking-wide;
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	@apply rounded-md dark:bg-gray-800/20 bg-gray-950;
+	@apply rounded-md dark:bg-gray-100/10 bg-gray-950;
 }
 .blog-content pre code {
 	counter-reset: line;
-	@apply font-mono tracking-wide bg-transparent dark:bg-transparent py-0 px-0;
+	@apply font-mono font-normal bg-transparent dark:bg-transparent py-0 px-0;
 }
 .blog-content pre code * {
 	@apply font-mono;
@@ -133,9 +140,7 @@ pre[class*="language-"] {
 .blog-content .code-line:before {
 	counter-increment: line;
 	content: counter(line);
-	display: inline-block;
-	width: 2.5rem;
-	@apply text-gray-400 dark:text-gray-700 leading-6 tracking-tighter;
+	@apply text-gray-400 inline-block min-w-[2rem] dark:text-gray-500 text-right mr-4 -ml-3 leading-6 tracking-tighter;
 }
 
 .blog-content a {
@@ -180,34 +185,31 @@ pre[class*="language-"] {
 }
 
 .blog-content table {
-	@apply w-full border rounded-md table-cell border-gray-200 dark:border-gray-700/70;
+	@apply border-b border-gray-200/50 dark:border-gray-700/70;
 }
 .blog-content tr th {
-	@apply bg-gray-100 dark:border-gray-700/80 dark:bg-gray-800/60 px-4 py-2 border-r border-b-2;
+	@apply bg-gray-100 dark:border-gray-700/80 dark:bg-gray-100/20 px-4 py-2 border-b-2;
 }
 .blog-content td {
-	@apply px-4 py-2 border-b border-r border-gray-100 dark:border-gray-700/50;
+	@apply px-4 py-2;
 }
 .blog-content tr:nth-child(even) {
-	@apply dark:bg-gray-800/20 bg-gray-50;
-}
-.blog-content td:last-child,
-.blog-content th:last-child {
-	@apply border-r-0;
-}
-.blog-content tr:last-child td {
-	@apply border-b-0;
-}
-.blog-content table tr:last-child {
-	@apply rounded-b-xl;
+	@apply dark:bg-gray-200/10 bg-gray-100/50;
 }
 
 .blog-content nav.toc {
 	@apply border dark:border-gray-800 border-gray-100 rounded py-2 px-3 bg-gray-50 dark:bg-gray-900/50;
 }
 .blog-content .toc-item {
-	@apply my-2 text-lg;
+	@apply text-[0.95rem] sm:text-[0.975rem] md:text-base lg:text-lg;
+	@apply my-2;
+}
+.blog-content .toc-link {
+	@apply inline-flex;
 }
 .blog-content .toc-link::before {
-	@apply hidden;
+	@apply -bottom-[.0125rem];
+}
+.blog-content .toc-link:hover::before {
+	@apply -bottom-[.125rem];
 }

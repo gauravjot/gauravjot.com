@@ -18,7 +18,7 @@ export default function ContactForm() {
 
 	return (
 		<>
-			<h2>I&rsquo;ll love to hear from you!</h2>
+			<h2 className="leading-8">I&rsquo;ll love to hear from you!</h2>
 			{state.succeeded ? (
 				<p className={tail.p}>
 					Thank you for reaching out. I usually respond back within 24 hours.

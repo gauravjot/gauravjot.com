@@ -21,12 +21,12 @@ export default function Home() {
 			<div className="container mx-auto">
 				<Squiggle />
 			</div>
-			<div className="mt-12 mb-28">
+			<div className="mt-12 mb-16 lg:mb-28">
 				<Projects />
 			</div>
 			<div className="container mx-auto">
 				<Squiggle />
-				<div className="my-24 mx-24">
+				<div className="my-12 lg:my-24 mx-8 lg:mx-24">
 					<ContactForm />
 				</div>
 			</div>
