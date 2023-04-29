@@ -52,7 +52,10 @@ export default function BlogHome({ allPosts }: Props) {
 						return <Article key={post.slug} post={post} />;
 					})
 				) : (
-					<></>
+					<div className="text-center py-14 border border-gray-900/20 rounded-xl my-8">
+						No blogs yet, but you can write one under <code>/blog</code>{" "}
+						directory of this project.
+					</div>
 				)}
 			</div>
 			<Footer />

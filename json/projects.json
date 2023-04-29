@@ -17,8 +17,8 @@
 			"name": "Social Network",
 			"description": "<p>\"Social Network\" is a platform where users can make friends, share moments and celebrate milestones. This application implements most features of a social network platform like creating posts, upload images, comment and like on posts, dedicated profile page for users, notifications, and finding new people.</p><p>It is built using <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a>. Every module such as notification, friend, post, and account can be converted to a microservice for individual scaling and communication between services can be facilitated by message queues.</p><p>Due to the nature of this project, this is not actively being worked on unlike <a href=\"https://cofinder.ca\" target=\"_blank\" rel=\"noreferrer\">CoFinder</a> and <a href=\"https://letsnote.io\" target=\"_blank\" rel=\"noreferrer\">Letsnote</a>. Although, it has value being my first major full stack project and helped me gain very relevant skills.</p>",
 			"preview": "/assets/projects/SocialNetwork.png",
-			"url": "https://sn.nzran.com",
-			"git": "https://github.com/gauravjot/social-network"
+			"git": "https://github.com/gauravjot/social-network",
+			"video": "https://streamable.com/04x2y0"
 		},
 		{
 			"name": "AmoledBackgrounds",
