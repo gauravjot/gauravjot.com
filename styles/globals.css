@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	@apply bg-white text-gray-950 font-mono text-sm sm:text-[0.925rem] md:text-[0.975rem] lg:text-base;
+	@apply bg-white text-gray-950 font-mono text-[0.95rem] md:text-[0.975rem] lg:text-base;
 	margin: 0;
 	font-display: block;
 }
@@ -52,7 +52,7 @@ a {
 }
 
 .container {
-	@apply max-w-[96%] md:max-w-[96%] lg:max-w-[100ch];
+	@apply max-w-[93%] md:max-w-[94%] lg:max-w-[100ch];
 }
 
 .select-none {

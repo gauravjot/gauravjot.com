@@ -13,6 +13,13 @@ export default function Home() {
 		<div className="fade-in-2 bg-white dark:bg-gray-950 relative">
 			<Head>
 				<title>Gauravjot Garaya</title>
+				<meta property="og:url" content={`https://gauravjot.com`} />
+				<meta property="og:title" content="Gauravjot Garaya - Portfolio" />
+				<meta
+					property="og:description"
+					content="I am Gauravjot Garaya, a Vancouver based software engineer with over five years of experience. I specialize in translating web designs for the browser with focus on simplicity and usability."
+				/>
+				<meta property="og:locale" content="en_US" />
 			</Head>
 			<Topbar current={Page.HOME} />
 			<div className="py-10"></div>

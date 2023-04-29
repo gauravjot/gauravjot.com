@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import data from "@/json/projects.json";
-import Image from "next/image";
 
 type ProjectItemType = {
 	name: string;
@@ -45,13 +45,10 @@ function ProjectItem({ project, num }: { project: ProjectItemType; num: number }
 		<div>
 			{project.preview && (
 				<a href={project.url} rel="noreferrer" target="_blank" className="block">
-					<Image
+					<img
 						src={project.preview}
 						alt={project.name + " image"}
-						width={800}
-						height={600}
 						className="w-full rounded-lg opacity-90 hover:opacity-100 transition-opacity shadow-lg shadow-black/5"
-						quality={85}
 					/>
 				</a>
 			)}

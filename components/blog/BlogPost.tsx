@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { PostType } from "@/lib/blog_api";
 import * as React from "react";
 import dateFormatter from "@/lib/date_formatter";
 import "prismjs/themes/prism-tomorrow.css";
-import Image from "next/image";
 import Squiggle from "../utils/Squiggle";
 
 export interface IBlogPostProps {
@@ -21,10 +21,8 @@ export function BlogPost(props: IBlogPostProps) {
 			<div>
 				{post.coverImage ? (
 					<>
-						<Image
+						<img
 							src={post.coverImage}
-							width={750}
-							height={500}
 							alt={post.title}
 							className="w-full bg-gray-100/30 rounded dark:bg-gray-800/20"
 						/>

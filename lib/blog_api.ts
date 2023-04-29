@@ -58,7 +58,9 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 }
 
 export function getAllPosts(fields: string[] = []) {
-	const slugs = getPostSlugs();
+	const slugs = getPostSlugs().filter((slug) => {
+		return !slug.startsWith("_");
+	});
 	const posts = slugs
 		.map((slug) => getPostBySlug(slug, fields))
 		// sort posts by date in descending order

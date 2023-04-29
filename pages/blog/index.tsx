@@ -32,11 +32,18 @@ export default function BlogHome({ allPosts }: Props) {
 		<div>
 			<Head>
 				<title>Blog - Gauravjot Garaya</title>
+				<meta property="og:url" content={`https://gauravjot.com/blog`} />
+				<meta property="og:title" content="Blog - Gauravjot Garaya" />
+				<meta
+					property="og:description"
+					content="Here you'll find a collection of my latest musings, opinions, and insights on a variety of topics. From personal experiences to professional advice, I share my thoughts with the aim of inspiring, informing, and entertaining my readers."
+				/>
+				<meta property="og:locale" content="en_US" />
 			</Head>
 			<Topbar current={Page.BLOG} />
 			<div className="py-8 lg:py-10"></div>
 			<div className="container mx-auto py-8">
-				<h1 className="my-2 lg:my-8">Blog</h1>
+				<h1 className="my-2 mb-4 lg:my-8">Blog</h1>
 				<p className="my-2 lg:my-6 lg:leading-9 lg:text-[1.05rem]">
 					Welcome to my blog page! Here you&#39;ll find a collection of my
 					latest musings, opinions, and insights on a variety of topics. From
@@ -52,8 +59,8 @@ export default function BlogHome({ allPosts }: Props) {
 						return <Article key={post.slug} post={post} />;
 					})
 				) : (
-					<div className="text-center py-14 border dark:border-gray-200/20 rounded-xl my-8 blog-content">
-						No blogs yet, but you can write one under <code>/blog</code>{" "}
+					<div className="text-center py-14 border px-4 dark:border-gray-200/20 rounded-xl my-8 blog-content">
+						No blog post yet, but you can write one under <code>/blog</code>{" "}
 						directory of this project.
 					</div>
 				)}
@@ -66,13 +73,26 @@ export default function BlogHome({ allPosts }: Props) {
 function Article({ post }: { post: PostType }) {
 	return (
 		<div className="block my-8">
-			<h4 className="font-serif leading-[3rem] text-content">
-				<Link href={"/blog/" + post.slug}>{post.title}</Link>
+			<h4 className="font-serif leading-[1.75rem] my-2">
+				<Link
+					href={"/blog/" + post.slug}
+					className=" text-black hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4"
+				>
+					{post.title}
+				</Link>
 			</h4>
 			<div className="my-1.5 leading-4 dark:text-gray-300 text-gray-400 font-sans">
 				{dateFormatter(post.date)} - {post.author.name}
 			</div>
-			<p className="my-2 font-sans lg:text-[1.05rem]">{post.excerpt}</p>
+			<p className="my-2 font-sans lg:text-[1.05rem]">
+				{post.excerpt}{" "}
+				<Link
+					href={"/blog/" + post.slug}
+					className=" text-black hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4"
+				>
+					Read more...
+				</Link>
+			</p>
 		</div>
 	);
 }
