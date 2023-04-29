@@ -1,0 +1,215 @@
+.blog-content * {
+	@apply font-sans;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+	@apply font-serif mb-4 lg:mb-6 mt-8 text-gray-950 dark:text-gray-100 relative antialiased;
+}
+.blog-content h1 {
+	@apply mb-6 lg:mb-8 mt-14 text-4xl lg:text-7xl font-black leading-[3rem] lg:leading-[5.5rem];
+}
+.blog-content h2 {
+	@apply mb-5 lg:mb-7 mt-12 text-3xl lg:text-5xl font-black leading-[2.75rem] lg:leading-[4rem];
+}
+.blog-content h3 {
+	@apply mb-4 lg:mb-6 mt-9 text-2xl lg:text-4xl leading-[2.25rem] lg:leading-[3rem];
+}
+.blog-content h4 {
+	@apply text-xl lg:text-3xl leading-[2rem] lg:leading-[2.75rem];
+}
+.blog-content h5 {
+	@apply text-lg lg:text-2xl leading-[1.9rem] lg:leading-[2.5rem];
+}
+.blog-content h6 {
+	@apply text-base lg:text-xl;
+	@apply leading-6 sm:leading-7 md:leading-8 lg:leading-9;
+}
+/* headings link */
+.blog-content a .icon-link {
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgOTYgOTYwIDk2MCIgd2lkdGg9IjQ4Ij48cGF0aCBkPSJNNDQzLjc4MiA3OTAuMTMxSDI4MHEtODkuMjggMC0xNTEuNzA2LTYyLjQxMy02Mi40MjUtNjIuNDEyLTYyLjQyNS0xNTEuNTQ2IDAtODkuMTM0IDYyLjQyNS0xNTIuMDAxUTE5MC43MiAzNjEuMzA0IDI4MCAzNjEuMzA0aDE2My43ODJ2NzkuNzgzaC0xNjMuNTRxLTU2LjczOCAwLTk1Ljk0NyAzOS4wNjktMzkuMjA4IDM5LjA2OS0zOS4yMDggOTUuNjA5IDAgNTYuNTM5IDM5LjIwOCA5NS44NDQgMzkuMjA5IDM5LjMwNCA5NS45NDcgMzkuMzA0aDE2My41NHY3OS4yMThabS0xMjguMzkxLTE4MC43NHYtNjYuNzgyaDMyOS4yMTh2NjYuNzgySDMxNS4zOTFabTIwMC44MjcgMTgwLjc0di03OS4yMThoMTYzLjU0cTU2LjczOCAwIDk1Ljk0Ny0zOS4wNjkgMzkuMjA4LTM5LjA2OSAzOS4yMDgtOTUuNjA5IDAtNTYuNTM5LTM5LjIwOC05NS44NDQtMzkuMjA5LTM5LjMwNC05NS45NDctMzkuMzA0aC0xNjMuNTR2LTc5Ljc4M0g2ODBxODkuMDk5IDAgMTUxLjg5OCA2Mi44MjMgNjIuNzk4IDYyLjgyMyA2Mi43OTggMTUxLjk1NyAwIDg5LjEzNC02Mi43OTggMTUxLjU5UTc2OS4wOTkgNzkwLjEzMSA2ODAgNzkwLjEzMUg1MTYuMjE4WiIvPjwvc3ZnPg==);
+	background-size: contain;
+	@apply dark:invert-[0.25] invert-[0.75] hover:invert-[0.5] dark:hover:invert-[0.65] w-7 h-7 -rotate-45 inline-block ml-3 align-middle;
+}
+.blog-content h1 a::before,
+.blog-content h2 a::before,
+.blog-content h3 a::before,
+.blog-content h4 a::before,
+.blog-content h5 a::before,
+.blog-content h6 a::before,
+.blog-content h1 a:hover::before,
+.blog-content h2 a:hover::before,
+.blog-content h3 a:hover::before,
+.blog-content h4 a:hover::before,
+.blog-content h5 a:hover::before,
+.blog-content h6 a:hover::before {
+	background: transparent;
+}
+.blog-content h1 a,
+.blog-content h2 a,
+.blog-content h3 a,
+.blog-content h4 a,
+.blog-content h5 a,
+.blog-content h6 a {
+	@apply opacity-0;
+}
+
+.blog-content h1:hover a,
+.blog-content h2:hover a,
+.blog-content h3:hover a,
+.blog-content h4:hover a,
+.blog-content h5:hover a,
+.blog-content h6:hover a {
+	@apply opacity-100;
+}
+
+.blog-content hr {
+	@apply dark:invert;
+}
+
+.blog-content p {
+	@apply text-base md:text-[1.1rem] lg:text-[1.2rem] antialiased;
+	@apply leading-7 md:leading-8 lg:leading-9;
+	@apply my-4 lg:my-6 text-gray-950 dark:text-gray-100;
+}
+
+.blog-content li {
+	@apply text-base md:text-[1.1rem] lg:text-[1.2rem] antialiased;
+	@apply leading-7 md:leading-8 lg:leading-9;
+	@apply pl-4 my-4 ml-5 lg:my-4 text-gray-950 dark:text-gray-100;
+}
+.blog-content li::marker {
+	@apply dark:text-gray-400 text-gray-500;
+}
+
+.blog-content ol li {
+	@apply list-decimal;
+}
+.blog-content ol li ol li {
+	list-style-type: lower-alpha;
+}
+.blog-content ul li {
+	@apply list-disc;
+}
+.blog-content ul li ul li {
+	list-style-type: circle;
+}
+
+.blog-content ul.contains-task-list li {
+	@apply list-none ml-0 pl-0;
+}
+.blog-content ul.contains-task-list li input[type="checkbox"] {
+	@apply mr-5;
+}
+
+.blog-content blockquote {
+	@apply bg-skeal-50 dark:bg-skeal-600/20 border border-skeal-200/60 dark:border-skeal-400/20 rounded px-4 my-8;
+}
+.blog-content blockquote p {
+	@apply text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.1rem];
+	@apply leading-6 sm:leading-7 md:leading-8;
+}
+.blog-content blockquote p:first-child,
+.blog-content blockquote p:last-child {
+	@apply my-2;
+}
+
+.blog-content code {
+	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.975rem] lg:text-base;
+	@apply bg-gray-100/80 opacity-90 inline-block dark:bg-gray-100/20 font-medium font-mono px-1.5 rounded text-sm lg:text-base tracking-wide;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	@apply rounded-md dark:bg-gray-100/10 bg-gray-950;
+}
+.blog-content pre code {
+	counter-reset: line;
+	@apply font-mono font-normal bg-transparent dark:bg-transparent py-0 px-0;
+}
+.blog-content pre code * {
+	@apply font-mono;
+}
+.blog-content .code-line,
+.token.property-access {
+	color: #fff;
+}
+.blog-content .code-line:before {
+	counter-increment: line;
+	content: counter(line);
+	@apply text-gray-400 inline-block min-w-[2rem] dark:text-gray-500 text-right mr-4 -ml-3 leading-6 tracking-tighter;
+}
+
+.blog-content a {
+	@apply text-black dark:text-white hover:text-black;
+}
+.dark .blog-content a {
+	@apply text-gray-100 hover:text-white;
+}
+.blog-content a::before {
+	content: "";
+	@apply bg-skeal-300/70 absolute bottom-[0.25rem] right-0 left-0 h-[0.15rem]
+    transition-all duration-300;
+}
+.blog-content a:hover::before {
+	background: linear-gradient(to right, #d53a9d, #743ad5);
+	@apply bottom-0 transition-all duration-300;
+}
+.blog-content a.data-footnote-backref::before {
+	@apply right-0;
+}
+.blog-content sup a,
+.blog-content sup a::before,
+.blog-content sup a::after {
+	@apply text-skeal-500 dark:text-skeal-300 hover:text-skeal-500 text-[0.8rem] hover:dark:text-skeal-300;
+}
+.blog-content sup a::before {
+	content: "[";
+	@apply relative bg-transparent h-auto bottom-0;
+}
+.blog-content sup a:hover::before {
+	background: transparent;
+	@apply relative h-auto;
+}
+.blog-content sup a::after {
+	content: "]";
+	vertical-align: baseline;
+	@apply relative bg-transparent h-auto leading-normal;
+}
+
+.blog-content img {
+	@apply my-10 text-sm;
+}
+
+.blog-content table {
+	@apply border-b border-gray-200/50 dark:border-gray-700/70;
+}
+.blog-content tr th {
+	@apply bg-gray-100 dark:border-gray-700/80 dark:bg-gray-100/20 px-4 py-2 border-b-2;
+}
+.blog-content td {
+	@apply px-4 py-2;
+}
+.blog-content tr:nth-child(even) {
+	@apply dark:bg-gray-200/10 bg-gray-100/50;
+}
+
+.blog-content nav.toc {
+	@apply border dark:border-gray-800 border-gray-100 rounded py-2 px-3 bg-gray-50 dark:bg-gray-900/50;
+}
+.blog-content .toc-item {
+	@apply text-[0.95rem] sm:text-[0.975rem] md:text-base lg:text-lg;
+	@apply my-2;
+}
+.blog-content .toc-link {
+	@apply inline-flex;
+}
+.blog-content .toc-link::before {
+	@apply -bottom-[.0125rem];
+}
+.blog-content .toc-link:hover::before {
+	@apply -bottom-[.125rem];
+}

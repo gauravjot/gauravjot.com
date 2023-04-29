@@ -1,40 +1,51 @@
 {
-  "name": "gauravjot-portfolio",
-  "version": "2022.09.08",
+  "name": "gauravjot.com",
+  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "axios": "^0.27.2",
-    "react-router-dom": "^6.3.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@formspark/use-formspark": "^0.1.39",
+    "@formspree/react": "^2.4.1",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.35",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.3.5",
+    "date-fns": "^2.29.3",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "gray-matter": "^4.0.3",
+    "next": "13.3.0",
+    "postcss": "8.4.22",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rehype": "^12.0.1",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-format": "^4.0.1",
+    "rehype-prism-plus": "^1.5.1",
+    "rehype-raw": "^6.1.1",
+    "rehype-slug": "^5.1.0",
+    "rehype-stringify": "^9.0.3",
+    "rehype-toc": "^3.0.2",
+    "remark": "^14.0.2",
+    "remark-gfm": "^3.0.1",
+    "remark-html": "^15.0.2",
+    "remark-parse": "^10.0.1",
+    "remark-prism": "^1.3.6",
+    "remark-rehype": "^10.1.0",
+    "remark-stringify": "^10.0.2",
+    "sharp": "^0.32.1",
+    "swr": "^2.1.4",
+    "tailwindcss": "3.3.1",
+    "typescript": "5.0.4",
+    "unified": "^10.1.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/remark-prism": "^1.3.4"
   }
 }
