@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspark/use-formspark": "^0.1.39",
     "@formspree/react": "^2.4.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
