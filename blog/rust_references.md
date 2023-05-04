@@ -1,7 +1,7 @@
 ---
-title: "All you need to know about Rust references and how ownership model affects it!"
+title: "All you need to know about Rust references!"
 excerpt: "In Rust, you need to be mindful of the ownership model, which means there can only be one owner at a given time for the data in memory. But what if we need to perform some operations on that data by passing it to a function but still need to retain the ownership? There are two ways to achieve this."
-coverImage: "/assets/blog/hello-world/cover.jpg"
+coverImage: "/assets/blog_images/rust-references.svg"
 date: "2023-05-03T18:20:32Z"
 edited: "2023-05-03T18:20:32Z"
 tags: "rust,rust concept"
