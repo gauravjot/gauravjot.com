@@ -14,6 +14,8 @@ export type PostType = {
 		url: string;
 	};
 	content: string;
+	tags: string;
+	edited: string;
 };
 
 export type Author = {
