@@ -1,19 +1,19 @@
 ---
 title: "All you need to know about Rust references!"
 excerpt: "In Rust, you need to be mindful of the ownership model, which means there can only be one owner at a given time for the data in memory. But what if we need to perform some operations on that data by passing it to a function but still need to retain the ownership? There are two ways to achieve this."
-coverImage: "/assets/blog_images/rust-references.svg"
+coverImage: "/assets/blog_images/rust-references.webp"
 date: "2023-05-03T18:20:32Z"
 edited: "2023-05-03T18:20:32Z"
 tags: "rust,rust concept"
 author:
     name: Gaurarvjot Garaya
 ogImage:
-    url: "/assets/blog_images/rust-references.svg"
+    url: "/assets/blog_images/rust-references.webp"
 ---
 
 The first method is to transfer the ownership to the function and then take it back. Here is a quick example:
 
-``` rust
+```rust
 // ownership goes from s1 -> some_function -> s2
 fn main() {
   let s1 = String::from("hello");
@@ -26,13 +26,13 @@ fn some_function(a_string: String) -> String {
 }
 ```
 
-The second method is to use a reference. 
+The second method is to use a reference.
 
 ## Referencing
 
-Referencing, or in Rust terminology ‘*Borrowing*’, is represented with `&` sign. Referencing allows you to pass the value of a variable without passing its ownership. Here is an example:
+Referencing, or in Rust terminology ‘_Borrowing_’, is represented with `&` sign. Referencing allows you to pass the value of a variable without passing its ownership. Here is an example:
 
-``` rust
+```rust
 let s1 = String::from("hello");
 let len = calculate_length(&s1);
 ```
@@ -53,13 +53,13 @@ Now when the function ends, `s` is not dropped from memory as the function does 
 
 If you try changing value of our reference `s` you will see that it will result in an error. By design, referenced or borrowed object can only be read and not mutated.
 
-```
+```text
 error[E0596]: cannot borrow `*s` as mutable, as it is behind a `&` reference
 ```
 
 If your use case requires you to mutate the borrowed value then you will have to explicitly tell the compiler. Here is an example on just how to do that.
 
-``` rust
+```rust
 let mut s1 = String::from("hello");
 let s2 = change(&mut s1); // pass mutable reference
 
@@ -74,9 +74,9 @@ Rust uses `mut` keyword to represent a mutable variable or object. The passed re
 
 The mutable reference can have **only one instance**. Attempting to have multiple mutable references to the same data at the same time will result in a compiler error.
 
-``` rust
+```rust
   // error[E0499]: cannot borrow `s` as mutable more than once at a time
-  
+
   let mut s = String::from("hello");
 
   let r1 = &mut s;
@@ -87,10 +87,9 @@ The mutable reference can have **only one instance**. Attempting to have multipl
 
 This is because `s` can only be mutated at one place at a given time. Once `r2` has the mutable reference, any invocation of `r1` will throw the error.
 
-
-``` rust
+```rust
   // works fine
-  
+
   let mut s = String::from("hello");
 
   let r1 = &mut s;
@@ -99,7 +98,7 @@ This is because `s` can only be mutated at one place at a given time. Once `r2` 
   println!("{}", r2);
 ```
 
-As per The Rust Language Book, it prevents an unwanted behavior called *data race* which happens if:
+As per The Rust Language Book, it prevents an unwanted behavior called _data race_ which happens if:
 
 1. Two or more pointers access the same data at the same time.
 1. At least one of the pointers is being used to write to the data.
