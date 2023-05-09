@@ -3,7 +3,7 @@ title: "All you need to know about Rust references!"
 excerpt: "In Rust, you need to be mindful of the ownership model, which means there can only be one owner at a given time for the data in memory. But what if we need to perform some operations on that data by passing it to a function but still need to retain the ownership? There are two ways to achieve this."
 coverImage: "/assets/blog_images/rust-references.webp"
 date: "2023-05-03T18:20:32Z"
-edited: "2023-05-03T18:20:32Z"
+edited: "2023-05-09T05:57:00Z"
 tags: "rust,rust concept"
 author:
     name: Gaurarvjot Garaya
@@ -49,7 +49,7 @@ fn calculate_length(s: &String) -> usize { // s is a reference to a String
 
 Now when the function ends, `s` is not dropped from memory as the function does not have ownership to it.
 
-### Mutating borrowed value
+## Mutating borrowed value
 
 If you try changing value of our reference `s` you will see that it will result in an error. By design, referenced or borrowed object can only be read and not mutated.
 
@@ -70,7 +70,7 @@ fn change(s: &mut String) { // s is a mutable reference
 
 Rust uses `mut` keyword to represent a mutable variable or object. The passed reference `&mut s1` has to be explicit about being mutable as well as the called function must have `&mut String` for string type.
 
-### Caveat!?
+## Caveat!?
 
 The mutable reference can have **only one instance**. Attempting to have multiple mutable references to the same data at the same time will result in a compiler error.
 
@@ -98,7 +98,7 @@ This is because `s` can only be mutated at one place at a given time. Once `r2` 
   println!("{}", r2);
 ```
 
-As per The Rust Language Book, it prevents an unwanted behavior called _data race_ which happens if:
+As per [The Rust Language Book](#references), it prevents an unwanted behavior called _data race_ which happens if:
 
 1. Two or more pointers access the same data at the same time.
 1. At least one of the pointers is being used to write to the data.
@@ -118,6 +118,35 @@ For this same reason, Rust will also prevent you to borrow a mutable if it was p
 
 When invocating `r1` in our `println!` macro, the integrity of `s` cannot be guranteed because it is also passed as mutable to `r3`. In other words, the users of immutable reference `r1` are not supposed to deal with mutated behavior caused by `r3`. With same logic users of `r2` will not have any problem with `r1` as the passed values cannot be changed, and therefore the integrity is assured.
 
+## Dangling References
+
+A reference is dangling when it points to a location in memory which has already been cleared. Here is an example of what it may look like:
+
+```rust
+fn main() {
+    let ref_x: &i32;
+    { // scope block
+        let x: i32 = 10;
+        ref_x = &x;
+    }
+    println!("ref_x: {ref_x}"); // dangling reference
+}
+```
+
+Here we have a scoped block inside the _main_ function. The variable `ref_x` is set outside this scope block and but is equated to `&x` inside the scope. But when the inner scope ends, `x` will be cleared from memory and will cause `ref_x` to become a dangling reference.
+
+Good for us that Rust's compiler ensures that no reference is dangling during compile-time and therefore this situation is avoided. So if you come across a similar scenario, the compiler will throw errors warning you about this behavior.
+
+```text
+this function's return type contains a borrowed value, but there is
+no value for it to be borrowed from
+```
+
 ## That's all!
 
 This is all you need to get started with references. Thank you for reading and bookmark for more!
+
+### References
+
+-   The Rust Programming Language Book (https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+-   Dangling References - Comprehensive Rust (https://google.github.io/comprehensive-rust/basic-syntax/references-dangling.html)
