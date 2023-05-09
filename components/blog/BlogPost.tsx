@@ -25,7 +25,7 @@ export function BlogPost(props: IBlogPostProps) {
 					return (
 						<div
 							key={tag}
-							className="bg-purpear-100 border border-purpear-200 font-medium text-sm py-1 px-3 mr-2 rounded-md inline-block"
+							className="bg-purpear-100 dark:bg-purple-400/30 border border-purpear-200 dark:border-purpear-200/30 font-medium text-sm py-1 px-3 mr-2 rounded-md inline-block"
 						>
 							#{tag}
 						</div>

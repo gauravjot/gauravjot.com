@@ -76,7 +76,7 @@ function Article({ post }: { post: PostType }) {
 			<h4 className="font-serif leading-[2rem] my-3">
 				<Link
 					href={"/blog/" + post.slug}
-					className=" text-black hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4"
+					className=" text-black hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4 tracking-normal"
 				>
 					{post.title}
 				</Link>
@@ -84,7 +84,7 @@ function Article({ post }: { post: PostType }) {
 			<div className="my-1.5 leading-4 dark:text-gray-300 text-gray-400 font-sans">
 				{dateFormatter(post.date)} - {post.author.name}
 			</div>
-			<p className="my-2.5 font-sans lg:text-[1.05rem]">
+			<p className="my-2.5 font-sans lg:text-[1.1rem] tracking-[0.025px]">
 				{post.excerpt}{" "}
 				<Link
 					href={"/blog/" + post.slug}
