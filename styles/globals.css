@@ -228,6 +228,14 @@ p {
 	@apply bg-cerise-500;
 }
 
+/* Page Progress */
+
+.page-progress {
+	/* background: linear-gradient(to right, #e39600, #d53a9d, #743ad5, #3ab6d5); */
+	background: linear-gradient(to right, #d53a9d, #d53a9d);
+	@apply top-0 left-0 right-0 h-1 fixed z-10 bg-no-repeat;
+}
+
 /* Navbar */
 .navbar-section {
 	border-top: 0.25rem solid;
@@ -238,7 +246,7 @@ p {
 .navbar-background {
 	@apply border-black/10 bg-white/70;
 	@apply dark:border-white/10 dark:bg-gray-950/80;
-	@apply py-1 border-b backdrop-blur-[25px];
+	@apply py-1 border-b backdrop-blur-[8px];
 }
 .nav-link {
 	@apply hover:bg-gray-100 text-gray-700 hover:text-black;

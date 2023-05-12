@@ -72,11 +72,11 @@ export default function BlogHome({ allPosts }: Props) {
 
 function Article({ post }: { post: PostType }) {
 	return (
-		<div className="block my-8">
-			<h4 className="font-serif leading-[2rem] my-3">
+		<div className="block my-10">
+			<h4 className="font-serif leading-[2rem] mb-3">
 				<Link
 					href={"/blog/" + post.slug}
-					className=" text-black hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4 tracking-normal"
+					className="dark:text-gray-100 text-gray-900 hover:text-black hover:dark:text-white hover:underline underline-offset-4 tracking-normal"
 				>
 					{post.title}
 				</Link>
@@ -84,13 +84,13 @@ function Article({ post }: { post: PostType }) {
 			<div className="my-1.5 leading-4 dark:text-gray-300 text-gray-400 font-sans">
 				{dateFormatter(post.date)} - {post.author.name}
 			</div>
-			<p className="my-2.5 font-sans lg:text-[1.1rem] tracking-[0.025px]">
+			<p className="mt-2.5 font-sans lg:text-[1.1rem] tracking-[0.025px] dark:text-gray-200 text-gray-600">
 				{post.excerpt}{" "}
 				<Link
 					href={"/blog/" + post.slug}
 					className=" text-black hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4"
 				>
-					Read more...
+					Read more…
 				</Link>
 			</p>
 		</div>

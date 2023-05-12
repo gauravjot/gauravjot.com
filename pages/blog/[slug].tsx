@@ -1,3 +1,4 @@
+import React from "react";
 import { getPostBySlug, getAllPosts } from "@/lib/blog_api";
 import Head from "next/head";
 import markdownToHtml from "@/lib/md_to_html";
@@ -6,13 +7,14 @@ import Footer from "@/components/Footer";
 import Topbar, { Page } from "@/components/Topbar";
 import { BlogPost } from "@/components/blog/BlogPost";
 import ScrollToTopBtn from "@/components/utils/ScrollToTopButton";
+import PageProgressBar from "@/components/utils/PageProgressBar";
 
 type Props = {
 	post: PostType;
 };
 
 export default function Post({ post }: Props) {
-	const title = `${post.title} - Gauravjot Garaya's Blog`;
+	const title = `${post.title}`;
 
 	return (
 		<div>
@@ -31,6 +33,7 @@ export default function Post({ post }: Props) {
 				<meta property="og:description" content={post.excerpt} />
 				<meta property="og:locale" content="en_US" />
 			</Head>
+			<PageProgressBar />
 			<Topbar current={Page.BLOG_POST} />
 			<article className="container mx-auto">
 				<BlogPost post={post} />

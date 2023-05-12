@@ -20,19 +20,21 @@ export function BlogPost(props: IBlogPostProps) {
 				— {post.author.name}
 			</div>
 			<h1 className="!mt-4">{post.title}</h1>
-			<div className="flex place-items-center">
-				{post.tags?.split(",").map((tag) => {
-					return (
-						<div
-							key={tag}
-							className="bg-purpear-100 dark:bg-purple-400/30 border border-purpear-200 dark:border-purpear-200/30 font-medium text-sm py-1 px-3 mr-2 rounded-md inline-block"
-						>
-							#{tag}
-						</div>
-					);
-				})}
-			</div>
-			<p className="italic text-base">{post.excerpt}</p>
+			{post.tags && (
+				<div className="flex place-items-center">
+					{post.tags.split(",").map((tag) => {
+						return (
+							<div
+								key={tag}
+								className="bg-purpear-100 dark:bg-purple-400/10 border border-purpear-200 dark:border-purpear-200/10 italic font-medium text-sm py-1 px-3 mr-2 rounded-md inline-block"
+							>
+								#{tag}
+							</div>
+						);
+					})}
+				</div>
+			)}
+			<p className="text-base">{post.excerpt}</p>
 			<div>
 				{post.coverImage ? (
 					<>

@@ -11,7 +11,7 @@
 	@apply font-serif mb-4 lg:mb-6 mt-8 text-gray-950 dark:text-white relative antialiased tracking-normal;
 }
 .blog-content h1 {
-	@apply mb-6 lg:mb-8 mt-14 text-4xl lg:text-7xl font-black leading-[3rem] lg:leading-[5.5rem];
+	@apply mb-6 lg:mb-8 mt-14 text-4xl lg:text-6xl font-black leading-[3rem] lg:leading-[5.5rem];
 }
 .blog-content h2 {
 	@apply mb-5 lg:mb-7 mt-12 text-3xl lg:text-5xl font-black leading-[2.75rem] lg:leading-[4rem];
@@ -72,15 +72,15 @@
 }
 
 .blog-content p {
-	@apply text-base md:text-[1.1rem] lg:text-[1.2rem] antialiased;
+	@apply text-base md:text-[1.05rem] lg:text-[1.1rem] antialiased;
 	@apply leading-6 md:leading-7 lg:leading-8;
-	@apply my-4 lg:my-6 text-gray-950 dark:text-gray-100;
+	@apply my-4 lg:my-6 text-gray-950 dark:text-gray-200;
 }
 
 .blog-content li {
-	@apply text-base md:text-[1.1rem] lg:text-[1.2rem] antialiased;
+	@apply text-base md:text-[1.05rem] lg:text-[1.1rem] antialiased;
 	@apply leading-6 md:leading-7 lg:leading-8;
-	@apply pl-4 my-1.5 ml-5 lg:my-2 text-gray-950 dark:text-gray-100;
+	@apply pl-4 my-1.5 ml-5 lg:my-2 text-gray-950 dark:text-gray-200;
 }
 .blog-content li::marker {
 	@apply dark:text-gray-400 text-gray-500;
@@ -106,36 +106,51 @@
 	@apply mr-5;
 }
 
+.blog-content ol + pre,
+.blog-content ul + pre {
+	@apply ml-8 mt-3 mb-5;
+}
+
 .blog-content blockquote {
-	@apply bg-skeal-50 dark:bg-skeal-600/20 border border-skeal-200/60 dark:border-skeal-400/20 rounded px-4 my-8;
+	@apply bg-skeal-50 dark:bg-skeal-300/10 border border-skeal-200/60 dark:border-skeal-200/10 rounded pl-3 pr-4 my-8;
 }
 .blog-content blockquote p {
-	@apply text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.1rem];
-	@apply leading-6 sm:leading-7 md:leading-8;
+	@apply text-[0.95rem] sm:text-[1rem] md:text-[1.025rem] lg:text-[1.05rem];
+	@apply leading-6 sm:leading-6 md:leading-7;
+	@apply relative pl-9;
 }
 .blog-content blockquote p:first-child,
 .blog-content blockquote p:last-child {
 	@apply my-2;
 }
+.blog-content blockquote p:first-child::before {
+	content: "";
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgOTYgOTYwIDk2MCIgd2lkdGg9IjQ4Ij48cGF0aCBkPSJNNDQyIDc4N2g4MlY1MzZoLTgydjI1MVptMzguMDctMzEwcTIwLjQzIDAgMzQuMTgtMTMuNTEzUTUyOCA0NDkuOTc1IDUyOCA0MzBxMC0yMS45NS0xMy43OTUtMzUuNDc1UTUwMC40MSAzODEgNDgwLjAxOCAzODFxLTIxLjUxOCAwLTM0Ljc2OCAxMy41MjVUNDMyIDQyOS41cTAgMjAuNiAxMy44MiAzNC4wNVE0NTkuNjQgNDc3IDQ4MC4wNyA0NzdabS4zMzQgNTI0cS04OC44NzIgMC0xNjYuMTI1LTMzLjA4NC03Ny4yNTQtMzMuMDgzLTEzNS4xODMtOTEuMDEyLTU3LjkyOS01Ny45MjktOTEuMDEyLTEzNS4xMTlRNTUgNjY0LjU5NCA1NSA1NzUuNjM4cTAtODguOTU3IDMzLjA4NC0xNjYuMjg1IDMzLjA4My03Ny4zMjggOTAuODU1LTEzNC44MDkgNTcuNzcyLTU3LjQ4MiAxMzUuMDM2LTkxLjAxM1EzOTEuMjM4IDE1MCA0ODAuMjc5IDE1MHE4OS4wNCAwIDE2Ni40ODYgMzMuNDU0IDc3LjQ0NiAzMy40NTMgMTM0Ljg1MyA5MC44MDIgNTcuNDA3IDU3LjM0OSA5MC44OTUgMTM0Ljg3N1E5MDYgNDg2LjY2IDkwNiA1NzUuNzM0cTAgODkuMDEtMzMuNTMxIDE2Ni4yNDctMzMuNTMxIDc3LjIzNy05MS4wMTMgMTM0Ljg2LTU3LjQ4MSA1Ny42MjMtMTM0LjgzMSA5MC44OTFRNTY5LjI3NiAxMDAxIDQ4MC40MDQgMTAwMVoiLz48L3N2Zz4=);
+	background-size: contain;
+	filter: invert(46%) sepia(100%) saturate(2137%) hue-rotate(162deg) brightness(100%)
+		contrast(90%);
+	@apply top-0.5 left-0 absolute w-7 h-7 opacity-50;
+}
 
 .blog-content code {
 	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.975rem] lg:text-base;
-	@apply bg-gray-100/80 opacity-90 inline-block dark:bg-gray-100/20 font-medium font-mono px-1.5 rounded text-sm lg:text-base tracking-wide;
+	@apply text-purple-800 dark:text-purpear-200;
+	@apply bg-purpear-200/50 opacity-90 inline-block dark:bg-purpear-500/20 font-mono px-1.5 rounded text-sm lg:text-base;
 }
 pre {
-	@apply rounded-md dark:!bg-gray-100/10 !bg-[#111];
+	@apply rounded-md dark:!bg-gray-100/10 !bg-[#0d0d0d];
 }
 pre {
 	margin: 0.5em 0;
 	overflow: auto;
-	@apply !p-2 lg:!p-4;
+	@apply !p-2 lg:!p-4 invert dark:invert-0;
 }
 .blog-content pre code {
 	counter-reset: line;
 	@apply font-mono font-normal bg-transparent dark:bg-transparent py-0 px-0;
 }
 .blog-content pre code * {
-	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.975rem] lg:text-base;
+	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.975rem];
 	@apply font-mono;
 }
 .blog-content .code-line,
