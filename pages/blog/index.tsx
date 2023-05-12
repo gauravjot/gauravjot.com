@@ -53,7 +53,6 @@ export default function BlogHome({ allPosts }: Props) {
 				<div className="my-10 lg:my-14">
 					<Squiggle />
 				</div>
-				<h2>Latest Posts</h2>
 				{allPosts && allPosts.length > 0 ? (
 					allPosts.map((post) => {
 						return <Article key={post.slug} post={post} />;
@@ -76,7 +75,7 @@ function Article({ post }: { post: PostType }) {
 			<h4 className="font-serif leading-[2rem] mb-3">
 				<Link
 					href={"/blog/" + post.slug}
-					className="dark:text-gray-100 text-gray-900 hover:text-black hover:dark:text-white hover:underline underline-offset-4 tracking-normal"
+					className="dark:text-gray-100 text-gray-900 hover:text-black hover:dark:text-white hover:underline underline-offset-4 tracking-wide"
 				>
 					{post.title}
 				</Link>

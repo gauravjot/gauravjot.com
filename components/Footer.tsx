@@ -12,7 +12,11 @@ export default function Footer() {
 					>
 						Next.js
 					</a>{" "}
-					and deployed by Vercel.
+					and deployed by{" "}
+					<a href="https://vercel.com/" title="Vercel">
+						Vercel
+					</a>
+					.
 				</div>
 			</div>
 		</div>

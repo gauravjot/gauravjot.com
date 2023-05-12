@@ -22,7 +22,7 @@ export default function Post({ post }: Props) {
 				<title>{title}</title>
 				<meta
 					property="og:image"
-					content={`https://gauravjot.com/assets/blog_images/${post.ogImage.url}`}
+					content={`https://gauravjot.com${post.ogImage.url}`}
 				/>
 				<meta
 					property="og:url"
@@ -38,6 +38,10 @@ export default function Post({ post }: Props) {
 			<article className="container mx-auto">
 				<BlogPost post={post} />
 			</article>
+			<div className="text-center">
+				Images courtesy of{" "}
+				<a href="https://www.freepik.com/free-vector/">Freepik</a>
+			</div>
 			<Footer />
 			<ScrollToTopBtn />
 		</div>

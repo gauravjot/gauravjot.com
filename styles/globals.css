@@ -29,13 +29,13 @@ body * {
 
 a {
 	@apply text-cerise-600 no-underline relative inline-block;
-	@apply hover:text-cerise-800;
+	@apply hover:text-cerise-800 hover:underline hover:underline-offset-4;
 }
 .dark a {
 	@apply text-cerise-300 hover:text-cerise-400;
 }
 .text-content a {
-	@apply text-black hover:text-black;
+	@apply text-black hover:text-black hover:no-underline;
 }
 .dark .text-content a {
 	@apply text-gray-100 hover:text-white;

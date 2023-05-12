@@ -11,7 +11,7 @@ export enum Page {
 	BLOG_POST,
 }
 const MENU = [
-	{ id: Page.HOME, title: "Portfolio", url: ROUTE.home },
+	{ id: Page.HOME, title: "Home", url: ROUTE.home },
 	{ id: Page.BLOG, title: "Blog", url: ROUTE.blog },
 	{ id: Page.CONTACT, title: "Contact", url: ROUTE.contact },
 ];
