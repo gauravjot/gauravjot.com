@@ -13,7 +13,7 @@ export default function Home() {
 		"I am Gauravjot Garaya, a Vancouver based software engineer with over five years of experience. I specialize in translating web designs for the browser with focus on simplicity and usability.";
 
 	return (
-		<div className="fade-in-2 bg-white dark:bg-gray-950 relative">
+		<div className="fade-in-2 relative">
 			<Head>
 				<title>Gauravjot Garaya</title>
 				<meta property="og:url" content={`https://gauravjot.com`} />

@@ -10,7 +10,7 @@ export default function Home() {
 		"Please leave your message and I will get back. Thank you for reaching out!";
 
 	return (
-		<div className="fade-in-2 bg-white dark:bg-gray-950">
+		<div className="fade-in-2">
 			<Head>
 				<title>Contact - Gauravjot Garaya</title>
 				<meta property="og:url" content={`https://gauravjot.com/contact`} />

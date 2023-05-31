@@ -15,7 +15,7 @@ body {
 }
 
 .dark {
-	@apply bg-gray-950 text-gray-300;
+	@apply bg-gray-1000 text-gray-300;
 }
 
 body * {
@@ -90,10 +90,13 @@ p {
 /* Buttons */
 .btn-outline-light {
 	@apply bg-gray-200/60 dark:bg-gray-900;
-	@apply !text-black dark:text-white;
+	@apply text-black dark:text-white;
 	@apply px-4 py-2 rounded-full font-bold hover:no-underline
     duration-0 inline-block leading-4 select-none;
 	@apply outline outline-1 outline-gray-300/60 dark:outline-gray-700;
+}
+.btn-outline-light > * {
+	@apply text-black dark:text-white;
 }
 
 .btn-outline-light span {
@@ -103,16 +106,21 @@ p {
 	@apply text-white duration-0;
 }
 .btn-outline-light:hover .ic-md,
-.btn-outline-light:hover .ic {
+.btn-outline-light:hover .ic,
+.btn-outline-light:focus .ic-md,
+.btn-outline-light:focus .ic {
 	@apply invert;
 }
 .btn-outline-light:hover {
-	@apply shadow-cerise-600/50 shadow-lg text-white outline-transparent;
+	@apply shadow-cerise-600/50 shadow-lg !text-white outline-transparent;
 	background: linear-gradient(to right, #d53a9d, #743ad5);
 }
 .btn-outline-light:focus {
 	@apply text-white outline-4 outline-purpear-400/40 dark:outline-purple-500/40;
 	background: linear-gradient(to right, #d53a9d, #743ad5);
+}
+.btn-outline-light:focus > * {
+	@apply text-white;
 }
 
 /*
@@ -245,13 +253,13 @@ p {
 }
 .navbar-background {
 	@apply border-black/10 bg-white/70;
-	@apply dark:border-white/10 dark:bg-gray-950/80;
+	@apply dark:border-white/10 dark:bg-gray-1000/80;
 	@apply py-1 border-b backdrop-blur-[8px];
 }
 .nav-link {
 	@apply hover:bg-gray-100 text-gray-700 hover:text-black;
 	@apply dark:text-gray-200 dark:hover:text-white dark:hover:bg-gray-900;
-	@apply text-[0.9rem] md:text-[0.975rem];
+	@apply text-[0.95rem] md:text-[1rem];
 	@apply py-1 lg:py-1.5 px-2 lg:px-3 rounded mr-2.5 lg:mr-4 no-underline hover:no-underline
     tracking-tight font-medium border border-transparent;
 }
@@ -284,7 +292,7 @@ p {
 }
 .footer-section::before {
 	content: "";
-	@apply h-24 w-full absolute top-0 bg-gradient-to-b from-white to-transparent dark:from-gray-950 dark:to-transparent;
+	@apply h-24 w-full absolute top-0 bg-gradient-to-b from-white to-transparent dark:from-gray-1000 dark:to-transparent;
 }
 
 /* Projects Section */

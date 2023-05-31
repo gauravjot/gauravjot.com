@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import dateFormatter from "@/lib/date_formatter";
 import Link from "next/link";
 import Squiggle from "@/components/utils/Squiggle";
+import Script from "next/script";
+import Image from "next/image";
 
 type Props = {
 	allPosts: PostType[];
@@ -72,27 +74,47 @@ export default function BlogHome({ allPosts }: Props) {
 
 function Article({ post }: { post: PostType }) {
 	return (
-		<div className="block my-10">
-			<h4 className="font-serif leading-[2rem] mb-3">
-				<Link
-					href={"/blog/" + post.slug}
-					className="dark:text-gray-100 text-gray-900 hover:text-black hover:dark:text-white hover:underline underline-offset-4 tracking-wide"
-				>
-					{post.title}
-				</Link>
-			</h4>
-			<div className="my-1.5 leading-4 dark:text-gray-300 text-gray-400 font-sans">
-				{dateFormatter(post.date)} - {post.author.name}
+		<div
+			className={
+				(post.coverImage &&
+					"grid grid-flow-col grid-cols-8 grid-rows-1 md:grid-cols-12") +
+				" my-12"
+			}
+		>
+			<div className={post.coverImage && "col-span-8"}>
+				<div className="font-serif font-bold text-[1.2rem] leading-[1.75rem] mb-2.5">
+					<Link
+						href={"/blog/" + post.slug}
+						className="dark:text-gray-100 text-gray-900 hover:text-black hover:dark:text-white hover:underline underline-offset-4 tracking-wide"
+					>
+						{post.title}
+					</Link>
+				</div>
+				<div className="leading-4 dark:text-gray-300 text-gray-400 font-sans text-sm">
+					{dateFormatter(post.date)} - {post.author.name}
+				</div>
+				<p className="mt-3 font-sans lg:text-[1.1rem] tracking-[0.02px] dark:text-gray-200 text-gray-600">
+					{post.excerpt}{" "}
+					<Link
+						href={"/blog/" + post.slug}
+						className=" text-black hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4"
+					>
+						Read more…
+					</Link>
+				</p>
 			</div>
-			<p className="mt-2.5 font-sans lg:text-[1.1rem] tracking-[0.025px] dark:text-gray-200 text-gray-600">
-				{post.excerpt}{" "}
-				<Link
-					href={"/blog/" + post.slug}
-					className=" text-black hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4"
-				>
-					Read more…
-				</Link>
-			</p>
+			{post.coverImage && (
+				<div className="col-span-4 hidden md:block self-end pl-8">
+					<div className="aspect-[2000/1169] relative">
+						<Image
+							src={post.coverImage}
+							fill={true}
+							alt={post.title}
+							className="rounded-md shadow-md"
+						/>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
