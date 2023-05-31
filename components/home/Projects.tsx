@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import data from "@/json/projects.json";
+import Image from "next/image";
 
 type ProjectItemType = {
 	name: string;
@@ -40,42 +41,47 @@ export default function Projects() {
 	);
 }
 
-function ProjectItem({ project, num }: { project: ProjectItemType; num: number }) {
+function ProjectItem(props: { project: ProjectItemType; num: number }) {
 	return (
 		<div>
-			{project.preview && (
-				<a href={project.url} rel="noreferrer" target="_blank" className="block">
-					<img
-						src={project.preview}
-						alt={project.name + " image"}
-						className="w-full rounded-lg opacity-90 hover:opacity-100 transition-opacity shadow-lg shadow-black/5"
-					/>
+			{props.project.url ? (
+				<a
+					href={props.project.url}
+					rel="noreferrer"
+					target="_blank"
+					className="block aspect-[2000/1169] relative"
+				>
+					<PreviewImage project={props.project} />
 				</a>
+			) : (
+				<div className="aspect-[2000/1169] relative">
+					<PreviewImage project={props.project} />
+				</div>
 			)}
 			<div className="mt-8 mx-6 lg:mx-24 relative">
 				<h3>
-					{project.url ? (
+					{props.project.url ? (
 						<a
 							className="text-black dark:text-white hover:dark:text-white hover:text-black hover:underline hover:underline-offset-8"
-							href={project.url}
+							href={props.project.url}
 							rel="noreferrer"
 							target="_blank"
 						>
-							{project.name}
+							{props.project.name}
 							<span className="ml-2 align-middle ic-xl ic-ne-arrow invert-[0.5]"></span>
 						</a>
 					) : (
-						<>{project.name}</>
+						<>{props.project.name}</>
 					)}
 				</h3>
-				<p
+				<div
 					className="my-6 text-gray-600 text-content text-project-description dark:text-gray-300 lg:text-base lg:leading-8"
-					dangerouslySetInnerHTML={{ __html: project.description }}
+					dangerouslySetInnerHTML={{ __html: props.project.description }}
 				/>
 				<div className="mt-10">
-					{project.git ? (
+					{props.project.git ? (
 						<a
-							href={project.git}
+							href={props.project.git}
 							className={tail.project.btn}
 							rel="noreferrer"
 							target="_blank"
@@ -86,9 +92,9 @@ function ProjectItem({ project, num }: { project: ProjectItemType; num: number }
 					) : (
 						<></>
 					)}
-					{project.video ? (
+					{props.project.video ? (
 						<a
-							href={project.video}
+							href={props.project.video}
 							className={tail.project.secondaryBtn}
 							rel="noreferrer"
 							target="_blank"
@@ -101,9 +107,21 @@ function ProjectItem({ project, num }: { project: ProjectItemType; num: number }
 					)}
 				</div>
 				<div className="absolute font-mono italic -top-2 lg:-top-1 right-2 lg:-left-24 lg:right-auto text-5xl lg:text-7xl tracking-tighter text-stroke text-white dark:text-gray-950">
-					#{num + 1}
+					#{props.num + 1}
 				</div>
 			</div>
 		</div>
+	);
+}
+
+function PreviewImage(props: { project: ProjectItemType }) {
+	return (
+		<Image
+			src={props.project.preview}
+			fill={true}
+			loading="lazy"
+			alt={props.project.name + " image"}
+			className="w-full rounded-lg opacity-90 hover:opacity-100 transition-opacity shadow-lg shadow-black/5"
+		/>
 	);
 }

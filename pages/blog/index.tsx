@@ -28,17 +28,18 @@ export const getStaticProps = async () => {
 };
 
 export default function BlogHome({ allPosts }: Props) {
+	let meta_description =
+		"Here you'll find a collection of my latest musings, opinions, and insights on a variety of topics. From personal experiences to professional advice, I share my thoughts with the aim of inspiring, informing, and entertaining my readers.";
+
 	return (
 		<div>
 			<Head>
 				<title>Blog - Gauravjot Garaya</title>
 				<meta property="og:url" content={`https://gauravjot.com/blog`} />
 				<meta property="og:title" content="Blog - Gauravjot Garaya" />
-				<meta
-					property="og:description"
-					content="Here you'll find a collection of my latest musings, opinions, and insights on a variety of topics. From personal experiences to professional advice, I share my thoughts with the aim of inspiring, informing, and entertaining my readers."
-				/>
+				<meta property="og:description" content={meta_description} />
 				<meta property="og:locale" content="en_US" />
+				<meta name="description" content={meta_description} />
 			</Head>
 			<Topbar current={Page.BLOG} />
 			<div className="py-8 lg:py-10"></div>

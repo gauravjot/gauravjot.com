@@ -21,7 +21,11 @@ export default function Topbar({ current }: { current: Page }) {
 		<div className={(current === Page.BLOG_POST ? "" : "fixed ") + "navbar-section"}>
 			<div className="navbar-background">
 				<nav className="flex container mx-auto">
-					<Link className="flex place-items-center" href="/">
+					<Link
+						className="flex place-items-center"
+						href="/"
+						aria-label="Gauravjot.com Homepage"
+					>
 						<Logo />
 					</Link>
 					<div className="flex-1 pb-3 pt-3.5 text-center">

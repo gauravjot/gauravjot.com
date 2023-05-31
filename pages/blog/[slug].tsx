@@ -32,6 +32,7 @@ export default function Post({ post }: Props) {
 				<meta property="og:type" content="article" />
 				<meta property="og:description" content={post.excerpt} />
 				<meta property="og:locale" content="en_US" />
+				<meta name="description" content={post.excerpt} />
 			</Head>
 			<PageProgressBar />
 			<Topbar current={Page.BLOG_POST} />

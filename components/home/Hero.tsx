@@ -42,13 +42,14 @@ export default function Hero() {
 					ReactJS and induldge in assisting fellow developers when it comes to
 					design principles and best practices for UI.
 				</p>
-				<div role="social-links" className="flex gap-6 my-12 place-items-center">
+				<div className="flex gap-6 my-12 place-items-center">
 					<a
 						href="https://github.com/gauravjot"
 						className={tail.social.link}
 						rel="noreferrer"
 						target="_blank"
 						title="Github"
+						aria-label="Github"
 					>
 						<span className="ic-md ic-github dark:invert-[.85]"></span>
 					</a>
@@ -58,12 +59,14 @@ export default function Hero() {
 						rel="noreferrer"
 						target="_blank"
 						title="LinkedIn"
+						aria-label="LinkedIn"
 					>
 						<span className="ic-md ic-linkedin dark:invert-[.85]"></span>
 					</a>
 					<a
 						href="mailto:connect@gauravjot.com"
 						className={tail.social.emailbtn}
+						aria-label="Email me"
 					>
 						<span className="ic align-top ic-email dark:invert"></span>
 						<span className="align-top ml-2.5 text-black dark:text-white">

@@ -6,17 +6,18 @@ import ContactForm from "@/components/contact/Form";
 import FindMe from "@/components/contact/FindMe";
 
 export default function Home() {
+	let meta_description =
+		"Please leave your message and I will get back. Thank you for reaching out!";
+
 	return (
 		<div className="fade-in-2 bg-white dark:bg-gray-950">
 			<Head>
 				<title>Contact - Gauravjot Garaya</title>
 				<meta property="og:url" content={`https://gauravjot.com/contact`} />
 				<meta property="og:title" content="Contact - Gauravjot Garaya" />
-				<meta
-					property="og:description"
-					content="Please leave your message and I will get back. Thank you for reaching out!"
-				/>
+				<meta property="og:description" content={meta_description} />
 				<meta property="og:locale" content="en_US" />
+				<meta name="description" content={meta_description} />
 			</Head>
 			<Topbar current={Page.CONTACT} />
 			<div className="py-10"></div>

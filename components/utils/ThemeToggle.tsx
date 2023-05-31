@@ -59,7 +59,7 @@ export default function ThemeToggle() {
 
 	return (
 		<div className="darkmode-toggle" onClick={toggle}>
-			<button ref={toggleBtn}>
+			<button ref={toggleBtn} aria-label="Toggle Theme">
 				<span className="ic ic-moon invert"></span>
 				<span className="ic ic-sun"></span>
 			</button>
