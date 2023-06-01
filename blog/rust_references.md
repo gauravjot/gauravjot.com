@@ -5,7 +5,7 @@ coverImage: "/assets/blog_images/rust_references.webp"
 date: "2023-05-03T18:20:32Z"
 edited: "2023-05-09T05:57:00Z"
 author:
-    name: Gaurarvjot Garaya
+    name: Gauravjot Garaya
 ogImage:
     url: "/assets/blog_images/rust_references_thumb.webp"
 ---

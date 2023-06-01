@@ -3,9 +3,9 @@ title: "Deploy Django REST APIs on Ubuntu Server with uWSGI"
 excerpt: "You have built yourself REST APIs with Django or you are trying to deploy them on an Ubuntu server. This article will be a walkthrough of the simplest approach."
 coverImage: "/assets/blog_images/django_api_deploy.webp"
 date: "2023-05-11T17:05:00Z"
-edited: "2023-05-11T17:05:00Z"
+edited: "2023-05-31T19:50:00Z"
 author:
-    name: Gaurarvjot Garaya
+    name: Gauravjot Garaya
 ogImage:
     url: "/assets/blog_images/django_api_deploy.webp"
 ---
@@ -167,11 +167,11 @@ sudo systemctl restart nginx.service
 
 Although, we are done with what we set out to achieve at start of this article, we can go one step further and install SSL certificates from Let's Encrypt.
 
-Follow installation isntructions for certbot: https://certbot.eff.org/
+Follow installation instructions for Certbot: https://certbot.eff.org/
 
-Make sure that you have firewall rule enabled to _tcp/80_ and _tcp/443_ if you can reach to your server from internet.
+Make sure that you have firewall rule enabled to _tcp/80_ and _tcp/443_ if you cannot reach to your server from internet.
 
-To install a certificate, run this command and follow the instructions.
+To install a certificate, run this command and follow the instructions in terminal.
 
 ```bash
 sudo certbot --nginx
