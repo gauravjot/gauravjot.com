@@ -2,7 +2,6 @@
 import { PostType } from "@/lib/blog_api";
 import * as React from "react";
 import dateFormatter from "@/lib/date_formatter";
-import "prismjs/themes/prism-tomorrow.css";
 import Squiggle from "../utils/Squiggle";
 
 export interface IBlogPostProps {

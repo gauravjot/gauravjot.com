@@ -138,7 +138,7 @@
 	@apply bg-black/5 opacity-90 inline-block dark:bg-white/5 font-mono px-1.5 rounded text-sm lg:text-base;
 }
 pre {
-	@apply rounded-md dark:!bg-gray-100/10 !bg-[#0d0d0d];
+	@apply rounded-md;
 }
 pre {
 	margin: 0.5em 0;
@@ -153,25 +153,12 @@ pre {
 	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.975rem];
 	@apply font-mono;
 }
-.blog-content .code-line,
-.token.property-access {
-	color: #fff;
-}
 .blog-content .code-line:before {
 	counter-increment: line;
 	content: counter(line);
 	@apply text-gray-400 inline-block min-w-[2rem] dark:text-gray-500 text-right mr-4 -ml-3 leading-6 tracking-tighter;
 }
 
-.blog-content a {
-	@apply text-skeal-600 hover:text-skeal-700 underline underline-offset-[5px];
-}
-.dark .blog-content a {
-	@apply text-skeal-300 hover:text-skeal-500;
-}
-.blog-content a.data-footnote-backref::before {
-	@apply right-0;
-}
 .blog-content sup a,
 .blog-content sup a::before,
 .blog-content sup a::after {

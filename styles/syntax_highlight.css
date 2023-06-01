@@ -1,0 +1,96 @@
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #ccc;
+	background: none;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	@apply dark:bg-white/10 bg-black/5;
+}
+
+:not(pre) > code[class*="language-"] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+.token.block-comment,
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+	@apply dark:text-gray-300 text-gray-500;
+}
+.token.punctuation {
+	@apply dark:text-gray-200 text-gray-800;
+}
+.token.attr-name,
+.token.deleted,
+.token.namespace,
+.token.tag {
+	@apply dark:text-[#e2777a] text-[#ac0c11];
+}
+.token.function-name {
+	@apply dark:text-[#6196cc] text-[#14589b];
+	color: #14589b;
+}
+.token.boolean,
+.token.function,
+.token.number {
+	@apply dark:text-[#f08d49] text-[#c04e02];
+}
+.token.class-name,
+.token.constant,
+.token.property,
+.token.symbol,
+.token.macro {
+	@apply dark:text-[#f8c555] text-[#027ac0];
+}
+.token.atrule,
+.token.builtin,
+.token.important,
+.token.keyword,
+.token.selector {
+	@apply dark:text-[#cc99cd] text-[#99339b];
+}
+.token.attr-value,
+.token.char,
+.token.regex,
+.token.string,
+.token.variable {
+	@apply dark:text-[#7ec699] text-[#027e31];
+}
+.token.entity,
+.token.operator,
+.token.url {
+	@apply dark:text-[#67cdcc] text-[#0c8b89];
+}
+.token.bold,
+.token.important {
+	font-weight: 700;
+}
+.token.italic {
+	font-style: italic;
+}
+.token.entity {
+	cursor: help;
+}
+.token.inserted {
+	color: green;
+}
+.blog-content .code-line,
+.token.property-access {
+	@apply dark:text-white text-black;
+}
