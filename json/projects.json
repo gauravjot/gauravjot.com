@@ -2,7 +2,8 @@
 	"projects": [
 		{
 			"name": "CoFinder",
-			"description": "<p><a href=\"https://cofinder.ca/\" target=\"_blank\" rel=\"noreferrer\" title=\"CoFinder website\">CoFinder</a> streamlines the university course selection process for students, making it easier and stress-free to manage courses and schedules. It comes with features such as schedule collision detector, a multi-view calendar, easy switch between semesters on the fly, export data for safekeeping among many others.</p><p>It is built upon three microservices: a database service, an API service and a frontend service. They are designed such that each can be scaled independently with layers in between for caching. The tools used are <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a>. I have put CloudFlare caching at DNS level and am working on Redis cache on database level.</p><p>Due to nature of this project being developed as course project at University of the Fraser Valley, it is not on public platforms such as GitHub yet. Feel free to contact me for any queries.</p>",
+			"description": "<p><a href=\"https://cofinder.ca/\" target=\"_blank\" rel=\"noreferrer\" title=\"CoFinder website\">CoFinder</a> streamlines the university course selection process for students, making it easier and stress-free to manage courses and schedules. It comes with features such as schedule collision detector, a multi-view calendar, easy switch between semesters on the fly, export data for safekeeping among many others.</p><p>It is built upon three microservices: a database service, an API service and a frontend service. They are designed such that each can be scaled independently with layers in between for caching. The tools used are <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a>. I have put CloudFlare caching at DNS level and am working on Redis cache on database level.</p>",
+			"git": "https://github.com/gauravjot/cofinder-frontend",
 			"preview": "/assets/projects/CoFinder-min.jpg",
 			"url": "https://cofinder.ca"
 		},
@@ -25,7 +26,7 @@
 			"description": "<p>Built using Android Studio, AmoledBackgrounds let users browse wallpapers from <a href=\"https://reddit.com/r/amoledbackgrounds\" target=\"_blank\" rel=\"noreferrer\">r/amoledbackgrounds</a> subreddit. It's intuitiveness is the ability to download and set the wallpaper natively in Android smartphone.</p><p>The application is greatly loved by the <a href=\"https://reddit.com/r/amoledbackgrounds\" target=\"_blank\" rel=\"noreferrer\">reddit community</a> with over 75,000+ installs and an average rating of 4.2★ on <a href=\"https://play.google.com/store/apps/details?id=com.droidheat.amoledbackgrounds\" target=\"_blank\" rel=\"noreferrer\">Google Play Store</a>.</p>",
 			"preview": "/assets/projects/AmoledBackgrounds-min.jpg",
 			"url": "https://play.google.com/store/apps/details?id=com.droidheat.amoledbackgrounds&pli=1",
-			"git": "https://github.com/gauravjot/social-network"
+			"git": "https://github.com/gauravjot/android-AmoledBackgrounds-for-reddit"
 		}
 	]
 }
