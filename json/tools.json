@@ -1,0 +1,22 @@
+{
+	"tools": [
+		{
+			"name": "ReactJS Vite Boilerplate",
+			"short_desc": "Vite template with preconfigured Reactjs, Typescript and Tailwind CSS. Many useful hooks and libraries are pre-included.",
+			"url": "https://github.com/nzran/react-tsx-tailwind-template",
+			"tags": "reactjs,vite,tailwind,axiom"
+		},
+		{
+			"name": "useDocTheme React Hook",
+			"short_desc": "React hook for switching theme between light, dark and system. Compatible with Tailwind CSS. Available on NPM.",
+			"url": "https://www.npmjs.com/package/use-doc-theme",
+			"tags": "npm,reactjs,react-hook"
+		},
+		{
+			"name": "Desktop Wallpapers",
+			"short_desc": "A web-app to browse desktop wallpapers from various subreddits.",
+			"url": "https://gauravjot.github.io/redditwal/",
+			"tags": "reddit,wallpapers,reactjs"
+		}
+	]
+}

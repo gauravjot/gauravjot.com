@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import ContactForm from "@/components/contact/Form";
 import ScrollToTopBtn from "@/components/utils/ScrollToTopButton";
+import Tools from "@/components/home/Tools";
 
 export default function Home() {
 	let meta_description =
@@ -34,7 +35,13 @@ export default function Home() {
 			</div>
 			<div className="container mx-auto">
 				<Squiggle />
-				<div className="my-12 lg:my-24 mx-8 lg:mx-24">
+			</div>
+			<div className="mt-12 mb-16 lg:mb-28 mx-2">
+				<Tools />
+			</div>
+			<div className="container mx-auto">
+				<Squiggle />
+				<div className="my-12 lg:my-24 mx-2 lg:mx-24">
 					<ContactForm />
 				</div>
 			</div>
