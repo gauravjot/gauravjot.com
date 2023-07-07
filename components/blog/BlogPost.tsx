@@ -18,7 +18,9 @@ export function BlogPost(props: IBlogPostProps) {
 					: `Edited: ${dateFormatter(post.edited)}`}{" "}
 				— {post.author.name}
 			</div>
-			<h1 className="!mt-4">{post.title}</h1>
+			<div className="max-w-[85ch] mx-auto">
+				<h1>{post.title}</h1>
+			</div>
 			{post.tags && (
 				<div className="flex place-items-center">
 					{post.tags.split(",").map((tag) => {
@@ -33,7 +35,9 @@ export function BlogPost(props: IBlogPostProps) {
 					})}
 				</div>
 			)}
-			<p className="text-base">{post.excerpt}</p>
+			<div className="max-w-[85ch] mx-auto">
+				<p className="text-base">{post.excerpt}</p>
+			</div>
 			<div>
 				{post.coverImage ? (
 					<>
@@ -47,13 +51,17 @@ export function BlogPost(props: IBlogPostProps) {
 					<></>
 				)}
 			</div>
-			<h3>Table of Contents</h3>
-			<div dangerouslySetInnerHTML={{ __html: post.content }} />
-			<div className="my-24">
-				<Squiggle />
-				<br />
-				<div className="font-serif my-2">Author</div>
-				<div className="font-sans text-xl font-medium">{post.author.name}</div>
+			<div className="max-w-[85ch] mx-auto">
+				<h3>Table of Contents</h3>
+				<div dangerouslySetInnerHTML={{ __html: post.content }} />
+				<div className="my-24">
+					<Squiggle />
+					<br />
+					<div className="font-serif my-2">Author</div>
+					<div className="font-sans text-xl font-medium">
+						{post.author.name}
+					</div>
+				</div>
 			</div>
 		</div>
 	);

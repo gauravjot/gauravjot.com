@@ -82,22 +82,22 @@ function Article({ post }: { post: PostType }) {
 			}
 		>
 			<div className={post.coverImage && "col-span-8"}>
-				<div className="font-serif font-bold text-[1.3rem] leading-[1.75rem] mb-2.5">
+				<div className="font-serif font-bold text-[1.5rem] leading-[2rem] mb-2.5">
 					<Link
 						href={"/blog/" + post.slug}
-						className="dark:text-gray-100 text-gray-900 hover:text-black hover:dark:text-white hover:underline underline-offset-4 tracking-wide"
+						className="dark:text-gray-100 text-gray-900 hover:text-black hover:dark:text-gray-200 hover:underline underline-offset-4 tracking-wide"
 					>
 						{post.title}
 					</Link>
 				</div>
-				<div className="leading-4 dark:text-gray-300 text-gray-400 font-sans text-sm">
+				<div className="leading-4 dark:text-gray-300 text-gray-400 font-sans text-base">
 					{dateFormatter(post.date)} - {post.author.name}
 				</div>
-				<p className="mt-3 font-sans lg:text-[1.1rem] tracking-[0.02px] dark:text-gray-200 text-gray-600">
+				<p className="mt-3 font-sans lg:text-[1.1rem] dark:text-gray-300 text-gray-600 tracking-wide">
 					{post.excerpt} <div className="p-1"></div>
 					<Link
 						href={"/blog/" + post.slug}
-						className="text-base text-gray-900 hover:text-black dark:text-white hover:dark:text-white hover:underline underline-offset-4"
+						className="text-base text-gray-900 hover:text-black dark:text-gray-200 hover:dark:text-white hover:underline underline-offset-4"
 					>
 						Read more…
 					</Link>
