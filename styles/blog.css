@@ -17,7 +17,7 @@
 	@apply mb-5 lg:mb-7 mt-12 text-3xl lg:text-4xl font-black leading-[2.75rem] lg:leading-[3rem];
 }
 .blog-content h3 {
-	@apply mb-4 lg:mb-6 mt-9 text-2xl lg:text-3xl leading-[2.25rem] lg:leading-[2.5rem];
+	@apply mb-4 lg:mb-6 mt-11 text-2xl lg:text-3xl leading-[2.25rem] lg:leading-[2.5rem];
 }
 .blog-content h4 {
 	@apply text-xl lg:text-2xl leading-[2rem];
@@ -72,8 +72,8 @@
 }
 
 .blog-content p {
-	@apply text-[1rem] sm:text-[1.15rem] md:text-[1.2rem] lg:text-[1.25rem] antialiased;
-	@apply leading-8 md:leading-9 lg:leading-9;
+	@apply text-[1rem] sm:text-[1.05rem] md:text-[1.125rem] lg:text-[1.15rem] antialiased;
+	@apply leading-7 md:leading-8 lg:leading-8;
 	@apply my-7 md:my-9 text-gray-950 dark:text-gray-200;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .blog-content blockquote {
-	@apply bg-skeal-50 dark:bg-skeal-300/10 border border-skeal-200/60 dark:border-skeal-200/10 rounded pl-3 pr-4 my-8;
+	@apply bg-skeal-50 dark:bg-skeal-300/10 border border-skeal-400/60 dark:border-skeal-200/10 rounded pl-3 pr-4 my-8;
 }
 .blog-content blockquote p {
 	@apply text-[0.95rem] sm:text-[1rem] md:text-[1.025rem] lg:text-[1.05rem];
@@ -133,30 +133,41 @@
 }
 
 .blog-content code {
-	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.975rem] lg:text-base;
-	@apply text-purple-800 dark:text-purpear-300;
+	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.95rem] lg:text-[0.95rem];
+	@apply text-gray-900 dark:text-purpear-100 border dark:border-gray-900;
 	@apply bg-black/5 opacity-90 inline-block dark:bg-white/5 font-mono px-1.5 rounded text-sm lg:text-base;
 }
 pre {
 	@apply rounded-md;
 }
 pre {
-	margin: 0.5em 0;
 	overflow: auto;
-	@apply !p-2 lg:!p-4;
+	@apply !bg-gray-400/10 border dark:border-gray-900;
 }
 .blog-content pre code {
 	counter-reset: line;
-	@apply font-mono font-normal bg-transparent dark:bg-transparent py-0 px-0;
+	@apply font-mono font-normal border-0 bg-transparent dark:bg-transparent py-0 px-0 relative w-full;
+}
+.blog-content p strong {
+	@apply font-medium tracking-[0.0125rem];
 }
 .blog-content pre code * {
-	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.975rem];
+	@apply text-[0.9rem] sm:text-[0.925rem] md:text-[0.95rem];
 	@apply font-mono;
+}
+.blog-content .code-line {
+	@apply block px-3;
 }
 .blog-content .code-line:before {
 	counter-increment: line;
 	content: counter(line);
-	@apply text-gray-400 inline-block min-w-[2rem] dark:text-gray-500 text-right mr-4 -ml-3 leading-6 tracking-tighter;
+	@apply text-gray-400 bg-black/5 dark:bg-white/5 px-3 py-0.5 inline-block min-w-[3rem] dark:text-gray-500 text-[0.85rem] text-right mr-4 -ml-3 leading-6 tracking-tighter;
+}
+.blog-content .code-line:before:last-child {
+	@apply pb-2;
+}
+.blog-content .code-line:before:first-child {
+	@apply pt-2;
 }
 
 .blog-content sup a,

@@ -39,10 +39,6 @@ export default function Post({ post }: Props) {
 			<article className="container mx-auto">
 				<BlogPost post={post} />
 			</article>
-			<div className="text-center">
-				Images courtesy of{" "}
-				<a href="https://www.freepik.com/free-vector/">Freepik</a>
-			</div>
 			<Footer />
 			<ScrollToTopBtn />
 		</div>
