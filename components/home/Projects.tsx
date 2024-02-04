@@ -106,9 +106,9 @@ function ProjectItem(props: { project: ProjectItemType; num: number }) {
 						<></>
 					)}
 				</div>
-				<div className="absolute font-mono italic -top-2 lg:-top-1 right-2 lg:-left-24 lg:right-auto text-5xl lg:text-7xl tracking-tighter text-stroke text-white dark:text-gray-1000">
+				{/* <div className="absolute font-mono italic -top-2 lg:-top-1 right-2 lg:-left-24 lg:right-auto text-5xl lg:text-7xl tracking-tighter text-stroke text-white dark:text-gray-1000">
 					#{props.num + 1}
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

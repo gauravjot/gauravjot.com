@@ -1,6 +1,13 @@
 {
 	"projects": [
 		{
+			"name": "Decks Of Fate",
+			"description": "<p>A 2D, turn-based combat card game where you play a party of a random selection of heroes. Do you have what it takes to defeat the evil villain of this world?</p><p>The game is made in Unity and was submitted as an entry for GlobalGameJam 2024. Our team included 3 artists and writers and sole developer.</p>",
+			"git": "https://github.com/gauravjot/DecksOfFate-GlobalGameJam2024",
+			"preview": "/assets/projects/DecksOfFate-min.webp",
+			"url": "https://globalgamejam.org/games/2024/decksoffate-1"
+		},
+		{
 			"name": "CoFinder",
 			"description": "<p><a href=\"https://cofinder.ca/\" target=\"_blank\" rel=\"noreferrer\" title=\"CoFinder website\">CoFinder</a> streamlines the university course selection process for students, making it easier and stress-free to manage courses and schedules. It comes with features such as schedule collision detector, a multi-view calendar, easy switch between semesters on the fly, export data for safekeeping among many others.</p><p>It is built upon three microservices: a database service, an API service and a frontend service. They are designed such that each can be scaled independently with layers in between for caching. The tools used are <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a>. I have put CloudFlare caching at DNS level and am working on Redis cache on database level.</p>",
 			"git": "https://github.com/gauravjot/cofinder-frontend",
