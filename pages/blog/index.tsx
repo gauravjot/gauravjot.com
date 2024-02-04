@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import dateFormatter from "@/lib/date_formatter";
 import Link from "next/link";
 import Squiggle from "@/components/utils/Squiggle";
-import Script from "next/script";
 import Image from "next/image";
 
 type Props = {
@@ -94,7 +93,9 @@ function Article({ post }: { post: PostType }) {
 					{dateFormatter(post.date)} - {post.author.name}
 				</div>
 				<p className="mt-3 font-sans lg:text-[1.1rem] dark:text-gray-300 text-gray-600 tracking-wide">
-					{post.excerpt} <div className="p-1"></div>
+					{post.excerpt}
+				</p>
+				<p className="pt-2 font-sans">
 					<Link
 						href={"/blog/" + post.slug}
 						className="text-base text-gray-900 hover:text-black dark:text-gray-200 hover:dark:text-white hover:underline underline-offset-4"

@@ -241,7 +241,7 @@ p {
 .page-progress {
 	/* background: linear-gradient(to right, #e39600, #d53a9d, #743ad5, #3ab6d5); */
 	background: linear-gradient(to right, #d53a9d, #d53a9d);
-	@apply top-0 left-0 right-0 h-1 fixed z-10 bg-no-repeat;
+	@apply top-0 left-0 right-0 h-1 fixed z-10 bg-no-repeat transition-all duration-200;
 }
 
 /* Navbar */

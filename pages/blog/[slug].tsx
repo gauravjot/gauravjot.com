@@ -20,10 +20,12 @@ export default function Post({ post }: Props) {
 		<div>
 			<Head>
 				<title>{title}</title>
-				<meta
-					property="og:image"
-					content={`https://gauravjot.com${post.ogImage.url}`}
-				/>
+				{post.ogImage && (
+					<meta
+						property="og:image"
+						content={`https://gauravjot.com${post.ogImage.url}`}
+					/>
+				)}
 				<meta
 					property="og:url"
 					content={`https://gauravjot.com/blog/${post.slug}`}

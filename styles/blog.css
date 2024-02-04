@@ -23,11 +23,11 @@
 	@apply text-xl lg:text-2xl leading-[2rem];
 }
 .blog-content h5 {
-	@apply text-lg lg:text-xl leading-[1.9rem];
+	@apply text-lg lg:text-xl leading-[1.9rem] text-gray-800 dark:text-gray-200;
 }
 .blog-content h6 {
 	@apply text-base;
-	@apply leading-6 sm:leading-7 md:leading-8 lg:leading-9;
+	@apply leading-6 sm:leading-7 md:leading-8 lg:leading-9 text-gray-800 dark:text-gray-200;
 }
 /* headings link */
 .blog-content a .icon-link {
@@ -68,7 +68,7 @@
 }
 
 .blog-content hr {
-	@apply dark:invert;
+	@apply dark:invert my-16;
 }
 
 .blog-content p {
@@ -133,7 +133,7 @@
 }
 
 .blog-content code {
-	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.95rem] lg:text-[0.95rem];
+	@apply text-[0.925rem] sm:text-[0.95rem] md:text-[0.95rem] lg:text-[0.95rem] inline-block;
 	@apply text-gray-900 dark:text-purpear-100 border dark:border-gray-900;
 	@apply bg-black/5 opacity-90 inline-block dark:bg-white/5 font-mono px-1.5 rounded text-sm lg:text-base;
 }
@@ -194,16 +194,19 @@ pre {
 }
 
 .blog-content table {
-	@apply border-b border-gray-200/50 dark:border-gray-700/70;
+	@apply border-b border-gray-200/50 dark:border-gray-700/70 w-full;
 }
 .blog-content tr th {
-	@apply bg-gray-100 dark:border-gray-700/80 dark:bg-gray-100/20 px-4 py-2 border-b-2;
+	@apply dark:border-gray-700/80 px-4 py-2 border-b-2 text-sm;
 }
 .blog-content td {
-	@apply px-4 py-2;
+	@apply px-4 py-2 text-[95%];
 }
 .blog-content tr:nth-child(even) {
-	@apply dark:bg-gray-200/10 bg-gray-100/50;
+	@apply dark:border-white/10 border-black/10 border-b;
+}
+.blog-content tr:nth-child(odd) {
+	@apply dark:border-white/10 border-black/10 border-b;
 }
 
 .blog-content nav.toc {
