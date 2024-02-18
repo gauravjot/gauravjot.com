@@ -8,7 +8,7 @@
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
-	@apply font-serif mb-4 lg:mb-6 mt-8 text-gray-950 dark:text-gray-100 relative antialiased tracking-normal;
+	@apply font-serif mb-4 lg:mb-6 mt-12 text-gray-950 dark:text-white relative antialiased tracking-normal;
 }
 .blog-content h1 {
 	@apply mb-6 lg:mb-8 mt-14 text-4xl lg:text-5xl font-black leading-[3rem] lg:leading-[4rem];
@@ -23,11 +23,11 @@
 	@apply text-xl lg:text-2xl leading-[2rem];
 }
 .blog-content h5 {
-	@apply text-lg lg:text-xl leading-[1.9rem] text-gray-800 dark:text-gray-200;
+	@apply text-lg lg:text-xl leading-[1.9rem] text-gray-800 dark:text-gray-100;
 }
 .blog-content h6 {
 	@apply text-base;
-	@apply leading-6 sm:leading-7 md:leading-8 lg:leading-9 text-gray-800 dark:text-gray-200;
+	@apply leading-6 sm:leading-7 md:leading-8 lg:leading-9 text-gray-800 dark:text-gray-100;
 }
 /* headings link */
 .blog-content a .icon-link {
@@ -74,7 +74,7 @@
 .blog-content p {
 	@apply text-[1rem] sm:text-[1.05rem] md:text-[1.125rem] lg:text-[1.15rem] antialiased;
 	@apply leading-7 md:leading-8 lg:leading-8;
-	@apply my-7 md:my-9 text-gray-950 dark:text-gray-200;
+	@apply my-6 md:my-7 text-gray-950 dark:text-gray-200;
 }
 
 .blog-content li {
@@ -168,6 +168,15 @@ pre {
 }
 .blog-content .code-line:before:first-child {
 	@apply pt-2;
+}
+.blog-content p:has(codemeta) {
+	@apply my-0 border border-b-0 bg-gray-100 dark:bg-white/10 dark:border-gray-900 rounded-t-md px-12 py-px;
+}
+.blog-content codemeta {
+	@apply text-gray-500 dark:text-gray-500 font-mono select-none italic text-sm;
+}
+.blog-content p:has(codemeta) + pre {
+	@apply rounded-t-none;
 }
 
 .blog-content sup a,
