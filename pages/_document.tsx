@@ -2,9 +2,18 @@ import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 
 export default function Document() {
+	const env = process.env.NODE_ENV;
+
 	return (
 		<Html lang="en">
 			<Head>
+				{env === "production" && (
+					<script
+						defer
+						src={process.env.ANALYTICS_SCRIPT_URL}
+						data-website-id={process.env.ANALYTICS_SITE_ID}
+					></script>
+				)}
 				<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 				<link
 					rel="apple-touch-icon"
