@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import React, { useState } from "react";
 import Head from "next/head";
