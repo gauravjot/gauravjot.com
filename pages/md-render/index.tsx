@@ -74,7 +74,9 @@ export default function Post() {
 				<div dangerouslySetInnerHTML={{ __html: post.content }} />
 				{query["hide_footer"] !== "true" && (
 					<p className="pt-2 border-t border-zinc-300">
-						<a href="/md-render">Render other Markdown</a>
+						<a href="https://gauravjot.com/md-render">
+							Render other Markdown
+						</a>
 					</p>
 				)}
 			</article>
