@@ -50,7 +50,7 @@ export default function Post() {
 	React.useEffect(() => {
 		let u = query["url"] as string;
 		if (u && (u.startsWith("http://") || u.startsWith("https://"))) {
-			setUrl(u);
+			setUrl("https://corsproxy.io/?" + u);
 			setLoading(true);
 			setError(null);
 		} else {
