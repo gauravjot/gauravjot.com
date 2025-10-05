@@ -3,7 +3,7 @@ title: "Deploy Django REST APIs on Ubuntu Server with uWSGI"
 excerpt: "You have built yourself REST APIs with Django or you are trying to deploy them on an Ubuntu server. This article will be a walkthrough of the simplest approach."
 coverImage: "/assets/blog_images/django_api_deploy.webp"
 date: "2023-05-11T17:05:00Z"
-edited: "2023-05-31T19:50:00Z"
+edited: "2025-10-05T01:23:00Z"
 author:
     name: Gauravjot Garaya
 ogImage:
@@ -25,11 +25,30 @@ sudo apt update &&
 sudo apt install -y build-essential python3 python3-pip \
 python3-dev python3-venv supervisor nginx &&
 python3 -m pip install uwsgi &&
+```
+
+### Directory Setup
+
+We will create a few directories to store our application and logs.
+
+```bash
 sudo mkdir /app &&
-sudo mkdir /app/django
+sudo mkdir /app/django &&
+sudo mkdir /var/log/uwsgi
 ```
 
 I like to use `app` directory at root of file system, you may choose a location which fits you the best.
+
+### Create Dedicated User
+
+It is a good practice to create a dedicated user for running your web applications. Here we will create a user `uwsgi_app_user` and add it to `www-data` group which is used by NGINX.
+
+```bash
+sudo useradd -r -M -s /usr/sbin/nologin uwsgi_app_user &&
+sudo usermod -a -G www-data uwsgi_app_user &&
+sudo chown -R uwsgi_app_user:uwsgi_app_user /var/log/uwsgi &&
+sudo chown -R uwsgi_app_user:uwsgi_app_user /app
+```
 
 ### Django Setup
 
@@ -47,14 +66,7 @@ python3 -m pip install -r [requirements.txt]
 ln -s venv/lib/python[YOUR-INSTALLATION-VERISON]/site-packages/django/contrib/admin/static/admin/ admin
 ```
 
-3. We also need to ensure that correct permissions are setup so NGINX can access our project files. We can do so by making _www-data_ owner of `/app` directory used by NGINX. You can add yourself to the group with the second command.
-
-```bash
-chown -R www-data:www-data /app &&
-usermod -a -G www-data $USER
-```
-
-4. For next steps, note down the paths to your django project and virtual environment.
+3. For next steps, note down the paths to your django project and virtual environment.
 
 ```text
 /app/django/[appname]
@@ -68,20 +80,34 @@ usermod -a -G www-data $USER
 
 Within `/app/django/[appname]` directory, make file `uwsgi-[appname].ini`. Here is what it has to include.
 
-```text
+```ini
 [uwsgi]
-chdir=/app/django/[appname]
-module=[appname-or-core-package-name].wsgi:application
-# Settings module
-env='DJANGO_SETTINGS_MODULE=[appname-or-core-package-name].settings'
-# Python vitual env
-home=/app/django/[appname]/venv
-master=True
-pidfile=/tmp/django-[appname].pid
-socket=127.0.0.1:8001
-processes=5
-vacuum=True
-max-requests=5000
+# User settings
+uid = uwsgi_app_user
+gid = uwsgi_app_user
+
+# Application
+; Replace all instances of [appname] with your Django project name
+chdir           = /app/django/[appname]
+module          = [appname].wsgi:application
+home            = /app/django/[appname]/venv ; Path to virtual environment
+env             = 'DJANGO_SETTINGS_MODULE=[appname].settings'
+
+# Process
+master          = true
+pidfile         = /tmp/[appname].pid
+socket          = 127.0.0.1:8001
+processes       = 5
+vacuum          = true
+max-requests    = 5000
+harakiri        = 30 ; Timeout in seconds after which request is killed
+die-on-term     = true ; Gracefully shutdown when SIGTERM signal is received
+
+# Logging and monitoring
+log-4xx         = true ; Log HTTP 4xx errors
+log-5xx         = true ; Log HTTP 5xx errors
+logto           = /var/log/uwsgi/uwsgi-[appname].log
+log-maxsize     = 52428800  ; 50MB
 ```
 
 > You may need to includes configuration for plugins (`plugins=python3[x]`, `plugins-dir=/usr/lib/uwsgi/plugins`) if you installed uwsgi as a system package and not Python's pip. I recommend to use Python package and the same is recommended by [Django's documentation](https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/uwsgi/).
@@ -105,6 +131,7 @@ autostart=true
 autorestart=true
 redirect_stderr=true
 stdout_logfile=/var/log/supervisor/uwsgi-[appname].log
+user=uwsgi_app_user
 ```
 
 And then restart the _supervisor_ service.
@@ -113,10 +140,14 @@ And then restart the _supervisor_ service.
 sudo systemctl restart supervisor
 ```
 
-To ensure that uWSGI process is spawned properly, you can check the log file we indicated in the config or check active ports on machine with `lsof`.
+To ensure that uWSGI process is spawned properly, you can check the log files we indicated in configs or check active ports on machine with `lsof`.
 
 ```bash
 sudo tail -F /var/log/supervisor/uwsgi-[appname].log
+```
+
+```bash
+sudo tail -F /var/log/uwsgi/uwsgi-[appname].log
 ```
 
 ```bash
@@ -126,7 +157,7 @@ sudo lsof -i :8001
 **Now there are some possibilities. Few commons one are:**
 
 1. uWSGI processes spawned as expected. Hurray!
-2. uWSGI cannot be found. In that case use path `/home/[user-name]/.local/bin/uwsgi` for command and restart _supervisor_ service.
+2. uWSGI cannot be found. In that case, check if you installed uWSGI at another location, such as `/home/[user-name]/.local/bin/uwsgi`.
 
 ### NGINX Setup
 
