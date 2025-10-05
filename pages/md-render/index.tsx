@@ -12,7 +12,7 @@ import rehypeFormat from "rehype-format";
 import rehypeStringify from "rehype-stringify";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
-import rehypeAutolinkHeadings from "rehype-autolink-headings/lib";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypePrism from "rehype-prism-plus";
 
