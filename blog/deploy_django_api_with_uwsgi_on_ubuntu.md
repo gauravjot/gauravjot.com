@@ -3,7 +3,7 @@ title: "Deploy Django REST APIs on Ubuntu Server with uWSGI"
 excerpt: "You have built yourself REST APIs with Django or you are trying to deploy them on an Ubuntu server. This article will be a walkthrough of the simplest approach."
 coverImage: "/assets/blog_images/django_api_deploy.webp"
 date: "2023-05-11T17:05:00Z"
-edited: "2025-10-05T01:23:00Z"
+edited: "2025-10-05T21:16:00Z"
 author:
     name: Gauravjot Garaya
 ogImage:
@@ -32,12 +32,12 @@ python3 -m pip install uwsgi &&
 We will create a few directories to store our application and logs.
 
 ```bash
-sudo mkdir /app &&
-sudo mkdir /app/django &&
+sudo mkdir /srv &&
+sudo mkdir /srv/webapps &&
 sudo mkdir /var/log/uwsgi
 ```
 
-I like to use `app` directory at root of file system, you may choose a location which fits you the best.
+I like to use `srv` directory at root of file system, you may choose a location which fits you the best.
 
 ### Create Dedicated User
 
@@ -47,12 +47,12 @@ It is a good practice to create a dedicated user for running your web applicatio
 sudo useradd -r -M -s /usr/sbin/nologin uwsgi_app_user &&
 sudo usermod -a -G www-data uwsgi_app_user &&
 sudo chown -R uwsgi_app_user:uwsgi_app_user /var/log/uwsgi &&
-sudo chown -R uwsgi_app_user:uwsgi_app_user /app
+sudo chown -R uwsgi_app_user:www-data /srv/webapps
 ```
 
 ### Django Setup
 
-1. Save your Django project in `/app/django/` directory and `cd` into it. Create you virtual environment to install your Python packages. Here is a quick-how.
+1. Save your Django project in `/srv/webapps` directory and `cd` into it. Create you virtual environment to install your Python packages. Here is a quick-how.
 
 ```bash
 python3 -m venv venv &&
@@ -60,7 +60,7 @@ source ./venv/bin/activate &&
 python3 -m pip install -r [requirements.txt]
 ```
 
-2. Admin Portal: If you are using Django's built-in admin portal, you might want to import CSS and other static files which it uses to render itself. You can do so by creating a symlink to it under `/app/django/[appname]`.
+2. Admin Portal: If you are using Django's built-in admin portal, you might want to import CSS and other static files which it uses to render itself. You can do so by creating a symlink to it under `/srv/webapps/[appname]`.
 
 ```bash
 ln -s venv/lib/python[YOUR-INSTALLATION-VERISON]/site-packages/django/contrib/admin/static/admin/ admin
@@ -69,16 +69,16 @@ ln -s venv/lib/python[YOUR-INSTALLATION-VERISON]/site-packages/django/contrib/ad
 3. For next steps, note down the paths to your django project and virtual environment.
 
 ```text
-/app/django/[appname]
-/app/django/[appname]/venv
-/app/django/[appname]/admin
+/srv/webapps/[appname]
+/srv/webapps/[appname]/venv
+/srv/webapps/[appname]/admin
 ```
 
 > You may additionally want to edit your `settings.py` file to set `DEBUG` to `False` or make CORS and CSRF changes.
 
 ### uWSGI Setup
 
-Within `/app/django/[appname]` directory, make file `uwsgi-[appname].ini`. Here is what it has to include.
+Within `/srv/webapps/[appname]` directory, make file `uwsgi-[appname].ini`. Here is what it has to include.
 
 ```ini
 [uwsgi]
@@ -88,9 +88,9 @@ gid = uwsgi_app_user
 
 # Application
 ; Replace all instances of [appname] with your Django project name
-chdir           = /app/django/[appname]
+chdir           = /srv/webapps/[appname]
 module          = [appname].wsgi:application
-home            = /app/django/[appname]/venv ; Path to virtual environment
+home            = /srv/webapps/[appname]/venv ; Path to virtual environment
 env             = 'DJANGO_SETTINGS_MODULE=[appname].settings'
 
 # Process
@@ -125,8 +125,8 @@ cd /etc/supervisor/conf.d/
 Here make a file `supervisor.conf` to store our configuration. Supervisor will use this config to spawn or restart our server instances.
 
 ```text
-[program:uwsgi]
-command=uwsgi --ini /app/django/[appname]/uswgi-[appname].ini
+[program:uwsgi-appname]
+command=uwsgi --ini /srv/webapps/[appname]/uwsgi-[appname].ini
 autostart=true
 autorestart=true
 redirect_stderr=true
@@ -176,9 +176,9 @@ server {
 
   server_name localhost;
 
-  # For Django Admin static files
+  # For Django Admin static files if you are using it
   location /static/admin/ {
-        alias /app/django/appname/admin/;
+        alias /srv/webapps/[appname]/admin/; # make sure this matches your path
     }
 
   location / {
