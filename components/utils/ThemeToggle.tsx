@@ -19,13 +19,13 @@ export default function ThemeToggle() {
 			window.matchMedia &&
 			window.matchMedia("(prefers-color-scheme: dark)").matches
 		) {
-			if (theme === ("dark" || null)) {
+			if (theme === "dark" || theme === null) {
 				changeToDark();
 			} else if (theme === "light") {
 				changeToLight();
 			}
 		} else {
-			if (theme === ("light" || null)) {
+			if (theme === "light" || theme === null) {
 				changeToLight();
 			} else if (theme === "dark") {
 				changeToDark();
