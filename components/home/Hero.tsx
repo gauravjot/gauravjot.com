@@ -15,32 +15,27 @@ export default function Hero() {
 		<section id="hero">
 			<div className="container mx-auto">
 				<h1 className="my-10 lg:my-12 lg:mt-16 leading-[2.75rem] lg:leading-[4.25rem] text-content">
-					Software Engineer,{" "}
+					Software Engineer & UI Designer,{" "}
 					<span className="inline-block">
-						Building Elegent & Reactive User Experiences.
+						Building Elegant & Reactive User Experiences.
 					</span>
 				</h1>
 				<p className={tail.hero.p}>
 					I am Gauravjot Garaya, a Vancouver based software engineer with over
 					five years of experience. I specialize in translating web designs for
-					the browser with focus on simplicity and usability.
+					the browser with focus on simplicity and accessibility.
 				</p>
 				<p className={tail.hero.p}>
-					I am currently working on{" "}
-					<a href="https://cofinder.ca" rel="noreferrer" target="_blank">
-						CoFinder.ca
+					I am currently working as Full-Stack Developer at{" "}
+					<a
+						href="https://cascadeaerospace.com"
+						rel="noreferrer"
+						target="_blank"
+					>
+						Cascade Aerospace
 					</a>{" "}
-					where I am in charge of developing the front-end. CoFinder is used by
-					students and instructors at{" "}
-					<a href="https://ufv.ca" rel="noreferrer" target="_blank">
-						University of the Fraser Vallery
-					</a>
-					.
-				</p>
-				<p className={tail.hero.p}>
-					Alongwith, I also like to tinker with open-source projects built with
-					ReactJS and induldge in assisting fellow developers when it comes to
-					design principles and best practices for UI.
+					and handle mission critical applications used by the hundreds of our
+					highly skilled aerospace personnel.
 				</p>
 				<div className="flex gap-6 my-12 place-items-center">
 					<a

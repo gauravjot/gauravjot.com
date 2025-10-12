@@ -1,32 +1,30 @@
 {
 	"projects": [
 		{
-			"name": "CoFinder",
-			"description": "<p><a href=\"https://cofinder.ca/\" target=\"_blank\" rel=\"noreferrer\" title=\"CoFinder website\">CoFinder</a> streamlines the university course selection process for students, making it easier and stress-free to manage courses and schedules. It comes with features such as schedule collision detector, a multi-view calendar, easy switch between semesters on the fly, export data for safekeeping among many others.</p><p>It is built upon three microservices: a database service, an API service and a frontend service. They are designed such that each can be scaled independently with layers in between for caching. The tools used are <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a>. I have put CloudFlare caching at DNS level and am working on Redis cache on database level.</p>",
-			"git": "https://github.com/gauravjot/cofinder-frontend",
-			"preview": "/assets/projects/CoFinder-min.jpg",
-			"url": "https://cofinder.ca"
-		},
-		{
-			"name": "Letsnote.io",
-			"description": "<p><i>Ever had an idea that you need to quickly note down?</i></p><p>Letsnote, a light-weight rich text editor, is built on premise that a user should be able to open <a href=\"https://letsnote.io\" target=\"_blank\" rel=\"noreferrer\">letsnote.io</a> → write something → close tab, and the work should be saved as a new note automatically. No other interaction should be required. No popups, no clicking buttons, no naming things or files.</p><p>Letsnote implements this approach as well as saves the note during writing, <a href=\"https://letsnote.io/note/shared/dabb9d3f/a3eb36ca-3c0d-4b27-9ab1-56cb6e271973\" target=\"_blank\" rel=\"noreferrer\">lets you share notes by generating links</a> (create multiple and remove unneeded for granular control), <a href=\"https://letsnote.io/note/shared/dabb9d3f/a3eb36ca-3c0d-4b27-9ab1-56cb6e271973\" target=\"_blank\" rel=\"noreferrer\">out-of-the-box formatting</a> for all the note elements and looks aesthetically pleasing.</p><p>Built on a powerful technology stack that includes <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a> front-end. The project is under active development and more features are underway.</p>",
-			"preview": "/assets/projects/Letsnote-min.jpg",
-			"url": "https://letsnote.io",
-			"git": "https://github.com/gauravjot/letsnote"
-		},
-		{
-			"name": "Social Network",
-			"description": "<p>\"Social Network\" is a platform where users can make friends, share moments and celebrate milestones. This application implements most features of a social network platform like creating posts, upload images, comment and like on posts, dedicated profile page for users, notifications, and finding new people.</p><p>It is built using <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a>. Every module such as notification, friend, post, and account can be converted to a microservice for individual scaling and communication between services can be facilitated by message queues.</p><p>Due to the nature of this project, this is not actively being worked on unlike <a href=\"https://cofinder.ca\" target=\"_blank\" rel=\"noreferrer\">CoFinder</a> and <a href=\"https://letsnote.io\" target=\"_blank\" rel=\"noreferrer\">Letsnote</a>. Although, it has value being my first major full stack project and helped me gain very relevant skills.</p>",
-			"preview": "/assets/projects/SocialNetwork-min.jpg",
-			"git": "https://github.com/gauravjot/social-network",
-			"video": "https://streamable.com/04x2y0"
-		},
-		{
 			"name": "AmoledBackgrounds",
 			"description": "<p>Built using Android Studio, AmoledBackgrounds let users browse wallpapers from <a href=\"https://reddit.com/r/amoledbackgrounds\" target=\"_blank\" rel=\"noreferrer\">r/amoledbackgrounds</a> subreddit. It's intuitiveness is the ability to download and set the wallpaper natively in Android smartphone.</p><p>The application is greatly loved by the <a href=\"https://reddit.com/r/amoledbackgrounds\" target=\"_blank\" rel=\"noreferrer\">reddit community</a> with over 75,000+ installs and an average rating of 4.2★ on <a href=\"https://play.google.com/store/apps/details?id=com.droidheat.amoledbackgrounds\" target=\"_blank\" rel=\"noreferrer\">Google Play Store</a>.</p>",
 			"preview": "/assets/projects/AmoledBackgrounds-min.jpg",
 			"url": "https://play.google.com/store/apps/details?id=com.droidheat.amoledbackgrounds&pli=1",
 			"git": "https://github.com/gauravjot/android-AmoledBackgrounds-for-reddit"
+		},
+		{
+			"name": "CoFinder",
+			"description": "<p>CoFinder streamlines the university course selection process for students, making it easier and stress-free to manage courses and schedules. It comes with features such as schedule collision detector, a multi-view calendar, easy switch between semesters on the fly, export data for safekeeping among many others.</p><p>It is built upon three microservices: a database service, an API service and a frontend service. They are designed such that each can be scaled independently with layers in between for caching. The tools used are <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a>. I have put CloudFlare caching at DNS level and am working on Redis cache on database level.</p>",
+			"git": "https://github.com/gauravjot/cofinder-frontend",
+			"preview": "/assets/projects/CoFinder-min.jpg"
+		},
+		{
+			"name": "Letsnote",
+			"description": "<p><i>Ever had an idea that you need to quickly note down?</i></p><p>Letsnote, a light-weight rich text editor, is built on premise that a user should be able to open \"letsnote.io\" → write something → close tab, and the work should be saved as a new note automatically. No other interaction should be required. No popups, no clicking buttons, no naming things or files.</p><p>Letsnote implements this approach as well as saves the note during writing, lets you share notes by generating links (create multiple and remove unneeded for granular control), out-of-the-box formatting for all the note elements and looks aesthetically pleasing.</p><p>Built on a powerful technology stack that includes <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a> front-end. The project is under active development and more features are underway.</p>",
+			"preview": "/assets/projects/Letsnote-min.jpg",
+			"git": "https://github.com/gauravjot/letsnote"
+		},
+		{
+			"name": "Social Network",
+			"description": "<p>\"Social Network\" is a platform where users can make friends, share moments and celebrate milestones. This application implements most features of a social network platform like creating posts, upload images, comment and like on posts, dedicated profile page for users, notifications, and finding new people.</p><p>It is built using <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noreferrer\">PostgreSQL</a>, <a href=\"https://www.djangoproject.com\" target=\"_blank\" rel=\"noreferrer\">Django</a>, and <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noreferrer\">React</a>. Every module such as notification, friend, post, and account can be converted to a microservice for individual scaling and communication between services can be facilitated by message queues.</p><p>Due to the nature of this project, this is not actively being worked on unlike CoFinder and Letsnote. Although, it has value being my first major full stack project and helped me gain very relevant skills.</p>",
+			"preview": "/assets/projects/SocialNetwork-min.jpg",
+			"git": "https://github.com/gauravjot/social-network",
+			"video": "https://streamable.com/04x2y0"
 		}
 	]
 }

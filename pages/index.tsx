@@ -11,7 +11,7 @@ import Tools from "@/components/home/Tools";
 
 export default function Home() {
 	let meta_description =
-		"I am Gauravjot Garaya, a Vancouver based software engineer with over five years of experience. I specialize in translating web designs for the browser with focus on simplicity and usability.";
+		"I am Gauravjot Garaya, a Vancouver based software engineer with over five years of experience. I specialize in translating web designs for the browser with focus on simplicity and accessability.";
 
 	return (
 		<div className="fade-in-2 relative">
